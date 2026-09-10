@@ -33,11 +33,13 @@ Site text © 2026 Matthew T. Kirby; publications carry their own licence, stated
    `www` `CNAME` to `MandatePatch.github.io`. Remove any parking or forwarding first.
 4. Settings → Pages → Custom domain `driftlayer.org`; tick Enforce HTTPS once the certificate issues.
 
-## Dates to check before merging
+## Dates
 
-Three dates are written as 12 September 2026 — the intended go-live. If it is merged on another day,
-change them together:
+Published 10 September 2026. The publication date appears in four places and they must agree:
 
-- `papers/rpib-consultation-response/index.html` — "Published here" and the version-1 line
-- `papers/definitions/index.html` — the Date row, the citation block, the BibTeX note, the version-1 line
+- `papers/rpib-consultation-response/index.html` — the "Published here" date and the version-1 line
+- `papers/definitions/index.html` — the Date row, the citation block, and the version-1 line
 - `papers/index.html` — the date on the definitions entry
+
+The RPIB paper also carries two dates that are not the publication date and must not be changed with it:
+9 September 2026, when the response was submitted, and 11 September 2026, when the consultation closes.
