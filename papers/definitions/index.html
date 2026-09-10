@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four Measures for Mandate Conformance — The Drift Layer</title>
+<meta name="description" content="Evaluation coverage, mandate conformance, divergence incidence and unauthorised continuation — the measurement vocabulary for whether an agent's transaction stayed inside its authority.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+    --rule:#e2e4ee; --panel:#f7f7fb; --max:44rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#070b1c; --fg:#e7e9f2; --mute:#9aa0be; --accent:#9a76ef; --accent-deep:#6d4dd6;
+      --rule:#1c2340; --panel:#10152c;
+    }
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--bg); color:var(--fg);
+    font:17px/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width:var(--max); margin:0 auto; padding:4rem 1.25rem 5rem; }
+  .masthead { display:inline-block; margin:0 0 2.4rem; border:0; color:inherit; }
+  .masthead svg { display:block; width:100%; height:auto; margin:0 0 .6rem; }
+  .masthead h1, .masthead .wordmark { font-size:1.45rem; letter-spacing:.185em;
+    text-transform:uppercase; font-weight:500; margin:0 -.185em 0 0; white-space:nowrap; }
+  h1.page-title { font-size:1.35rem; line-height:1.35; font-weight:600; margin:0 0 1.4rem;
+    letter-spacing:0; text-transform:none; }
+  h2 { font-size:1.05rem; letter-spacing:.08em; text-transform:uppercase; color:var(--mute);
+    margin:2.6rem 0 .8rem; font-weight:600; }
+  h3 { font-size:1rem; margin:1.9rem 0 .35rem; font-weight:600; }
+  h4 { font-size:.95rem; margin:1.6rem 0 .3rem; font-weight:600; color:var(--accent); }
+  .list p { margin:0 0 .55rem; }
+  p { margin:0 0 1rem; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-deep); }
+  a:hover { border-bottom-color:var(--accent); }
+  code { font:0.92em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); padding:.1em .35em; border-radius:3px; overflow-wrap:anywhere; }
+  pre { font:0.84em/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); border-left:3px solid var(--rule); padding:.8rem 1rem;
+    white-space:pre-wrap; overflow-wrap:anywhere; margin:1rem 0; }
+  .cite { border-left:3px solid var(--accent-deep); padding:.6rem 1rem; background:var(--panel);
+    margin:1rem 0; font-size:.95rem; }
+  .meta { color:var(--mute); font-size:.9rem; margin:0 0 .25rem; }
+  .meta-table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
+  .meta-table th { text-align:left; font-weight:600; color:var(--mute); padding:.35rem 1rem .35rem 0;
+    vertical-align:top; white-space:nowrap; }
+  .meta-table td { padding:.35rem 0; vertical-align:top; overflow-wrap:anywhere; }
+  .entry { border-top:1px solid var(--rule); padding:1.2rem 0; }
+  .entry p:last-child { margin-bottom:0; }
+  .entry .title { font-size:1.05rem; margin:0 0 .35rem; }
+  .back { margin:0 0 1.6rem; font-size:.9rem; }
+  .note { color:var(--mute); font-size:.9rem; }
+  @media (max-width:30rem) {
+    main { padding:2.5rem 1.1rem 3.5rem; }
+    .meta-table th, .meta-table td { display:block; padding:0; }
+    .meta-table th { white-space:normal; padding-top:.7rem; }
+    .meta-table td { padding-bottom:.2rem; }
+    .masthead h1, .masthead .wordmark { font-size:1.15rem; letter-spacing:.15em; }
+  }
+  footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
+    color:var(--mute); font-size:.9rem; }
+  footer a { color:var(--mute); border-bottom-color:var(--rule); }
+</style>
+</head>
+<body>
+<main>
+  <a class="masthead" href="/">
+    <svg viewBox="0 0 100 10.6" role="img" aria-label="The Drift Layer">
+      <rect x="0" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="33.853" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="67.707" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="0" y="6.9" width="100" height="3.7" fill="var(--fg)"/>
+    </svg>
+    <p class="wordmark">The Drift Layer</p>
+  </a>
+
+  <p class="back"><a href="/papers/">← Papers</a></p>
+
+  <h1 class="page-title">Four Measures for Mandate Conformance</h1>
+
+  <table class="meta-table">
+    <tr><th>Author</th><td>Matthew T. Kirby, Independent Researcher, River Falls, Wisconsin, USA — <a href="mailto:matthew.kirby@driftlayer.org">matthew.kirby@driftlayer.org</a></td></tr>
+    <tr><th>Date</th><td>12 September 2026</td></tr>
+    <tr><th>Version</th><td>1</td></tr>
+    <tr><th>Licence</th><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td></tr>
+    <tr><th>First published</th><td>In <a href="/papers/rpib-consultation-response/">the RPIB consultation response</a>, 9 September 2026</td></tr>
+  </table>
+
+  <h3>Abstract</h3>
+  <p>Four measures would make it answerable how often transactions executed by software stay inside the authority a person gave it. The response in which they were first published records that no public transaction-level conformance measure with a defined cross-rail denominator was found. They are set out here in the wording in which they were first published, in the author's response to the Bank of England's RPIB consultation of 9 September 2026, together with the ways each of them can be made to lie.</p>
+
+  <h3>Provenance</h3>
+  <p>These definitions were first published on 9 September 2026 in
+  <a href="/papers/rpib-consultation-response/">the author's response to the RPIB consultation</a>,
+  section Q17a. The wording below is that wording. Where any earlier working draft differs, the
+  published text governs.</p>
+
+  <h3>The four measures</h3>
+
+  <h4>1 · Evaluation coverage</h4>
+  <div class="cite">Evaluation coverage: what share of agent-initiated transactions carry sufficient
+  authority and evaluation evidence for conformance to be determinable at all.</div>
+  <p>The evidence in question is a signed mandate, a canonical commitment over the transaction, the
+  evaluation criteria as pinned when the mandate was signed, and evidence of how the transaction was
+  initiated. Anything missing one of these is neither a pass nor a failure — it is unevaluable.</p>
+
+  <h4>2 · Mandate conformance</h4>
+  <div class="cite">Mandate conformance: among evaluable transactions, the share executing without an
+  unapproved divergence from the governing authority.</div>
+  <p>The denominator is evaluable, mandate-bound transactions — not all agent traffic. A rate computed
+  over everything an agent did is a statement about instrumentation, not about conformance.</p>
+
+  <h4>3 · Divergence incidence</h4>
+  <div class="cite">Divergence incidence: how often execution encounters a material authority mismatch,
+  and of what type — amount, payee, item or service meaning, quantity, cumulative budget, or
+  freshness.</div>
+  <p>Those six classes are a design taxonomy for a scoreboard, not a census of error codes already
+  shipped one-to-one in ACP, UCP, AP2 or Open Banking v4.0.1. Live codes name a mismatch or a failed
+  control; they do not yet publish this split.</p>
+  <p>No scaling denominator is prescribed here. A rate per thousand borrows its unit from card fraud
+  reporting; counts reported against their base carry more information and disclose the volume, which a
+  reader needs in order to read the rate at all.</p>
+
+  <h4>4 · Unauthorised continuation</h4>
+  <div class="cite">Unauthorised continuation: the share of transaction value moving after an authority
+  evaluation has failed, without a fresh user authorisation resolving the failure.</div>
+  <p>This is one line inside a richer measure, the divergence resolution split: of those divergences,
+  how each ended — resolved by a signed user amendment, resolved by superseding the mandate, declined,
+  expired unresolved, or still open — each carrying transaction value. The open bucket is not
+  bookkeeping fussiness: no published profile defines a time-out for an unresolved divergence, so
+  folding open cases into declines invents a result.</p>
+  <p>Unauthorised continuation is the line in that split that matters: money moved after an evaluation
+  failed, with no fresh human signature.</p>
+
+  <h3>Coverage is printed first</h3>
+  <div class="cite">Coverage must be reported first. Otherwise a high conformance rate can be
+  manufactured by excluding transactions for which no evidence exists.</div>
+  <p>A conformance rate published without its coverage figure beside it describes only the subset that
+  happened to be observable.</p>
+
+  <h3>The word to use</h3>
+  <p><strong>Mandate</strong> conformance, never <em>authorisation conformance</em>. In payments,
+  authorisation means issuer approval, so an authorisation conformance rate reads to that audience as a
+  decline rate. The measure here is about the mandate, and the word has to say so.</p>
+
+  <h3>How these can be made to lie</h3>
+  <p>None of these is unjukeable, and it is worth saying so plainly. A mandate written loosely enough
+  passes everything. A transaction that was never evaluated looks clean and is a coverage miss, not a
+  conformance hit. Changing the evaluation criteria between mandates silently changes what conformance
+  means. Chargeback files are a biased sample of pain and must never be published as a conformance rate.
+  A metric published with its own failure modes attached is a measurement vocabulary; one published
+  without them is marketing.</p>
+
+  <h3>Implementing them</h3>
+  <p>These definitions are free to implement and require no permission and no relationship with the
+  author. The artefacts they are computed over — mandate, canonical commitment, divergence record,
+  supersession record — have an open reference implementation at
+  <a href="https://mandatepatch.org">mandatepatch.org</a>. Neither is a condition of the other.</p>
+
+  <h3>Cite as</h3>
+  <div class="cite">Kirby, M. T. (2026) <em>Four Measures for Mandate Conformance</em>. Version 1, 12 September 2026. https://driftlayer.org/papers/definitions/</div>
+  <pre>@misc{kirby2026measures,
+  author = {Kirby, Matthew T.},
+  title = {Four Measures for Mandate Conformance},
+  year = {2026},
+  month = sep,
+  howpublished = {\url{https://driftlayer.org/papers/definitions/}},
+  note = {Version 1}
+}</pre>
+
+  <h3>Versions</h3>
+  <p><strong>Version 1</strong> — 12 September 2026. First publication.</p>
+  <p class="note">Versions are never overwritten. See <a href="/errata/">versions and errata</a>.</p>
+
+  <h3>Disclosure</h3>
+  <p>A US provisional patent application (No.&nbsp;64/141,321) was filed on 26 August 2026 and precedes both the disclosure and the repository. The specification is published as <em>Mandate Lifecycle Extensions for Agentic Payment Credentials</em>, Technical Disclosure Commons, Defensive Publications Series no.&nbsp;11517 (August 2026), under CC BY 4.0. A reference implementation of the artefact layer is published at <a href="https://github.com/MandatePatch/mandatepatch">github.com/MandatePatch/mandatepatch</a> under Apache-2.0. The mechanisms described are one implementation of a more general requirement. Each licence governs what it names and nothing else.</p>
+
+
+  <footer>© 2026 Matthew T. Kirby. Site text is the author's; each publication carries its own licence, stated on its page. <a href="/errata/">Versions and errata</a>.</footer>
+</main>
+</body>
+</html>

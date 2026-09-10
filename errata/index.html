@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Versions and errata — The Drift Layer</title>
+<meta name="description" content="How publications on this site are versioned and corrected: nothing overwritten, every change dated and stated, every file hashed.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+    --rule:#e2e4ee; --panel:#f7f7fb; --max:44rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#070b1c; --fg:#e7e9f2; --mute:#9aa0be; --accent:#9a76ef; --accent-deep:#6d4dd6;
+      --rule:#1c2340; --panel:#10152c;
+    }
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--bg); color:var(--fg);
+    font:17px/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width:var(--max); margin:0 auto; padding:4rem 1.25rem 5rem; }
+  .masthead { display:inline-block; margin:0 0 2.4rem; border:0; color:inherit; }
+  .masthead svg { display:block; width:100%; height:auto; margin:0 0 .6rem; }
+  .masthead h1, .masthead .wordmark { font-size:1.45rem; letter-spacing:.185em;
+    text-transform:uppercase; font-weight:500; margin:0 -.185em 0 0; white-space:nowrap; }
+  h1.page-title { font-size:1.35rem; line-height:1.35; font-weight:600; margin:0 0 1.4rem;
+    letter-spacing:0; text-transform:none; }
+  h2 { font-size:1.05rem; letter-spacing:.08em; text-transform:uppercase; color:var(--mute);
+    margin:2.6rem 0 .8rem; font-weight:600; }
+  h3 { font-size:1rem; margin:1.9rem 0 .35rem; font-weight:600; }
+  h4 { font-size:.95rem; margin:1.6rem 0 .3rem; font-weight:600; color:var(--accent); }
+  .list p { margin:0 0 .55rem; }
+  p { margin:0 0 1rem; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-deep); }
+  a:hover { border-bottom-color:var(--accent); }
+  code { font:0.92em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); padding:.1em .35em; border-radius:3px; overflow-wrap:anywhere; }
+  pre { font:0.84em/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); border-left:3px solid var(--rule); padding:.8rem 1rem;
+    white-space:pre-wrap; overflow-wrap:anywhere; margin:1rem 0; }
+  .cite { border-left:3px solid var(--accent-deep); padding:.6rem 1rem; background:var(--panel);
+    margin:1rem 0; font-size:.95rem; }
+  .meta { color:var(--mute); font-size:.9rem; margin:0 0 .25rem; }
+  .meta-table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
+  .meta-table th { text-align:left; font-weight:600; color:var(--mute); padding:.35rem 1rem .35rem 0;
+    vertical-align:top; white-space:nowrap; }
+  .meta-table td { padding:.35rem 0; vertical-align:top; overflow-wrap:anywhere; }
+  .entry { border-top:1px solid var(--rule); padding:1.2rem 0; }
+  .entry p:last-child { margin-bottom:0; }
+  .entry .title { font-size:1.05rem; margin:0 0 .35rem; }
+  .back { margin:0 0 1.6rem; font-size:.9rem; }
+  .note { color:var(--mute); font-size:.9rem; }
+  @media (max-width:30rem) {
+    main { padding:2.5rem 1.1rem 3.5rem; }
+    .meta-table th, .meta-table td { display:block; padding:0; }
+    .meta-table th { white-space:normal; padding-top:.7rem; }
+    .meta-table td { padding-bottom:.2rem; }
+    .masthead h1, .masthead .wordmark { font-size:1.15rem; letter-spacing:.15em; }
+  }
+  footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
+    color:var(--mute); font-size:.9rem; }
+  footer a { color:var(--mute); border-bottom-color:var(--rule); }
+</style>
+</head>
+<body>
+<main>
+  <a class="masthead" href="/">
+    <svg viewBox="0 0 100 10.6" role="img" aria-label="The Drift Layer">
+      <rect x="0" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="33.853" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="67.707" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="0" y="6.9" width="100" height="3.7" fill="var(--fg)"/>
+    </svg>
+    <p class="wordmark">The Drift Layer</p>
+  </a>
+
+  <h1 class="page-title">Versions and errata</h1>
+
+  <p>This is an archive, so the rules that matter are the ones about not moving things.</p>
+
+  <h3>1 · Nothing is overwritten</h3>
+  <p>Every file keeps the address it was published at. A file at a given address does not change after
+  it is published.</p>
+
+  <h3>2 · A correction is a new version</h3>
+  <p>Version 2 is published alongside version 1, at its own filename, on the same page. Version 1 stays
+  retrievable and is marked superseded. A reader who cited version 1 can still fetch what they cited.</p>
+
+  <h3>3 · Every change is dated and stated</h3>
+  <p>The publication's page carries a dated line for each version saying what changed and why. "Minor
+  edits" is not a description of a change.</p>
+
+  <h3>4 · The hash is the check</h3>
+  <p>The SHA-256 of each published file is printed beside it. If a file's hash ever differs from the one
+  printed for its version, that is a fault rather than an edit, and it should be reported.</p>
+
+  <h3>5 · What is not versioned</h3>
+  <p>Repairs to a page's own HTML that do not change meaning — a broken link, a misspelling, a layout
+  fix — are made in place. Anything touching a definition, a figure, a claim or a citation is a new
+  version of the publication, not a repair to a page.</p>
+
+  <h3>6 · Withdrawal</h3>
+  <p>If something is wrong beyond correction, the page says so plainly at the top and the file stays
+  where it is. Nothing published here is deleted.</p>
+
+  <h3>Reporting an error</h3>
+  <p>To <a href="mailto:matthew.kirby@driftlayer.org">matthew.kirby@driftlayer.org</a>. A report that
+  names the publication, the version and the passage is the one that gets fixed fastest.</p>
+
+  <footer>© 2026 Matthew T. Kirby. Site text is the author's; each publication carries its own licence, stated on its page. <a href="/errata/">Versions and errata</a>.</footer>
+</main>
+</body>
+</html>

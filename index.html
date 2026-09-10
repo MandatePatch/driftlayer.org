@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Drift Layer</title>
+<meta name="description" content="The Drift Layer — a publication holding papers and the definitions used to measure whether an agent's transaction stayed inside the authority a person gave it.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+    --rule:#e2e4ee; --panel:#f7f7fb; --max:44rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#070b1c; --fg:#e7e9f2; --mute:#9aa0be; --accent:#9a76ef; --accent-deep:#6d4dd6;
+      --rule:#1c2340; --panel:#10152c;
+    }
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--bg); color:var(--fg);
+    font:17px/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width:var(--max); margin:0 auto; padding:4rem 1.25rem 5rem; }
+  .masthead { display:inline-block; margin:0 0 2.4rem; border:0; color:inherit; }
+  .masthead svg { display:block; width:100%; height:auto; margin:0 0 .6rem; }
+  .masthead h1, .masthead .wordmark { font-size:1.45rem; letter-spacing:.185em;
+    text-transform:uppercase; font-weight:500; margin:0 -.185em 0 0; white-space:nowrap; }
+  h1.page-title { font-size:1.35rem; line-height:1.35; font-weight:600; margin:0 0 1.4rem;
+    letter-spacing:0; text-transform:none; }
+  h2 { font-size:1.05rem; letter-spacing:.08em; text-transform:uppercase; color:var(--mute);
+    margin:2.6rem 0 .8rem; font-weight:600; }
+  h3 { font-size:1rem; margin:1.9rem 0 .35rem; font-weight:600; }
+  h4 { font-size:.95rem; margin:1.6rem 0 .3rem; font-weight:600; color:var(--accent); }
+  .list p { margin:0 0 .55rem; }
+  p { margin:0 0 1rem; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-deep); }
+  a:hover { border-bottom-color:var(--accent); }
+  code { font:0.92em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); padding:.1em .35em; border-radius:3px; overflow-wrap:anywhere; }
+  pre { font:0.84em/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); border-left:3px solid var(--rule); padding:.8rem 1rem;
+    white-space:pre-wrap; overflow-wrap:anywhere; margin:1rem 0; }
+  .cite { border-left:3px solid var(--accent-deep); padding:.6rem 1rem; background:var(--panel);
+    margin:1rem 0; font-size:.95rem; }
+  .meta { color:var(--mute); font-size:.9rem; margin:0 0 .25rem; }
+  .meta-table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
+  .meta-table th { text-align:left; font-weight:600; color:var(--mute); padding:.35rem 1rem .35rem 0;
+    vertical-align:top; white-space:nowrap; }
+  .meta-table td { padding:.35rem 0; vertical-align:top; overflow-wrap:anywhere; }
+  .entry { border-top:1px solid var(--rule); padding:1.2rem 0; }
+  .entry p:last-child { margin-bottom:0; }
+  .entry .title { font-size:1.05rem; margin:0 0 .35rem; }
+  .back { margin:0 0 1.6rem; font-size:.9rem; }
+  .note { color:var(--mute); font-size:.9rem; }
+  @media (max-width:30rem) {
+    main { padding:2.5rem 1.1rem 3.5rem; }
+    .meta-table th, .meta-table td { display:block; padding:0; }
+    .meta-table th { white-space:normal; padding-top:.7rem; }
+    .meta-table td { padding-bottom:.2rem; }
+    .masthead h1, .masthead .wordmark { font-size:1.15rem; letter-spacing:.15em; }
+  }
+  footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
+    color:var(--mute); font-size:.9rem; }
+  footer a { color:var(--mute); border-bottom-color:var(--rule); }
+</style>
+</head>
+<body>
+<main>
+  <div class="masthead">
+    <svg viewBox="0 0 100 10.6" role="img" aria-label="The Drift Layer">
+      <rect x="0" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="33.853" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="67.707" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="0" y="6.9" width="100" height="3.7" fill="var(--fg)"/>
+    </svg>
+    <h1>The Drift Layer</h1>
+  </div>
+
+  <p>The Drift Layer is a publication. It holds papers, and it holds the definitions used to
+  measure whether software spending money on a person's behalf stayed inside the authority that
+  person gave it. It is not an organisation, a service or a product, and nothing here is for sale.</p>
+
+  <h2>The layer this is named for</h2>
+  <p>Whether an agent acted inside its authority is decided, if it is decided at all, above the
+  eventual movement of money — and the payment message visible downstream was never built to record
+  that decision.</p>
+  <p>That plane is the drift layer: where authority is created, evaluated against a proposed
+  transaction, and, when execution departs from it, either repaired or thrown away. A payment rail
+  records that money moved. It does not record which authority permitted it, or what was checked
+  before it did.</p>
+
+  <h2>Drift, named precisely</h2>
+  <p>Three different things travel under the word. This publication keeps them apart and does not use
+  <em>drift</em> unqualified.</p>
+  <div class="list">
+    <p><strong>Behavioural drift</strong> — an agent departing from its onboarding profile.</p>
+    <p><strong>Intent drift</strong> — constraints lost while an instruction is interpreted, before any
+    mandate exists.</p>
+    <p><strong>Mandate divergence</strong> — the executed transaction leaving the committed mandate.</p>
+  </div>
+  <p>Of the three, mandate divergence is the one measurable at the transaction, because the mandate and
+  the committed transaction are both artefacts that can be held, compared, and shown to someone else.
+  It is the sense used throughout this site.</p>
+
+  <h2>Publications</h2>
+  <p><a href="/papers/">The archive</a> holds every publication at a stable address, with the version,
+  the licence and the hash of each file printed on its page. The measurement vocabulary is at
+  <a href="/papers/definitions/">Four Measures for Mandate Conformance</a>.</p>
+
+  <h2>Where this sits</h2>
+  <p>Three things, three jobs, kept separate on purpose.</p>
+  <table class="meta-table">
+    <tr><th>Specification</th><td>Kirby, M. T., <em>Mandate Lifecycle Extensions for Agentic Payment
+      Credentials</em>, Technical Disclosure Commons, Defensive Publications Series no.&nbsp;11517,
+      August 2026. Frozen: cited, not revised.
+      <a href="https://www.tdcommons.org/dpubs_series/11517">tdcommons.org/dpubs_series/11517</a></td></tr>
+    <tr><th>Implementation</th><td>MandatePatch — schemas, type stubs and a canonical commitment
+      function for the artefacts.
+      <a href="https://mandatepatch.org">mandatepatch.org</a></td></tr>
+    <tr><th>Publication</th><td>This site. The vocabulary and the measurement. Open, and it grows.</td></tr>
+  </table>
+
+  <h2>Versions and errata</h2>
+  <p>Nothing published here is overwritten. A correction produces a new version alongside the old one,
+  with a dated note saying what changed. The <a href="/errata/">policy</a> states it in full.</p>
+
+  <h2>Disclosure</h2>
+  <p>A US provisional patent application (No.&nbsp;64/141,321) was filed on 26 August 2026 and precedes both the disclosure and the repository. The specification is published as <em>Mandate Lifecycle Extensions for Agentic Payment Credentials</em>, Technical Disclosure Commons, Defensive Publications Series no.&nbsp;11517 (August 2026), under CC BY 4.0. A reference implementation of the artefact layer is published at <a href="https://github.com/MandatePatch/mandatepatch">github.com/MandatePatch/mandatepatch</a> under Apache-2.0. The mechanisms described are one implementation of a more general requirement. Each licence governs what it names and nothing else.</p>
+
+  <h2>Contact</h2>
+  <p>Matthew T. Kirby, Independent Researcher, River Falls, Wisconsin, USA — <a href="mailto:matthew.kirby@driftlayer.org">matthew.kirby@driftlayer.org</a></p>
+
+  <footer>© 2026 Matthew T. Kirby. Site text is the author's; each publication carries its own licence, stated on its page. <a href="/errata/">Versions and errata</a>.</footer>
+</main>
+</body>
+</html>
