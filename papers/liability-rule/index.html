@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A liability rule aimed at the wrong control — The Drift Layer</title>
+<meta name="description" content="Part 7 of the UK Payment Services Regulations 2017 is a working loss-allocation regime wired to authentication. For a software delegate acting on a standing instruction, authentication and consent come apart; the case where the close is outside the description the payer gave is one no door in Part 7 reaches, and nothing examined requires anyone to keep the record — grant, close and join — with which it could be tried.">
+<link rel="canonical" href="https://driftlayer.org/papers/liability-rule/">
+<meta name="citation_title" content="A liability rule aimed at the wrong control: what the law offers when a delegate exceeds its instruction">
+<meta name="citation_author" content="Kirby, Matthew T.">
+<meta name="citation_publication_date" content="2026/09/24">
+<meta name="citation_online_date" content="2026/09/25">
+<meta name="DCTERMS.available" content="2026-09-25">
+<meta name="citation_pdf_url" content="https://driftlayer.org/papers/liability-rule/liability-rule-v1.pdf">
+<meta name="citation_abstract_html_url" content="https://driftlayer.org/papers/liability-rule/">
+<meta name="citation_language" content="en">
+<meta name="citation_publisher" content="The Drift Layer">
+<meta name="citation_technical_report_number" content="The Drift Layer, paper no. 5, version 1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+<meta name="DC.title" content="A liability rule aimed at the wrong control: what the law offers when a delegate exceeds its instruction">
+<meta name="DC.creator" content="Matthew T. Kirby">
+<meta name="DC.date" content="2026-09-24">
+<meta name="DC.identifier" content="https://driftlayer.org/papers/liability-rule/">
+<meta name="DC.rights" content="CC BY 4.0">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Drift Layer">
+<meta property="og:title" content="A liability rule aimed at the wrong control">
+<meta property="og:description" content="Part 7 of the UK Payment Services Regulations 2017 is a working loss-allocation regime wired to authentication. For a software delegate acting on a standing instruction, authentication and consent come apart; the case where the close is outside the description the payer gave is one no door in Part 7 reaches, and nothing examined requires anyone to keep the record — grant, close and join — with which it could be tried.">
+<meta property="og:url" content="https://driftlayer.org/papers/liability-rule/">
+<meta property="og:image" content="https://driftlayer.org/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Drift Layer">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"A liability rule aimed at the wrong control: what the law offers when a delegate exceeds its instruction","name":"A liability rule aimed at the wrong control","author":{"@type":"Person","name":"Matthew T. Kirby","email":"matthew.kirby@driftlayer.org"},"datePublished":"2026-09-25","version":"1","license":"https://creativecommons.org/licenses/by/4.0/","url":"https://driftlayer.org/papers/liability-rule/","isPartOf":{"@type":"Periodical","name":"The Drift Layer"},"encoding":{"@type":"MediaObject","contentUrl":"https://driftlayer.org/papers/liability-rule/liability-rule-v1.pdf","encodingFormat":"application/pdf","contentSize":"331186 bytes","sha256":"666fa30d21a4155aac0d37951f774a20d181ecbb2cdcdc14bad937a6bbabf419"},"inLanguage":"en"}
+</script>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+    --rule:#e2e4ee; --panel:#f7f7fb; --max:44rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#070b1c; --fg:#e7e9f2; --mute:#9aa0be; --accent:#9a76ef; --accent-deep:#6d4dd6;
+      --rule:#1c2340; --panel:#10152c;
+    }
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--bg); color:var(--fg);
+    font:17px/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width:var(--max); margin:0 auto; padding:4rem 1.25rem 5rem; }
+  .masthead { display:inline-block; margin:0 0 2.4rem; border:0; color:inherit; }
+  .masthead svg { display:block; width:100%; height:auto; margin:0 0 .6rem; }
+  .masthead h1, .masthead .wordmark { font-size:1.45rem; letter-spacing:.185em;
+    text-transform:uppercase; font-weight:500; margin:0 -.185em 0 0; white-space:nowrap; }
+  h1.page-title { font-size:1.35rem; line-height:1.35; font-weight:600; margin:0 0 1.4rem;
+    letter-spacing:0; text-transform:none; }
+  h2 { font-size:1.05rem; letter-spacing:.08em; text-transform:uppercase; color:var(--mute);
+    margin:2.6rem 0 .8rem; font-weight:600; }
+  h3 { font-size:1rem; margin:1.9rem 0 .35rem; font-weight:600; }
+  h4 { font-size:.95rem; margin:1.6rem 0 .3rem; font-weight:600; color:var(--accent); }
+  .list p { margin:0 0 .55rem; }
+  p { margin:0 0 1rem; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-deep); }
+  a:hover { border-bottom-color:var(--accent); }
+  code { font:0.92em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); padding:.1em .35em; border-radius:3px; overflow-wrap:anywhere; }
+  pre { font:0.84em/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); border-left:3px solid var(--rule); padding:.8rem 1rem;
+    white-space:pre-wrap; overflow-wrap:anywhere; margin:1rem 0; }
+  .cite { border-left:3px solid var(--accent-deep); padding:.6rem 1rem; background:var(--panel);
+    margin:1rem 0; font-size:.95rem; }
+  .meta { color:var(--mute); font-size:.9rem; margin:0 0 .25rem; }
+  .meta-table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
+  .meta-table th { text-align:left; font-weight:600; color:var(--mute); padding:.35rem 1rem .35rem 0;
+    vertical-align:top; white-space:nowrap; }
+  .meta-table td { padding:.35rem 0; vertical-align:top; overflow-wrap:anywhere; }
+  .entry { border-top:1px solid var(--rule); padding:1.2rem 0; }
+  .entry p:last-child { margin-bottom:0; }
+  .entry .title { font-size:1.05rem; margin:0 0 .35rem; }
+  .back { margin:0 0 1.6rem; font-size:.9rem; }
+  .note { color:var(--mute); font-size:.9rem; }
+  ol, ul { margin:0 0 1rem; padding-left:1.3rem; }
+  li { margin:0 0 .4rem; }
+  @media (max-width:30rem) {
+    main { padding:2.5rem 1.1rem 3.5rem; }
+    .meta-table th, .meta-table td { display:block; padding:0; }
+    .meta-table th { white-space:normal; padding-top:.7rem; }
+    .meta-table td { padding-bottom:.2rem; }
+    .masthead h1, .masthead .wordmark { font-size:1.15rem; letter-spacing:.15em; }
+  }
+  footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
+    color:var(--mute); font-size:.9rem; }
+  footer a { color:var(--mute); border-bottom-color:var(--rule); }
+</style>
+</head>
+<body>
+<main>
+  <a class="masthead" href="/">
+    <svg viewBox="0 0 100 10.6" role="img" aria-label="The Drift Layer">
+      <rect x="0" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="33.853" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="67.707" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="0" y="6.9" width="100" height="3.7" fill="var(--fg)"/>
+    </svg>
+    <p class="wordmark">The Drift Layer</p>
+  </a>
+
+  
+  <p class="back"><a href="/papers/">← Papers</a></p>
+
+  <h1 class="page-title">A liability rule aimed at the wrong control</h1>
+  <p class="note">what the law offers when a delegate exceeds its instruction</p>
+
+  <table class="meta-table">
+    <tr><th>Author</th><td>Matthew T. Kirby, Independent Researcher, River Falls, Wisconsin, USA — <a href="mailto:matthew.kirby@driftlayer.org">matthew.kirby@driftlayer.org</a></td></tr>
+    <tr><th>Date</th><td>Version 1, 24 September 2026 · published 25 September 2026</td></tr>
+    <tr><th>Version</th><td>1</td></tr>
+    <tr><th>Licence</th><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td></tr>
+    <tr><th>Paper</th><td>The Drift Layer, paper no. 5</td></tr>
+    <tr><th>Cite as</th><td>Kirby, M. T. (2026) <em>A liability rule aimed at the wrong control: what the law offers when a delegate exceeds its instruction</em>. The Drift Layer, paper no. 5, version 1. https://driftlayer.org/papers/liability-rule/</td></tr>
+  </table>
+
+  <h3>Abstract</h3>
+  <p>Part 7 of the Payment Services Regulations 2017 allocates loss on unauthorized and incorrectly executed payments through a burden rule, a notification window, a refund and a chain of recourse, and every one of those parts is wired to authentication or to the rail fields. For a software delegate acting on a standing instruction, authentication and consent come apart: the credential was used correctly, by the right person, against a live authority, and the close is outside the description the payer gave. This paper reads regulations 67, 74, 75, 76, 77, 79 and 90, <em>Philipp v Barclays</em>, <em>Hamblin v Moorwand</em> in both courts, the attribution authorities, the APP-reimbursement overlay and Regulation E against that case. Four doors are opened and none reaches it. The finding is about evidence rather than remedy: whether anyone owes the payer a duty to construe the mandate is a question of obligation, and whether a breach could be shown is a question of evidence — and the record that would decide it, the grant, the close and the join between them, is one nothing examined requires anyone to keep. What kind of instrument could require it is a question about instruments, and is not answered here.</p>
+
+  <h3>Related</h3>
+  <p><a href="/papers/the-drift-layer/">The Drift Layer: the clean, fast session that is not proof of authority</a>, paper no. 4, 14 September 2026. <a href="/papers/hmt-payment-services-consultation-response/">Response to the HM Treasury consultation on Modernising Payment Services Regulation</a>, 13 September 2026. <a href="/papers/rpib-consultation-response/">Response to the RPIB consultation</a>, 9 September 2026. <a href="/papers/definitions/">Four Measures for Mandate Conformance</a>, 10 September 2026.</p>
+
+  <h3>The file</h3>
+  <table class="meta-table">
+    <tr><th>PDF</th><td><a href="/papers/liability-rule/liability-rule-v1.pdf">liability-rule-v1.pdf</a></td></tr>
+    <tr><th>Size</th><td>331,186 bytes · 17 pages · A4</td></tr>
+    <tr><th>SHA-256</th><td><code>666fa30d21a4155aac0d37951f774a20d181ecbb2cdcdc14bad937a6bbabf419</code></td></tr>
+  </table>
+  <p class="note">Version 1 — 24 September 2026, published 25 September 2026. This file is the fixed, citable copy. It is not overwritten when a later version is published.</p>
+
+<p>I am not a lawyer. Everything below is a reading of statutes,
+regulations and judgments as published, quoted with their paragraph
+numbers so that the reading can be checked; the questions it raises are
+questions for people who are.</p>
+<h2 id="executive-summary">Executive summary</h2>
+<p>Part 7 of the Payment Services Regulations 2017 is a working
+loss-allocation regime. It says who must prove what, how long the user
+has to notify, what the remedy is, and where the loss lands when a
+control fails. The difficulty is which control those parts are wired
+to.</p>
+<p>The test that decides whether a payment was authorized is regulation
+67: whether the payer consented to the transaction, or to a series of
+which it forms part. The evidence rules and the triggers that move the
+loss are about authentication — the credential, its recorded use, strong
+customer authentication performed or accepted. For a stolen instrument
+those two things fail together. For a software delegate acting on a
+standing instruction they come apart. Authentication was performed,
+correctly, by the right person, against a live authority. Regulation 77
+allocates loss only on a transaction already found unauthorized, and its
+two limbs that turn on the credential are not engaged. The payer who
+says “I consented to a series, but not to this” is inside regulation
+75(3), and is left arguing about scope with no access to the evidence
+that would settle it.</p>
+<p>Regulation 74 names a second track in the same sentence:
+non-execution, defective execution, late execution. Regulation 90(1) is
+the correctness control on that track, and a substitution that still
+hits the named merchant with the named amount, on time, is not that
+case. Regulation 79, the one Part 7 door keyed to the scope of a
+consent, is keyed to amount alone. So there is a third branch:
+authorized under regulation 67, deemed correctly executed under
+regulation 90(1), the close outside the description of what the payer
+instructed the agent to do. Part 7 does not open on it. It is argued in
+the conditional — <em>where</em> a standing instruction constitutes
+consent to a series, and <em>where</em> the rail fields are intact — and
+the remaining question is construction of the mandate.</p>
+<p>The United Kingdom has already walked around the
+authorized/unauthorized binary once. <em>Philipp</em> held that Part 7
+does not reimburse a payment the payer authorized, even if the consent
+was procured by fraud. Section 72 of the Financial Services and Markets
+Act 2023 disabled regulation 90 as a defense to a separate Payment
+Systems Regulator requirement for Faster Payments orders executed
+subsequent to fraud or dishonesty. Specific Direction 20 and Specific
+Requirement 1 define authorization in regulation 67’s own words and
+reimburse anyway. Their definition of the eligible case is fraud or
+dishonesty; an agent that paid the intended merchant the intended amount
+for the wrong goods fails it at its first clause, and the regulator’s
+civil-dispute guidance is the official refusal of this paper’s case.</p>
+<p><em>Hamblin</em> supplies the other ledger. Punctilious observance of
+the agreed mechanics can satisfy the statutory authorization machinery
+while leaving a common-law inquiry standing. The Court of Appeal
+restored the trial judge on the facts of inquiry, reserved whether any
+such duty applies to payments processed with no human in the loop, and
+left the relationship between statutory authorization and the common-law
+duty undecided. <em>Quincecare</em>, as restated in <em>Philipp</em>, is
+the fraud-shaped instance of a general duty to interpret, ascertain and
+act in accordance with the customer’s instructions. A pack-size
+substitution may never engage the dishonesty trigger, and whether the
+general duty of construction sits on a sending provider that received
+only a clear payment order, rather than on the platform or operator that
+received the description, is left open. The attribution authorities —
+<em>Singularis</em>, <em>Bilta</em>, <em>Meridian</em> — explain why the
+same trust that makes the instruction look authorized cannot then make
+the miss the principal’s own act, and why a court needs an observable
+fact before it can say a provider was put on inquiry about an
+instruction no person saw. They do not invent that fact.</p>
+<p>United States consumer-payment law has the same shape. Regulation E’s
+unauthorized-transfer definition and Comment 2(m)-2 supply an exclusion
+for transfers by a person furnished the access device, and an event that
+ends the exclusion: the consumer’s notice that the delegation has ended.
+None of the three sources examined — regulation 67(4), a live
+variable-recurring-payment product, Regulation E — forbids a narrow
+amendment of a standing grant. None provides for it, and none records
+what the payer agreed to when execution diverged.</p>
+<p>The finding is about evidence, not remedy. Whether anyone owes the
+payer a duty to construe the mandate is a question of obligation, and no
+record creates an obligation that does not exist. Whether a breach could
+be shown, if the duty exists, is a question of evidence, and the record
+it needs — the grant, the close, and the join between them — is one
+nothing examined here requires anyone to keep. What kind of instrument
+could require it, and what such an instrument would need from the
+definition it points at, are questions about instruments, and they are
+not answered here.</p>
+<h2 id="the-room">1. The room</h2>
+<p>In 2018 Fiona Philipp and her husband were deceived by criminals into
+instructing Barclays to transfer £700,000 from her current account to
+bank accounts in the United Arab Emirates. She gave the instructions in
+person, at a branch, twice, and twice confirmed them when the bank
+telephoned to ask whether she wished to proceed. The money was lost.<a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<p>Five years later the Supreme Court held that the bank had owed her no
+duty to refuse the instruction she herself had given. The reasoning that
+matters here is not about the bank’s duty of care, on which the case is
+usually cited. It is about the Payment Services Regulations. Lord
+Leggatt, for the court, described Part 7 of the Regulations as “largely
+concerned with establishing rights and obligations of payment service
+users and providers in relation to unauthorised payment transactions,”
+and then drew the line that this paper is about:</p>
+<blockquote>
+<p>“They do not provide for reimbursement of any payments which the
+payer has authorised. They therefore do not offer any means of redress
+for a customer who is a victim of APP fraud. Indeed, they have been
+perceived as containing an obstacle to the imposition of a regulatory
+obligation on payment service providers to reimburse customers who are
+victims of APP fraud.”<a href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a></p>
+</blockquote>
+<p>Mrs Philipp had consented. Regulation 67 was satisfied. Regulation
+76, the refund provision, never opened. The fact that her consent had
+been procured by a fraud did not change which side of the line the
+payment fell on.</p>
+<p>The court also recorded what Parliament had done about it. Thirteen
+days before the judgment was handed down, the Financial Services and
+Markets Act 2023 received Royal Assent. Section 72 amends regulation 90
+of the Payment Services Regulations “to enable liability to be imposed
+‘where the payment order is executed subsequent to fraud or dishonesty’”
+and requires the Payment Systems Regulator to impose a reimbursement
+requirement in such cases.<a href="#fn3" class="footnote-ref"
+id="fnref3" role="doc-noteref"><sup>3</sup></a> The inserted text is
+short. Nothing in regulation 90 now “affects the liability of a payment
+service provider under a relevant requirement in a case where the
+payment order is executed subsequent to fraud or dishonesty.”<a
+href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a> That is how the United Kingdom got
+mandatory reimbursement for authorised push payment fraud: not by
+reading “authorised” differently, but by legislating around the
+Regulations’ own binary. The Supreme Court’s phrase for what the
+Regulations had been “perceived as containing” was an obstacle, and
+Parliament removed it for one class of case.</p>
+<p>The sequel is a smaller case with a larger reservation, and the
+reservation is about software: whether the duty applies to payments
+processed with no human in the loop, and how authorization under the
+Regulations relates to the common-law duty at all. In 2017 Gareth
+Hamblin was invoiced £160,000, which he paid into an electronic wallet
+that a company called RND Global held with Moorwand, an FCA-regulated
+electronic money institution.<a href="#fn5" class="footnote-ref"
+id="fnref5" role="doc-noteref"><sup>5</sup></a> The person controlling
+RND paid the money away. The Hamblins were not Moorwand’s customers.
+They sued in RND’s name, derivatively, arguing that Moorwand should have
+been put on inquiry before it acted on the pay-away instructions. At
+first instance the claim failed on the facts. On appeal, Marcus Smith J
+held that Moorwand had been on inquiry and allowed the appeal on that
+ground — the claim being one that obliges the provider “to restore or
+correct the balance” of the account, “not a claim that sounds in
+damages”<a href="#fn6" class="footnote-ref" id="fnref6"
+role="doc-noteref"><sup>6</sup></a> — but dismissed the claim that the
+pay-aways had been “unauthorised” under the 2009 Regulations, and
+refused permission to appeal on that ground alone:</p>
+<blockquote>
+<p>“Regulation 55(2)(b) imposes a purely mechanical requirement on the
+payment service provider to observe the procedures agreed between it and
+its customer. The Payment Services Regulations are concerned with
+transactional speed and efficiency. Payment service providers should
+execute payment instructions swiftly and in accordance with clear
+criteria.”<a href="#fn7" class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a></p>
+</blockquote>
+<blockquote>
+<p>“As the Judgments make clear, it cannot be said that the mechanical
+provisions regarding payment instructions were disregarded by Moorwand.
+To the contrary, they were (as the Judgment records) punctiliously
+observed. … The point is that a punctilious observance of the mechanics
+of a mandate does not absolve a payment service provider from observing
+the <em>Quincecare</em> duty where it arises, as it does here.”<a
+href="#fn8" class="footnote-ref" id="fnref8"
+role="doc-noteref"><sup>8</sup></a></p>
+</blockquote>
+<p>The Court of Appeal restored the trial judge in July 2026.<a
+href="#fn9" class="footnote-ref" id="fnref9"
+role="doc-noteref"><sup>9</sup></a> Moorwand had not been put on
+inquiry, and the claim failed again. What the Court of Appeal did not do
+is the part that bears on what follows. An argument was advanced on
+appeal that the payments had been made “by computer and automatically.”
+Foxton LJ declined to decide what that would mean:</p>
+<blockquote>
+<p>“In circumstances in which the trial judge was never asked to make
+any findings on whether payment requests were processed without human
+intervention and no argument was made by Moorwand that a
+<em>Quincecare</em> duty either did not apply (or applied only in some
+modified form) were that to be the case, nor were the Hamblins required
+to raise any counter-arguments as to what, if any, monitoring duty there
+might be in such circumstances (whether undertaken algorithmically or
+otherwise), these questions cannot fairly be addressed on this appeal,
+and I say nothing more about them.”<a href="#fn10" class="footnote-ref"
+id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
+</blockquote>
+<p>And on the relationship between statutory authorization and the
+common-law duty, the court left the High Court’s holding standing
+without adopting it: “We received no argument on the significance, if
+any, of authority being established under the 2009 Regulations for the
+purposes of the <em>Quincecare</em> duty, and this issue does not arise
+on this appeal.”<a href="#fn11" class="footnote-ref" id="fnref11"
+role="doc-noteref"><sup>11</sup></a></p>
+<p>So the position in the United Kingdom, as of the date of writing, is
+this. A payment the payer personally instructed is authorized, and the
+refund route for unauthorized payments under regulation 76 does not
+open, whatever the deception; Parliament has overlaid a reimbursement
+requirement for fraud by a separate instrument. <em>Hamblin</em> shows
+that a delegate’s punctilious compliance with the agreed mechanics can
+satisfy the statutory authorization machinery while leaving a separate
+common-law inquiry standing, and that whether the provider owed the
+principal a duty on that ledger is a different question. Whether that
+duty exists at all when no human is in the loop, and what a system would
+have to watch for to discharge it, is expressly open.</p>
+<p>The case this paper is about is the next one. A payer signs a
+standing instruction — an agentic mandate, in the vocabulary of the
+earlier papers: a signed authority with enforceable fields such as a
+spending cap and a merchant, and a description of what is to be bought,
+under which software executes purchases without the payer present — to
+buy the weekly groceries from the usual supermarket, within a cap. An
+item is out of stock. The agent substitutes a pack four times the size,
+at the same merchant, with the same credential, inside the cap. Assume
+three things, each of which section 2 will examine rather than assert:
+that the standing instruction constitutes the payer’s consent to a
+series of payment transactions; that the agreed payment procedure was
+followed; and that the rail fields — unique identifier, amount, timing —
+are correct. The consent is real and was not procured by anyone. The
+delegate is software. And it executed something other than what the
+payer meant. On those assumptions, and on the current authorities, that
+payment is authorized and correctly executed as a payment. Logs may
+exist — the agent’s, the merchant’s, the platform’s — but nothing in the
+payment machinery requires a record of the grant, the evaluation and the
+close to be produced and joined to the transaction, and without that
+record no one can argue otherwise. This paper is about why the machinery
+produces that result, and why the same result appears in United States
+consumer-payment law.</p>
+<h2 id="the-machinery-read-directly">2. The machinery, read
+directly</h2>
+<p>The tempting version of the argument is that the framework has no
+rule for an agent that spends inside its limits and outside its
+instructions. That version is wrong, and it is worth abandoning early,
+because the accurate account is more useful.</p>
+<p>The Payment Services Regulations 2017 have a complete apparatus for
+allocating loss on an unauthorized payment. It says who must prove what,
+how long the user has to notify, what the remedy is, and where the loss
+lands when a control fails. All four parts work. The difficulty is which
+control they are wired to.</p>
+<p><strong>Who must prove what.</strong> Regulation 75(1) puts the
+burden on the payment service provider to prove that the transaction was
+authenticated and accurately recorded. Regulation 75(3) then refuses to
+let the record close the question:</p>
+<blockquote>
+<p>“Where a payment service user denies having authorised an executed
+payment transaction, the use of a payment instrument recorded by the
+payment service provider, including a payment initiation service
+provider where appropriate, is not in itself necessarily sufficient to
+prove either that— (a) the payment transaction was authorised by the
+payer…”</p>
+</blockquote>
+<p><strong>How long the claim lives.</strong> Regulation 74 sets the
+window, and it sets it in a number:</p>
+<blockquote>
+<p>“A payment service user is entitled to redress under regulation 76,
+91, 92, 93 or 94 … only if it notifies the payment service provider
+without undue delay, and in any event no later than 13 months after the
+debit date, on becoming aware of any unauthorised or incorrectly
+executed payment transaction.”</p>
+</blockquote>
+<p>Regulation 74(2) adds a condition that runs the other way: where the
+provider failed to supply the information Part 6 requires, the user gets
+redress <em>notwithstanding</em> that it failed to notify in time.
+Information failure and remedy are already linked in the instrument.</p>
+<p><strong>What the remedy is.</strong> Regulation 76(1), expressly
+subject to 74 and 75, keys the refund to the consent test in regulation
+67, with no residual category between its two outcomes:</p>
+<blockquote>
+<p>“Subject to regulations 74 and 75, where an executed payment
+transaction was not authorised in accordance with regulation 67 (consent
+and withdrawal of consent), the payment service provider must— (a)
+refund the amount of the unauthorised payment transaction to the
+payer…”</p>
+</blockquote>
+<p><strong>Where the loss lands.</strong> Regulation 77 moves it to
+whoever failed the control, and follows it along the chain:</p>
+<blockquote>
+<p>“(4) Except where the payer has acted fraudulently, the payer is not
+liable for any losses incurred in respect of an unauthorised payment
+transaction— … (c) where regulation 100 (authentication) requires the
+application of strong customer authentication, but the payer’s payment
+service provider does not require strong customer authentication”</p>
+</blockquote>
+<blockquote>
+<p>“(6) Where regulation 100 requires the application of strong customer
+authentication, but the payee or the payee’s payment service provider
+does not accept strong customer authentication, the payee or the payee’s
+payment service provider, or both … must compensate the payer’s payment
+service provider for the losses incurred…”</p>
+</blockquote>
+<p>Read those four together and the shape is clear. This is not an
+absence. It is a working loss-allocation regime with a burden rule, a
+notification window, a remedy and a chain of recourse.</p>
+<p>Now read what triggers it.</p>
+<p>Regulation 77(4)(c) and 77(6) are both keyed to regulation 100 — to
+strong customer authentication, performed or not performed, accepted or
+not accepted. Regulation 75(3) is about “the use of a payment instrument
+recorded.” The evidential facts the machinery specifies —
+authentication, accurate recording, use of the instrument, whether
+strong customer authentication was applied or accepted — concern the
+credential and its presentation. Regulation 75(3) knows that those facts
+and consent are different things, which is why it says recorded use is
+not necessarily sufficient. But none of the specified facts is evidence
+of the scope of the consent, and nothing in the machinery requires
+anyone to produce such evidence.</p>
+<p>Regulation 67 asks a different question. It asks whether the payer
+consented to the execution of the payment transaction, or to the
+execution of a series of which it forms part. That is a question about
+the scope of the payer’s consent to execution, not about the
+presentation of a credential. (The common law separately asks about the
+scope of the delegate’s authority; section 3 keeps the two apart.)</p>
+<p>A practitioner reached the same seam from the liability side two
+months before this paper, and it should be said before the argument is
+made. Rob Bratby, a London solicitor writing on HM Treasury’s July 2026
+consultation, <em>Modernising Payment Services Regulation</em> — the
+consultation the author’s own response, cited at the end of this paper,
+answers — states the precondition this paper relies on — the Regulations
+“do not require every payer to be an individual,” so “An AI system is
+therefore not required to become the statutory payer before it can
+initiate an instruction on someone’s behalf”<a href="#fn12"
+class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> —
+and then, in a piece stated as the law at 22 July 2026, the constraint:
+“Authentication and authorisation are not the same question, and the
+distinction matters for an agent-initiated payment. Regulation 75 does
+not allocate the separate question of whether the instruction fell
+within the authority the payer conferred.” His three cases are factual
+scenarios, and this section’s branches are statutory tracks, but they
+map. Where the customer set the limits too loosely, “the payment will
+usually fall inside the consent.” Where an outside party subverts the
+agent, “the resulting payment may be unauthorised,” depending on how
+consent was given and what the mandate permitted. And “a model error,
+where the agent misreads its own instruction, falls between the two and
+depends on how the delegation was framed.” His conclusion is the one
+this paper starts from: “The constraint is evidential: a provider has to
+be able to show, after the event, what the payer delegated, and that
+depends on how well the consent, the limits and the authentication were
+recorded at the outset.”<a href="#fn13" class="footnote-ref"
+id="fnref13" role="doc-noteref"><sup>13</sup></a> An earlier piece of
+his put the consent question first and answered it flatly — where “an
+autonomous agent decides the transaction, the payer has not consented to
+that specific payment”<a href="#fn14" class="footnote-ref" id="fnref14"
+role="doc-noteref"><sup>14</sup></a> — and the July analysis is the
+refinement of that answer into the three cases above. This paper adopts
+the statutory-payer proposition, treats the flat answer as the first
+branch of the fork below rather than as a conclusion, and takes his
+“falls between the two” case as its subject.</p>
+<p>What this paper adds is a specification of the record, and it is the
+one thing in this section that is not already in his. Recording the
+consent, the limits and the authentication at the outset fixes the
+grant. A model-error case is decided by comparing the grant to the close
+— what the agent actually bought, at what price, from whom, and what the
+evaluation against the grant said at the moment it committed — and
+nothing recorded at the outset contains the close. The record that makes
+the regulation 67 question adjudicable has three parts, not one: the
+grant, the close, and the join between them, produced at execution time
+by whichever party executed. The rest of this section is about why the
+machinery asks for none of the three.</p>
+<p>So there is a seam inside the regime. The test that decides the case
+is in regulation 67 and is about the scope of consent. The evidence
+rules and the triggers that move the loss are about authentication. For
+a payment where those two things fail together — a stolen instrument, a
+credential used by somebody else — the seam never opens, because a
+failure of authentication is also a failure of authority. The regime was
+built for that case and handles it.</p>
+<p>An agent acting on a standing instruction is the case where they come
+apart. Authentication was performed, correctly, days earlier, by the
+right person, against a live authority. Regulation 77 allocates loss on
+a transaction already found unauthorized — 77(1) applies to a provider
+“liable under regulation 76(1)” — so it does not decide whether this one
+was; and its two limbs that turn on the credential, 77(4)(c) and 77(6),
+are not engaged, because nothing about the authentication failed.
+Regulation 75(3) still says the record is not necessarily sufficient. A
+payer who says “I consented to a series, but not to this” is already
+inside that provision: they are denying having authorized this executed
+transaction, and the recorded use of the instrument is what the provider
+will offer in reply. But a provider that can show a correctly
+authenticated standing consent and an execution within its enforceable
+fields has said everything the machinery knows how to ask about, and the
+payer is left arguing about scope with no access to the evidence that
+would settle it.</p>
+<p>That is the difficulty, and it is narrower than “no rule exists.” The
+machinery is sound and it is aimed at a control that is not the one
+failing.</p>
+<p>Regulation 74’s thirteen months is worth holding onto here, because
+it converts a design preference into a number the instrument supplies.
+Regulation 74 is a notification and claim window, not a retention rule;
+it obliges no one to keep anything. But an evidence architecture that is
+meant to make the regulation 67 question adjudicable throughout that
+window has to keep the evidence available, or reconstructable, and
+joinable to the debit, thirteen months out — or regulation 76 cannot be
+operated on it in the last month of the window as it could in the first.
+The duty is the architecture’s. The number is the law’s, and any scheme,
+protocol or evidence service that cannot reach back across it has set
+its own retention shorter than the claim it exists to serve.</p>
+<p>One qualification, which applies to everything in this section that
+is a number or a burden. Where the payer is not a consumer, a
+micro-enterprise or a charity, regulation 63(5) lets the provider agree
+that regulations 75, 77, 79, 80, 83, 91, 92 and 94 “do not apply,” and
+that “a different time period applies for the purposes of regulation
+74(1).” Regulation 76 is not on that list.<a href="#fn15"
+class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>
+So for a payer outside the protected classes — consumers,
+micro-enterprises and charities keep all of them — the burden rule, the
+fourth door described below and the thirteen-month period may be
+modified by agreement, and the refund right for an unauthorized
+transaction may not. Where nothing is agreed, the Regulations apply as
+written.</p>
+<p>Regulation 74 also names a second track in the same sentence. Redress
+under regulation 76 is the unauthorized track. Redress under regulations
+91, 92, 93 or 94 is the other: non-execution, defective execution, late
+execution. A payments lawyer’s first move, faced with an agent that
+bought the wrong thing, will be to put the case on that second track.
+The instrument does not allow it, and the reason is the same shape as
+the reason the unauthorized track does not open.</p>
+<p>Regulation 90(1) is the correctness control:</p>
+<blockquote>
+<p>“Where a payment order is executed in accordance with the unique
+identifier, the payment order is deemed to have been correctly executed
+by each payment service provider involved in executing the payment order
+with respect to the payee specified by the unique identifier.”<a
+href="#fn16" class="footnote-ref" id="fnref16"
+role="doc-noteref"><sup>16</sup></a></p>
+</blockquote>
+<p>Lord Leggatt had already pointed at that provision. The sentence
+after the passage quoted in section 1 identifies the obstacle:
+regulation 90(1) deems a payment order executed in accordance with the
+unique identifier to have been correctly executed.<a href="#fn17"
+class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a>
+Regulation 91 then makes the payer’s provider liable to the payer for
+“the correct execution of the payment transaction” unless it can prove
+that the payee’s provider received the amount.<a href="#fn18"
+class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>
+“Correct execution,” in this instrument, is a rail question. It asks
+whether the amount reached the account specified by the unique
+identifier, and when. It does not ask whether the goods were the goods,
+or whether the close was inside the description the payer gave the
+agent.</p>
+<p>So there is a fork, and it should be stated as a fork rather than
+resolved.</p>
+<p><strong>The unauthorized track.</strong> Where a standing instruction
+to an agent constitutes the payer’s consent to a series under regulation
+67(1)(b), and this close falls outside that consent, the case is on the
+unauthorized track. Regulation 76 is the remedy. The evidence that would
+settle it is the grant, the close, and a join between them. The point of
+this section stands: the authentication machinery does not produce that
+evidence.</p>
+<p><strong>The incorrect-execution track.</strong> Where the payment
+order was not executed in accordance with the unique identifier, or was
+defective or late in the sense regulations 91 to 94 use those words, the
+case is on the incorrect-execution track. The controls are already
+specified: for the identity of the payee, regulation 90(1) supplies the
+unique identifier; regulations 91 to 94 govern the remaining execution
+questions of receipt, amount and timing. None asks whether what was
+bought remained within the description in the mandate. A substitution
+that still hits the named payee with the named amount, on time, is not
+this case.</p>
+<p><strong>The case Part 7 does not reach.</strong> Where the payment is
+authorized under regulation 67 and deemed correctly executed under
+regulation 90(1) — same unique identifier, same amount, on time — but
+the close is outside the description of what the payer instructed the
+agent to do, Part 7 does not open. The remaining question is
+construction of the mandate, and whatever duty <em>Philipp</em> leaves
+standing when it describes a bank’s obligation “to interpret, ascertain
+and act in accordance with its customer’s instructions.”<a href="#fn19"
+class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>
+That is the case this paper is about.</p>
+<p>There is one more door in Part 7, and it should be named, because it
+is the only one keyed to the scope of a consent rather than to a
+credential or a rail field. Regulation 79 entitles a payer to a refund
+of “any authorised payment transaction initiated by or through the
+payee” where “the authorisation did not specify the exact amount of the
+payment transaction when the authorisation was given in accordance with
+regulation 67” and “the amount of the payment transaction exceeded the
+amount that the payer could reasonably have expected taking into account
+the payer’s previous spending pattern, the conditions of the framework
+contract and the circumstances of the case.”<a href="#fn20"
+class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a>
+It is a narrow door. Regulation 79(3) separately gives an unconditional
+refund for euro direct debits under Regulation (EU) 260/2012; that is a
+direct-debit rule and is set aside here. Under 79(1)–(2) the door sees
+one field, amount. The request must be made within eight weeks of the
+debit; the provider may require the payer to prove the conditions; and
+the right can be contracted out of where the payer gave consent directly
+to the provider and the transaction information was made available four
+weeks ahead.<a href="#fn21" class="footnote-ref" id="fnref21"
+role="doc-noteref"><sup>21</sup></a> For a payee-initiated agentic
+payment whose amount ran past what the payer could reasonably have
+expected, this is the track a payments lawyer would try first, and it
+may work. For the substitution this paper describes — same payee, same
+amount, wrong goods — it does not open, for the same reason as the other
+two: the field it checks is intact.</p>
+<p>The thirteen-month window in regulation 74 sets the horizon for the
+first two branches: evidence meant to operate regulation 76 or
+regulations 91 to 94 has to remain available and joinable to the
+transaction for as long as the claim can be brought. The third branch is
+not a regulation 74 claim. The record it needs is a record with which a
+court could construe the grant. Nothing in Part 7 requires anyone to
+keep it.</p>
+<p>Three things this section does not claim. It does not claim that a
+standing instruction to an agent is, as a matter of law, consent to a
+series under regulation 67(1)(b). Whether it is depends on the
+instruction and on facts a court would find. The first branch holds in
+the conditional: <em>where</em> such an instruction constitutes the
+payer’s consent to a series, the scope question is the one that decides
+the case, and the evidence to answer it is what is missing. It does not
+claim that a pack-size substitution, or any other semantic miss that
+leaves the rail fields intact, is “incorrectly executed” within the
+meaning of regulations 91 to 94. That reading is the one regulation
+90(1) is there to prevent. And it does not claim that any of this is a
+defect in the drafting. Authentication is a good proxy for consent, and
+the unique identifier a good proxy for the payee, for as long as
+authentication, consent and execution stay close enough together for one
+to stand in for another. Delegated execution against a description
+separates them. The proxies are what have come apart, not the law.</p>
+<h2 id="two-ledgers">3. Two ledgers</h2>
+<p><em>Hamblin</em> says something about that seam that the Regulations
+do not say about themselves: that there are two ledgers, and that they
+can give different answers on the same payment.</p>
+<p>On the statutory ledger, the question is whether the payer gave
+consent “in the form, and in accordance with the procedure, agreed” with
+the provider.<a href="#fn22" class="footnote-ref" id="fnref22"
+role="doc-noteref"><sup>22</sup></a> The High Court called that
+requirement “purely mechanical,” and held that where the mechanics were
+“punctiliously observed” the statutory refund claim fails.<a
+href="#fn23" class="footnote-ref" id="fnref23"
+role="doc-noteref"><sup>23</sup></a> That is the reading the Court of
+Appeal left in place.<a href="#fn24" class="footnote-ref" id="fnref24"
+role="doc-noteref"><sup>24</sup></a> It is also, on its face, the right
+reading of a provision whose purpose the judge described as
+“transactional speed and efficiency”: a rule built so that providers
+“execute payment instructions swiftly and in accordance with clear
+criteria” cannot also be a rule that asks, at the moment of execution,
+whether the instruction meant what the principal meant.</p>
+<p>On the common-law ledger, the question is whether the person giving
+the instruction had the principal’s authority to give it — and the
+Supreme Court in <em>Philipp</em> was explicit that authority is not the
+same thing as the credential. “Authority to act as agent includes only
+authority to act honestly in pursuit of the interests of the
+principal.”<a href="#fn25" class="footnote-ref" id="fnref25"
+role="doc-noteref"><sup>25</sup></a> The authority a customer confers on
+an agent to give payment instructions “does not include authority to act
+dishonestly in pursuit of the agent’s own interests and in fraud of the
+customer.”<a href="#fn26" class="footnote-ref" id="fnref26"
+role="doc-noteref"><sup>26</sup></a> A bank may rely on the appearance
+of authority — but “not if there are circumstances suggestive of
+dishonesty apparent to the bank which would cause a reasonable banker
+before executing an instruction to make inquiries to verify the agent’s
+authority.”<a href="#fn27" class="footnote-ref" id="fnref27"
+role="doc-noteref"><sup>27</sup></a> The duty that follows, in Lord
+Leggatt’s summary, “is simply an application of the general duty of care
+owed by a bank to interpret, ascertain and act in accordance with its
+customer’s instructions.”<a href="#fn28" class="footnote-ref"
+id="fnref28" role="doc-noteref"><sup>28</sup></a></p>
+<p>Two ledgers, then. One asks whether the agreed procedure was
+followed. The other asks whether the instruction was the principal’s. A
+payment can pass the first and fail the second; <em>Hamblin</em> in the
+High Court is a case in which it did. The Court of Appeal was asked
+nothing about how the two relate and said so.</p>
+<p>One point of vocabulary, so that a name does not do more work than
+the cases allow. The duty the cases call <em>Quincecare</em> is the
+fraud-shaped instance of the general duty Lord Leggatt describes at
+[97]: to interpret, ascertain and act in accordance with the customer’s
+instructions. For a delegate that has not been dishonest, the common-law
+ledger is that general duty and ordinary construction of the mandate.
+This paper calls it the construction ledger. The <em>Quincecare</em>
+cases are cited below for what they say about authority and attribution,
+not as a remedy for drift.</p>
+<p>The common law is not going to rescue the payer in the case this
+paper is about, and section 3 does not ask it to; the honest limit is
+stated at the end of this section. What the authorities supply is three
+structural propositions about authority and attribution, and each
+creates a question when the delegate is software. Those questions are
+why the record matters to the common-law ledger as much as to the
+statutory one.</p>
+<p><strong>The trust that makes the instruction look authorized is the
+same fact that stops the delegate’s excess being the principal’s own
+act.</strong> <em>Singularis</em> is the case. Daiwa paid away a
+company’s money on the instructions of its chairman and sole
+shareholder, who was defrauding it. Daiwa’s defense was that the
+chairman’s fraud was the company’s fraud, so the company could not
+complain. The Supreme Court refused that attribution, and the reason it
+gave is the reason that matters here:</p>
+<blockquote>
+<p>“The purpose of that duty is to protect the company against just the
+sort of misappropriation of its funds as took place here. By definition,
+this is done by a trusted agent of the company who is authorised to
+withdraw its money from the account. To attribute the fraud of that
+person to the company would be, as the judge put it, to ‘denude the duty
+of any value in cases where it is most needed’.”<a href="#fn29"
+class="footnote-ref" id="fnref29"
+role="doc-noteref"><sup>29</sup></a></p>
+</blockquote>
+<p>The structure of that reasoning is what carries. The duty exists
+<em>because</em> the delegate is trusted; the trust is what makes the
+instruction look authorized; and the same trust cannot then be used to
+make the delegate’s departure from the grant the principal’s own act.
+For an agentic mandate the predicate is sharper still. The credential
+and the signed mandate are precisely what make the software a trusted
+delegate. If that trust is why the statutory ledger treats the close as
+authorized, <em>Singularis</em> says the same trust cannot, in a claim
+that the provider should have inquired, make the miss the principal’s
+fraud. Both answers at once. That is not a contradiction. It is the
+predicate on which the protective duty rests.</p>
+<p><strong>The same actor can bind and not bind, depending on who is
+asking.</strong> <em>Bilta</em> is the case, and its holding is a method
+rather than a result. Attribution of an agent’s conduct to the company
+“depends very much on the context in which the issue arises”: as between
+the company and a defrauded third party, the company is treated as the
+perpetrator; in a claim between the company and the directors who
+defrauded it, the directors cannot rely on their own breach to defeat
+provisions “intended to protect the company.”<a href="#fn30"
+class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a>
+Lord Neuberger put the general principle in a sentence: whether “to
+attribute an action by, or a state of mind of, a company director or
+agent to the company or the agent’s principal in relation to a
+particular claim against the company or the principal must depend on the
+nature and factual context of the claim in question.”<a href="#fn31"
+class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a>
+Applied to a payment: as against the merchant and the scheme, the
+principal who held the agent out and signed the mandate may well be
+treated as having paid. As against a provider who should have stepped
+up, the principal may still be the party the agent exceeded. Both can be
+true. What makes them compatible in practice is a record — of the grant,
+the evaluation, and the miss — that lets a court ask <em>Bilta</em>’s
+question instead of collapsing both answers into “the credential moved.”
+Put the grocery substitution through it. As against the supermarket,
+which was paid the mandated amount under a live credential, the payer
+may well be treated as the buyer of the larger pack. As against the
+provider, if a duty of inquiry ever reached an automated close, the
+payer may be the principal whose delegate exceeded the description. Both
+answers are available in principle; on the current record neither can be
+proved, because nothing required the grant and the miss to be written
+down together.</p>
+<p><strong>Attribution is construction of the rule, not a search for a
+mind.</strong> The method behind all of this is Lord Hoffmann’s in
+<em>Meridian</em>, quoted in <em>Bilta</em> by Lord Sumption:</p>
+<blockquote>
+<p>“This is always a matter of interpretation: given that it was
+intended to apply to a company, how was it intended to apply? Whose act
+(or knowledge, or state of mind) was for this purpose intended to count
+as the act etc. of the company? One finds the answer to this question by
+applying the usual canons of interpretation, taking into account the
+language of the rule (if it is a statute) and its content and policy.”<a
+href="#fn32" class="footnote-ref" id="fnref32"
+role="doc-noteref"><sup>32</sup></a></p>
+</blockquote>
+<p><em>Meridian</em> assumes the candidate whose act or knowledge might
+count is a natural person. Two consequences follow, neither of which is
+a holding. First, rules of authority still work: a principal can deploy
+software under a delegated technical authority, and apparent authority
+is a representation plus reliance, not a state of mind of the delegate;
+a signed mandate and an agent credential are ordinary facts on that
+ledger. Whether the software is itself an agent in law, or the
+operator’s instrument, can stay open, exactly as section 4 leaves it
+open for Regulation E. Second, any rule that turns on knowledge, notice,
+inquiry, or a state of mind becomes difficult to apply when no human
+observes the instruction, because the court needs an observable fact
+capable of being attributed to the provider. A court applying
+<em>Meridian</em> to a software delegate has to say either that the rule
+was not intended to reach this architecture, or that some human’s or
+system’s output is to count as that state of mind for this purpose. The
+second is a special rule, and it has to be built from the rule’s own
+policy — which requires something to build it from. When is a provider
+“put on inquiry” about an instruction no person saw? When there is a
+fact a reasonable provider would have seen, and that fact can be
+attributed to the provider. The common law can find such a fact in
+circumstances as well as in signals. But if the architecture produces no
+signal and surfaces no circumstance, there is nothing for the rule to
+attach to. <em>Meridian</em> supplies the method of attribution; it does
+not supply the signal, and without a signal the method has nothing to
+work on. That is the cleanest company-law reason to require the record
+now, rather than wait for the next <em>Hamblin</em> to discover that
+there is nothing to interpret.</p>
+<p>The honest limit, stated rather than buried. The duty the courts have
+been describing is triggered by an attempt to defraud or misappropriate.
+<em>Philipp</em> defines actual authority as authority “to act honestly
+in pursuit of the interests of the principal,” and the inquiry it
+describes is into “circumstances suggestive of dishonesty.”<a
+href="#fn33" class="footnote-ref" id="fnref33"
+role="doc-noteref"><sup>33</sup></a> An agent that substitutes a
+four-times-larger pack because the item is out of stock is not
+defrauding anyone. It is executing badly, or outside the description. If
+the dishonesty trigger holds, a semantic miss without fraud never
+engages the duty, and the principal’s common-law claim is at most
+ordinary skill and care in reading the mandate — a much weaker claim —
+or nothing, because <em>Philipp</em> also says that where a bank
+“receives a valid payment order which is clear and leaves no room for
+interpretation or choice,” its “duty is simply to execute the order.”<a
+href="#fn34" class="footnote-ref" id="fnref34"
+role="doc-noteref"><sup>34</sup></a> That limit cuts deeper for a
+sending provider than for a bank at a branch counter. The description
+the agent departed from was given to the agent, or to the platform that
+runs it; the payment order the sending provider receives is clear, and
+the provider may never have seen the description at all. Whatever duty
+to construe the mandate survives runs, if it runs anywhere, against the
+party that received the description — and in the architectures the
+protocols describe that party is not necessarily a payment service
+provider. Bratby makes the same point from the other side: “Neither
+regime allocates loss to the supplier of the agent,” and neither
+“creates a liability rule that bites on a person merely because it
+supplied the software.”<a href="#fn35" class="footnote-ref" id="fnref35"
+role="doc-noteref"><sup>35</sup></a> Whether any regulator’s power
+reaches that party is a question about instruments rather than about
+Part 7, and it is not answered here. Nothing here proposes the
+<em>Quincecare</em> duty as the answer to agentic drift. What the two
+ledgers show is narrower. The unauthorized track and the
+incorrect-execution track each have a control — the credential, the
+unique identifier — and neither control produces a record of the grant
+and the close. The common-law inquiry would need that record too. The
+case that remains, once both statutory tracks are satisfied, is the one
+Part 7 does not reach; and the common-law inquiry, if it ever reached an
+automated close, would need the same record the statutory tracks do not
+produce. Section 6 says what follows from that, once.</p>
+<h2 id="the-united-states-the-same-shape">4. The United States: the same
+shape</h2>
+<p>Paper 4 set out the United States position in one passage and this
+paper does not repeat it.<a href="#fn36" class="footnote-ref"
+id="fnref36" role="doc-noteref"><sup>36</sup></a> Regulation E relies on
+a proxy of the same shape as the UK machinery: where the Regulations put
+authentication in place of the scope of consent, Regulation E puts the
+furnishing of an access device in place of the scope of the authority
+given with it. The short form is that Regulation E excludes from
+“unauthorized electronic fund transfer” a transfer initiated by a person
+who was furnished the access device by the consumer, unless the consumer
+has notified the institution that transfers by that person are no longer
+authorized; that the official interpretation says a consumer who grants
+transfer authority to a person “who exceeds the authority given” is
+“fully liable for the transfers” until such notice; that Regulation Z
+says the same of credit cards and sends the prior question of whether
+authority existed to state law; and that the Bureau’s 2021 FAQs, a
+Compliance Aid rather than an official interpretation, read “furnished”
+not to include credentials obtained by fraud or later theft, and say
+nothing about a delegate who exceeds a grant.<a href="#fn37"
+class="footnote-ref" id="fnref37"
+role="doc-noteref"><sup>37</sup></a></p>
+<p>What this paper adds is the <em>Meridian</em> consequence, stated for
+that law. A court applying Regulation E to a software delegate must
+decide whether the delegate is a “person … furnished the access device,”
+whether an agent credential is an “access device,” and whether a capped
+natural-language mandate is the grant of authority Comment 2(m)-2
+describes. The definitions cut both ways and settle nothing. “Person”
+means “a natural person or an organization,”<a href="#fn38"
+class="footnote-ref" id="fnref38" role="doc-noteref"><sup>38</sup></a>
+so the operator of an agent is plainly one; whether the agent is a
+person, or the operator’s instrument, the rule does not say. An “access
+device” is “a card, code, or other means of access to a consumer’s
+account … that may be used by the consumer to initiate electronic fund
+transfers”;<a href="#fn39" class="footnote-ref" id="fnref39"
+role="doc-noteref"><sup>39</sup></a> an agent credential may constitute
+a code or other means of access, and if it does, it is one the consumer
+never uses directly. None of those questions is answered in Supplement
+I. The court would have to hold either that the exclusion does not reach
+this architecture, or construct from the exclusion’s policy an account
+of what counts as the consumer’s grant and what counts as exceeding it.
+And it would face the same vacuum: the exclusion’s only operative event
+is the consumer’s notice that the delegation has ended. There is no
+event in the rule for a narrowing, a single-transaction correction, or
+an amendment with a link to what it replaced. In the case the rule
+recognizes, the control it supplies is termination.</p>
+<p>Three sources, the same shape: each supplies an express revocation,
+and none supplies an express narrow amendment. Regulation 67(4) in the
+United Kingdom permits withdrawal of consent to a series prospectively;
+a UK bank’s published guidance for a live variable recurring payment
+says an active permission cannot be amended and must be revoked and set
+up again;<a href="#fn40" class="footnote-ref" id="fnref40"
+role="doc-noteref"><sup>40</sup></a> Regulation E’s exclusion ends when
+the consumer says the delegation has ended. None of the three forbids
+amendment. None provides for it, and none records what the payer agreed
+to when execution diverged. How an operative definition should treat
+amendment of a live grant is not resolved here.</p>
+<h2 id="the-overlay">5. The overlay</h2>
+<p>Section 1 recorded what Parliament did about <em>Philipp</em>. What
+the regulator then did with the duty section 72 created is the last door
+to check, because it is the only United Kingdom instrument that
+reimburses a payment the Regulations call authorized. Specific Direction
+20, given under section 54 of the Financial Services (Banking Reform)
+Act 2013 to discharge the duty in section 72 of the 2023 Act, states its
+obligation in one sentence — “When a victim reports a reimbursable FPS
+APP scam payment to their sending PSP, the sending PSP must reimburse
+the victim in full” (¶3.1) — and points elsewhere for its content — the
+requirement applies “in line with the exceptions and additional
+provisions set out at paragraphs 4.2 to 5.23 of Specific Requirement 1”
+(¶3.3), and Specific Requirement 1 obliges Pay.UK to “insert and not
+alter” that requirement in the Faster Payments rulebook.<a href="#fn41"
+class="footnote-ref" id="fnref41" role="doc-noteref"><sup>41</sup></a>
+The direction has no expiry.<a href="#fn42" class="footnote-ref"
+id="fnref42" role="doc-noteref"><sup>42</sup></a> Specific Requirement 1
+defines authorization in regulation 67’s own words — the payer “has
+given their explicit consent to: the execution of the payment
+transaction, or the execution of a series of payment transactions of
+which that payment transaction forms part”<a href="#fn43"
+class="footnote-ref" id="fnref43" role="doc-noteref"><sup>43</sup></a> —
+and reimburses anyway. So a liability has already been placed on a
+payment the Regulations call authorized, by an instrument outside Part
+7.</p>
+<p>Its definition of the eligible case is also why it does not reach the
+case in this paper. An APP scam is “where a person uses a fraudulent or
+dishonest act or course of conduct to manipulate, deceive or persuade a
+consumer into transferring funds from the consumer’s relevant account to
+a relevant account not controlled by the consumer, where: the recipient
+is not who the consumer intended to pay, or the payment is not for the
+purpose the consumer intended.”<a href="#fn44" class="footnote-ref"
+id="fnref44" role="doc-noteref"><sup>44</sup></a> The purpose limb
+looks, on a skim, as if it might reach a substitution. It cannot on its
+own: the mismatch has to be the product of fraud or dishonesty, and the
+funds have to reach an account the consumer does not control. An agent
+that paid the intended merchant the intended amount for the wrong goods
+fails the definition at its first clause, and the regulator’s own policy
+statement treats a dispute with a legitimate supplier as a civil dispute
+outside the scheme.<a href="#fn45" class="footnote-ref" id="fnref45"
+role="doc-noteref"><sup>45</sup></a> That is the nearest UK instrument
+to the case this paper describes, and it refuses the case by definition.
+It is the fourth door, and it is shut for the same reason as the other
+three: the field it checks — here, fraud or dishonesty operating on the
+consumer — is intact.</p>
+<h2 id="the-finding-and-what-it-hands-on">6. The finding, and what it
+hands on</h2>
+<p>Four doors were opened above and none of them reaches the case.
+Regulation 76 is keyed to consent under regulation 67, and on the
+assumptions stated in section 1 the consent is real. Regulations 91 to
+94 are keyed to the unique identifier, the amount and the timing, and
+all three are intact. Regulation 79 is keyed to amount alone. Specific
+Direction 20 is keyed to fraud or dishonesty operating on the consumer,
+and there was none. Each door checks a field, and every field it checks
+is as the payer left it. What moved is the thing no door checks: whether
+the close was inside the description the payer gave the agent.</p>
+<p>The finding is therefore narrow, and it is about evidence rather than
+remedy. Two questions are left, and they are different. Whether any
+party — the sending provider, the platform, the agent’s operator — owes
+the payer a duty to construe the mandate is a question of obligation,
+and no record creates an obligation that does not exist. Whether a
+breach of such a duty could be established, if one exists, is a question
+of evidence, and on the current record it could not be, against anyone.
+The record that would make the regulation 67 question adjudicable has
+three parts: the grant, the close, and the join between them, produced
+at execution time by whichever party executed. Nothing in Part 7,
+nothing in the common-law ledger as the courts have so far described it,
+and nothing in Regulation E requires any party to produce or keep it.
+That is what this paper establishes, and it is all it establishes.</p>
+<p>The obligation half of that finding has since been stated by the
+industry, and it should be recorded here rather than left to the reader
+to find. UK Finance’s response to the Bank of England’s consultation on
+the design of future retail-payments infrastructure, published on 11
+September 2026, names the case in terms: “Where a PSP correctly executes
+an apparently valid agent-generated instruction, but the agent has
+exceeded the end user’s intended authority, responsibility should be
+determined through a clear legal and regulatory liability framework and
+should not automatically transfer to the executing PSP solely because it
+has processed a technically valid instruction.” Its list of the
+scenarios such a framework must address ends with this paper’s: “where
+an agent acts within the technical parameters of a mandate but outside
+the end user’s intended authority or reasonable expectations.”<a
+href="#fn46" class="footnote-ref" id="fnref46"
+role="doc-noteref"><sup>46</sup></a> That is a call for an allocation
+rule, and it sits one step downstream of the finding above. An
+allocation rule needs a breach to allocate, and on the present record a
+breach could not be shown against anyone. What the trade body proposes
+should travel with a payment is instructive on exactly that point. It
+asks that the message “include a reference to a verifiable mandate, to
+verify that the third-party acted within its permitted payment
+parameters, limits and restrictions,” and “data required for
+traceability and audit”; it places the creation and storage of mandates,
+and “documented rationale for a third-party’s reasoning,” outside the
+core infrastructure; and, read in full, it proposes no duty on any party
+to keep either.<a href="#fn47" class="footnote-ref" id="fnref47"
+role="doc-noteref"><sup>47</sup></a> The reference travels. The grant,
+the close and the join between them do not, and nobody is obliged to
+keep them. The industry’s own proposal, in other words, carries the
+pointer and leaves the record where this paper found it — which is the
+same passage that says technical validation “should not, by itself,
+determine whether a transaction is legally authorised,” and is right to
+say so, since a pointer to a mandate is not a record of what was done
+under it.</p>
+<p>What kind of instrument could require anything of anyone, and what
+such an instrument would need from a definition kept elsewhere so that a
+duty measured against it could be examined, are questions about
+instruments rather than about Part 7. They are not answered here.</p>
+<h2 id="limits">7. Limits</h2>
+<p>I am not a lawyer, and nothing above is legal advice.</p>
+<p>The standing-instruction case is argued in the conditional. Whether
+an instruction to an agent is consent to a series under regulation
+67(1)(b), whether a software agent is a “person” for the purposes of
+Regulation E, whether an agent credential is an access device, and
+whether a capped mandate is the grant Comment 2(m)-2 describes, are all
+undecided, and each determines whether any of this reaches the liability
+layer in its jurisdiction at all.</p>
+<p>The incorrect-execution track is the other statutory exit. Whether a
+close that hits the unique identifier and the amount can ever be
+“defective” under regulations 91 to 94 is a question regulation 90(1)
+appears to close. This paper does not reopen it. Regulation 79 is the
+one Part 7 provision keyed to the scope of a consent rather than to a
+credential or a rail field; it is keyed to amount alone, and the case
+described here leaves the amount intact. For a payer outside the
+protected classes, regulation 63(5) lets the burden rule, the amount
+door and the notification period be modified by agreement; this paper’s
+numbers are the protected-class numbers. The case it describes is the
+one in which all three doors are satisfied and Part 7 does not open.</p>
+<p>The common-law duty described in section 3 is triggered by
+dishonesty. A pack-size substitution may never engage it. The Court of
+Appeal has expressly reserved whether the duty applies to automated
+processing at all, and what monitoring would discharge it; this paper
+cites that reservation as a reservation and not as a holding in either
+direction. Whether the general duty of construction is owed by a sending
+provider that received only a clear payment order, rather than by the
+platform or operator that received the description, is a question
+<em>Philipp</em> at [63] bears on and this paper does not decide.</p>
+<p>What was left out: the trust-law tail of the <em>Hamblin</em>
+litigation — who owns money in a mule company’s wallet, and who may sue
+in the company’s name — which concerns victims of fraud vehicles and
+does not reach the payer whose agent bought the wrong thing; every
+figure about disputes, chargebacks and first-party misuse that has been
+suggested to me and that I have not opened at its source; and any
+characterization of what a court would hold.</p>
+<h2 id="endnotes">Endnotes</h2>
+<h3 id="statutes-and-directions-quoted">Statutes and directions
+quoted</h3>
+<p>Payment Services Regulations 2017 (SI 2017/752), regs. 63, 67, 74,
+75, 76, 77, 79, 80, 83, 90, 91, 92, 93, 94 and 100 —
+https://www.legislation.gov.uk/uksi/2017/752/contents (regs. 90 and 91
+opened 19 September 2026; regs. 63, 79 and 80 opened 20 September 2026;
+the others as read for the author’s response to HM Treasury, 13
+September 2026). Financial Services and Markets Act 2023, ss. 72 and 86.
+Payment Systems Regulator, Specific Direction 20 (July 2024) and
+Specific Requirement 1 (July 2024, corrected); PS25/5 (May 2025).
+NatWest, “How do I amend a VRP (variable recurring payment) or sweeping
+payment?”, read 13 September 2026, cited as one institution’s
+description of its own product.</p>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p><em>Philipp v Barclays Bank UK plc</em> [2023] UKSC 25,
+12 July 2023, at [1] and [12] —
+https://caselaw.nationalarchives.gov.uk/uksc/2023/25, opened 19 and 20
+September 2026. Disposition at [120]: summary judgment for the bank
+restored, but limited to the claim that the bank owed a duty not to
+execute her instructions; summary judgment refused on the alternative
+claim that the bank failed to take adequate steps to recover the money,
+insofar as based on inaction after 27 March 2018.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><em>Philipp</em> at [18]. The paragraph continues by
+identifying the obstacle: regulation 90(1) deems a payment order
+executed in accordance with the unique identifier to have been correctly
+executed.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><em>Philipp</em> at [21]: “The Financial Services and
+Markets Act 2023, which received Royal Assent on 29 June 2023, provides
+for a mandatory reimbursement scheme. Section 72 of the Act amends
+regulation 90 of the Payment Services Regulations to enable liability to
+be imposed ‘where the payment order is executed subsequent to fraud or
+dishonesty’. … Such cases are, however, limited to payment orders
+executed over the Faster Payments Scheme.”<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Financial Services and Markets Act 2023, s. 72
+(“Liability of payment service providers for fraudulent transactions”),
+s. 72(11), inserting regulation 90(6)–(7) into the Payment Services
+Regulations 2017 —
+https://www.legislation.gov.uk/ukpga/2023/29/section/72, opened 19
+September 2026. Section 72 came into force two months after Royal
+Assent, on 29 August 2023, under s. 86(2)(i) —
+https://www.legislation.gov.uk/ukpga/2023/29/section/86, opened 20
+September 2026 — that is, after <em>Philipp</em> was handed down; the
+Supreme Court was describing an enactment, not a provision yet in
+force.<a href="#fnref4" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p><em>Moorwand Ltd v Hamblin</em> [2026] EWCA Civ 942 at
+[3] (“On 22 February 2017, X caused a company called RND to be
+incorporated at Companies House” — RND Global Ltd), [4] (Moorwand, “an
+Electronic Money Institution (‘EMI’) regulated by the Financial Conduct
+Authority”) and [10] (“On 10 July 2017, Mr Hamblin was sent an invoice
+for £160,000, providing for payment to a Moorwand account”). The trial
+judge was HHJ Raeside KC; Marcus Smith J’s conclusions on the first
+appeal are summarised at [33].<a href="#fnref5" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><em>Hamblin v Moorwand Ltd</em> [2025] EWHC 817 (Ch),
+Marcus Smith J, 4 April 2025, at [21]–[22] (“permission to appeal on
+this ground must be given, and the appeal must succeed”; the Derivative
+Claim “is not a claim that sounds in damages, but is one that obliges
+Moorwand to restore or correct the balance between RND and itself”) and
+[33] (Moorwand “must restore the monies (just under £160,000) improperly
+paid away”) — https://caselaw.nationalarchives.gov.uk/ewhc/ch/2025/817,
+opened 19 and 20 September 2026.<a href="#fnref6" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><em>Hamblin</em> (HC) at [30]. At [29] the judge treated
+the pay-aways as “a case of a series of payment transactions within
+regulation 55(1)(b).”<a href="#fnref7" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p><em>Hamblin</em> (HC) at [31]; permission to appeal on
+this ground refused at [32].<a href="#fnref8" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p><em>Moorwand Ltd v Hamblin</em> [2026] EWCA Civ 942,
+Peter Jackson, Nugee and Foxton LJJ, 21 July 2026; appeal allowed and
+the trial judge’s decision restored —
+https://caselaw.nationalarchives.gov.uk/ewca/civ/2026/942, opened 19 and
+20 September 2026. Peter Jackson LJ at [106] records that the parties’
+combined costs of the trial and two appeals were said to be “in the
+region of £1 million,” “seven times the original disputed sum.”<a
+href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p><em>Moorwand</em> (CA) at [74] (Foxton LJ).<a
+href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p><em>Moorwand</em> (CA) at [76].<a href="#fnref11"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Bratby, R., “Agentic payments: what HM Treasury is
+consulting on” (browser title: “Agentic payments: HM Treasury’s July
+2026 consultation”), bratby.law, 15 July 2026 (updated 18 August 2026) —
+https://bratby.law/agentic-payments-accountability-gap/, opened 14 and
+20 September 2026. The passage quoted sits under the heading “The PSRs
+provide a starting point.”<a href="#fnref12" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Bratby, R., “Agentic payments liability: what UK
+payment law answers, and what it does not” (browser title: “Can an AI
+Agent Authorise a Payment? PSRs 2017 Consent”), bratby.law, 22 July 2026
+(updated 18 August 2026; “Law stated as at 22 July 2026”) —
+https://bratby.law/agentic-payments-liability-psrs-2017/, opened 20
+September 2026. Quotations from the sections “Authorisation under
+regulation 67,” “Who has to prove what,” “Where the reimbursement regime
+takes over” and “Perspective.” Practitioner commentary, cited as such.
+His piece also identifies, independently of this paper, the case where a
+fraudster corrupts the instruction given to the software and the
+customer is not deceived, as falling outside the APP-scam definition —
+the fraud-shaped neighbour of the case examined here.<a href="#fnref13"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>Bratby, R., “Agentic AI and Payments: Can an AI Agent
+Consent to a Payment?”, bratby.law, 28 March 2026 (updated 24 June 2026)
+— https://bratby.law/agentic-ai-payments-consent-regulation/, opened 14
+and 20 September 2026. Practitioner commentary, cited as such and not as
+authority for any holding.<a href="#fnref14" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>Payment Services Regulations 2017, reg. 63(5)(a)–(b) —
+https://www.legislation.gov.uk/uksi/2017/752/regulation/63, opened 20
+September 2026. The list also includes regs. 66(1), 67(3)–(4),
+86(2A)–(2D) and 94A.<a href="#fnref15" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p>Payment Services Regulations 2017 (SI 2017/752), reg.
+90(1) — https://www.legislation.gov.uk/uksi/2017/752/regulation/90,
+opened 19 September 2026. Regulation 90(2)–(5) allocate recovery efforts
+where the unique identifier provided by the payment service user is
+incorrect; regulation 90(6)–(7), inserted by Financial Services and
+Markets Act 2023 s. 72, are the fraud overlay described in section 1.<a
+href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p><em>Philipp</em> at [18]. The paragraph continues by
+identifying the obstacle: regulation 90(1) deems a payment order
+executed in accordance with the unique identifier to have been correctly
+executed.<a href="#fnref17" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>Payment Services Regulations 2017, reg. 91(2)–(3) —
+https://www.legislation.gov.uk/uksi/2017/752/regulation/91, opened 19
+September 2026. Regulations 92 and 93 are the payee-initiated and
+payment-initiation-service analogues. None of them asks a question about
+the goods or about the description in a mandate.<a href="#fnref18"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p><em>Philipp</em> at [97].<a href="#fnref19"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn20"><p>Payment Services Regulations 2017, reg. 79(1)–(2) —
+https://www.legislation.gov.uk/uksi/2017/752/regulation/79, opened 20
+September 2026. Regulation 79(3) separately gives an unconditional
+refund right for SEPA direct debits.<a href="#fnref20"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p>Regulation 80(1) (eight weeks from the debit), 80(2)
+(provider may require information reasonably necessary to prove the reg.
+79(2) conditions), 80(3)–(4) (refund or reasoned refusal within ten
+business days) —
+https://www.legislation.gov.uk/uksi/2017/752/regulation/80, opened 20
+September 2026; the contracting-out condition is reg. 79(6).<a
+href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn22"><p><em>Moorwand</em> (CA) at [75], quoting regulation
+55(1)–(2) of the Payment Services Regulations 2009, the predecessor of
+regulation 67 of the 2017 Regulations.<a href="#fnref22"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn23"><p><em>Hamblin</em> (HC) at [30]. At [29] the judge
+treated the pay-aways as “a case of a series of payment transactions
+within regulation 55(1)(b).”<a href="#fnref23" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn24"><p><em>Moorwand</em> (CA) at [76].<a href="#fnref24"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn25"><p><em>Philipp</em> at [72].<a href="#fnref25"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p><em>Philipp</em> at [90].<a href="#fnref26"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn27"><p><em>Philipp</em> at [91].<a href="#fnref27"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn28"><p><em>Philipp</em> at [97].<a href="#fnref28"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn29"><p><em>Singularis Holdings Ltd v Daiwa Capital Markets
+Europe Ltd</em> [2019] UKSC 50 at [35], adopting Rose J at first
+instance, [2017] EWHC 257 (Ch) at [184]. Facts at [2] (“Mr Al Sanea was
+its sole shareholder, a director and also its chairman, president and
+treasurer”); Daiwa’s attribution argument at [26] —
+https://caselaw.nationalarchives.gov.uk/uksc/2019/50, opened 19
+September 2026.<a href="#fnref29" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn30"><p><em>Jetivia SA v Bilta (UK) Ltd</em> [2015] UKSC 23 at
+[208] (Lords Toulson and Hodge) —
+https://caselaw.nationalarchives.gov.uk/uksc/2015/23, opened 19 and 21
+September 2026. The agreed proposition is Lord Neuberger’s at [7]. The
+three contexts — a third party’s claim against the company; the
+company’s claim against its own director or employee; the company’s
+claim against a third party — are set out at [204]–[207]; the
+supermarket is the first and the provider, if a claim exists, the third.
+At [181] the same Justices say the so-called fraud exception “is not
+confined to fraud but is simply an instance of a wider principle that
+whether an act or a state of mind is to be attributed to a company
+depends upon the context in which the question arises” — which is why
+the two-answers point survives the honest limit at the end of this
+section: the split does not require dishonesty, only two different
+questions asked of the same facts.<a href="#fnref30"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn31"><p><em>Bilta</em> at [9] (Lord Neuberger).<a
+href="#fnref31" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn32"><p><em>Meridian Global Funds Management Asia Ltd v
+Securities Commission</em> [1995] UKPC 5; [1995] 2 AC 500 (PC), 507
+(Lord Hoffmann). The passage is quoted by Lord Sumption in
+<em>Bilta</em> at [67], which supplies the page; the judgment itself was
+opened at https://www.bailii.org/uk/cases/UKPC/1995/5.html on 21
+September 2026 and the words are as printed here.<a href="#fnref32"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn33"><p><em>Philipp</em> at [72].<a href="#fnref33"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn34"><p><em>Philipp</em> at [63]: “the duty to exercise
+reasonable skill and care only arises where the validity or content of
+the customer’s instruction is unclear or leaves the bank with a choice
+about how to carry out the instruction … Where the bank receives a valid
+payment order which is clear and leaves no room for interpretation or
+choice about what is required in order to carry out the order, the
+bank’s duty is simply to execute the order by making the requisite
+payment. The duty of care does not apply.”<a href="#fnref34"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn35"><p>Bratby, R., “Agentic payments liability: what UK
+payment law answers, and what it does not” (browser title: “Can an AI
+Agent Authorise a Payment? PSRs 2017 Consent”), bratby.law, 22 July 2026
+(updated 18 August 2026; “Law stated as at 22 July 2026”) —
+https://bratby.law/agentic-payments-liability-psrs-2017/, opened 20
+September 2026. Quotations from the sections “Authorisation under
+regulation 67,” “Who has to prove what,” “Where the reimbursement regime
+takes over” and “Perspective.” Practitioner commentary, cited as such.
+His piece also identifies, independently of this paper, the case where a
+fraudster corrupts the instruction given to the software and the
+customer is not deceived, as falling outside the APP-scam definition —
+the fraud-shaped neighbour of the case examined here.<a href="#fnref35"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn36"><p>Kirby, M. T. (2026) <em>The Drift Layer: the clean,
+fast session that is not proof of authority</em>, paper no. 4, §5,
+version 1, 14 September 2026 —
+https://driftlayer.org/papers/the-drift-layer/.<a href="#fnref36"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn37"><p>12 CFR §1005.2(m) and Official Interpretation Comment
+2(m)-2 —
+https://www.consumerfinance.gov/rules-policy/regulations/1005/2/; 12 CFR
+§1026.12, Comments 12(b)(1)(ii)-1 and -3 —
+https://www.consumerfinance.gov/rules-policy/regulations/1026/12/; CFPB,
+Electronic Fund Transfers FAQs (Compliance Aid), answers dated 4 June
+and 13 December 2021 —
+https://www.consumerfinance.gov/compliance/compliance-resources/deposit-accounts-resources/electronic-fund-transfers/electronic-fund-transfers-faqs/.
+All opened 14 September 2026.<a href="#fnref37" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn38"><p>12 CFR §1005.2(j) —
+https://www.consumerfinance.gov/rules-policy/regulations/1005/2/, opened
+19 September 2026.<a href="#fnref38" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn39"><p>12 CFR §1005.2(a)(1), same page.<a href="#fnref39"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn40"><p>NatWest, “How do I amend a VRP (variable recurring
+payment) or sweeping payment?” —
+https://www.natwest.com/support-centre/bank-accounts-and-supporting-information/general/how-do-i-amend-a-vrp-variable-recurring-payment-or-sweeping-payment.html,
+read 13 September 2026 (“You cannot amend an active payment (sweeping
+and / or VRP), if you want to change an existing permission you must
+revoke and set-up a new one”); cited as one institution’s description of
+its own product, not as a statement of what the law or every
+implementation requires.<a href="#fnref40" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn41"><p>Payment Systems Regulator, Specific Direction 20 (July
+2024) (FPS APP scam reimbursement requirement), ¶¶2.2, 2.4, 3.1, 3.3,
+4.1 —
+https://www.psr.org.uk/media/rqrpnb0w/amended-specific-direction-20-july-2024.pdf,
+opened 19 September 2026; Specific Requirement 1 (July 2024, corrected),
+¶4.1 —
+https://www.psr.org.uk/media/xenefhgp/amended-specific-requirement-1-july-2024-corrected.pdf,
+opened 19 September 2026.<a href="#fnref41" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn42"><p>Specific Direction 20, ¶12.3: “This specific direction
+will continue in force until such time as it is varied or revoked by the
+PSR.”<a href="#fnref42" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn43"><p>Specific Requirement 1, interpretation section,
+definition of authorisation.<a href="#fnref43" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn44"><p>Specific Requirement 1, interpretation section,
+definition of “APP scam”; the definition continues: “For the avoidance
+of doubt, if the consumer is party to the fraud or dishonesty, this is
+not an APP scam for the purpose of the FPS reimbursement requirement or
+the FPS reimbursement rules.”<a href="#fnref44" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn45"><p>Payment Systems Regulator, PS25/5, APP scams
+reimbursement: consolidated policy statement, May 2025, ¶¶3.3–3.4 —
+https://www.psr.org.uk/media/rhelv4op/ps25-5-app-scams-reimbursement-consolidated-policy-statement-may-2025.pdf,
+opened 13 and 20 September 2026.<a href="#fnref45" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn46"><p>UK Finance, <em>Response to the RPIB consultation on
+the design of future retail payments infrastructure</em>, 11 September
+2026, p. 82 (Q17a, “Legal clarity and liability arrangements”) —
+https://www.ukfinance.org.uk/system/files/2026-09/UK%20Finance%20response%20RPIB%20consultation%20future%20infrastructure%2011092026.pdf,
+opened 24 September 2026 (PDF of 90 pages, 1,202,784 bytes, text
+extracted from the file; printed page numbers). The second passage is
+quoted as printed: the source’s list reads “hallucination defective or
+revoked consent,” without a comma. Landing page:
+https://www.ukfinance.org.uk/policy-and-guidance/consultation-responses/boe-rpib-consultation-design-future-retail-payments.
+The response postdates this paper’s argument and the author’s own
+response to the same consultation of 9 September 2026; it is cited as
+the industry’s statement of the case, not as authority for the reading
+of the Regulations.<a href="#fnref46" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn47"><p>Same document, p. 79 (Q17, “The message should:”),
+p. 80 (capabilities placed outside core infrastructure, including
+“Creation and storage of mandates” and “Documented rationale for a
+third-party’s reasoning”) and p. 82 (“We expect delegation management to
+sit outside core infrastructure”). The absence is stated from a search
+of the extracted text rather than from a failure to notice: every
+passage in which a requirement word (require, mandatory, must) co-occurs
+with a record word (record, evidence, audit, traceability, log, retain,
+proof) was read — nine in 90 pages — and none imposes a duty on any
+party to keep or produce a mandate, a rationale or a record of
+execution; “audit” appears three times and “record” three times, none in
+the agentic sections; rulebook development is assigned to industry
+(p. 83). The only requirement addressed to records is addressed to the
+message, not to a party.<a href="#fnref47" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+
+
+  <footer>© 2026 Matthew T. Kirby. Site text is the author's; each publication carries its own licence, stated on its page. <a href="/errata/">Versions and errata</a>.</footer>
+</main>
+</body>
+</html>
