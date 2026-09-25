@@ -1,0 +1,78 @@
+cff-version: 1.2.0
+message: >-
+  This repository publishes The Drift Layer. Cite the individual paper you
+  used, not the repository. Each paper's page prints the SHA-256 of the PDF
+  it serves.
+title: The Drift Layer
+abstract: >-
+  A series on the life of a payment mandate: what a delegated instruction
+  authorizes, what the record shows when a delegate closes outside it, and
+  what a conformance definition would have to say to be operative.
+type: dataset
+authors:
+  - family-names: Kirby
+    given-names: Matthew T.
+    email: matthew.kirby@driftlayer.org
+    affiliation: Independent Researcher
+url: https://driftlayer.org
+license: CC-BY-4.0
+keywords:
+  - agentic payments
+  - payment mandate
+  - mandate conformance
+  - payment services regulations
+  - liability allocation
+
+references:
+  - type: report
+    title: >-
+      The Drift Layer: the clean, fast session that is not proof of authority
+    authors:
+      - family-names: Kirby
+        given-names: Matthew T.
+    collection-title: The Drift Layer
+    number: "4"
+    year: 2026
+    month: 9
+    date-published: 2026-09-14
+    url: https://driftlayer.org/papers/the-drift-layer/
+    license: CC-BY-4.0
+  - type: report
+    title: >-
+      A liability rule aimed at the wrong control: what the law offers when a
+      delegate exceeds its instruction
+    authors:
+      - family-names: Kirby
+        given-names: Matthew T.
+    collection-title: The Drift Layer
+    number: "5"
+    year: 2026
+    month: 9
+    date-published: 2026-09-24
+    url: https://driftlayer.org/papers/liability-rule/
+    license: CC-BY-4.0
+  - type: report
+    title: Four Measures for Mandate Conformance
+    authors:
+      - family-names: Kirby
+        given-names: Matthew T.
+    collection-title: The Drift Layer
+    year: 2026
+    month: 9
+    date-published: 2026-09-10
+    url: https://driftlayer.org/papers/definitions/
+    license: CC-BY-4.0
+  - type: report
+    title: Mandate Lifecycle Extensions for Agentic Payment Credentials
+    authors:
+      - family-names: Kirby
+        given-names: Matthew T.
+    institution:
+      name: Technical Disclosure Commons
+    collection-title: Defensive Publications Series
+    number: "11517"
+    year: 2026
+    month: 8
+    date-published: 2026-08-27
+    url: https://www.tdcommons.org/dpubs_series/11517
+    license: CC-BY-4.0

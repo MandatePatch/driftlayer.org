@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>The Drift Layer</title>
+  <subtitle>A series on the life of a payment mandate.</subtitle>
+  <id>https://driftlayer.org/</id>
+  <link href="https://driftlayer.org/" rel="alternate" type="text/html"/>
+  <link href="https://driftlayer.org/feed.xml" rel="self" type="application/atom+xml"/>
+  <updated>2026-09-24T00:00:00Z</updated>
+  <author>
+    <name>Matthew T. Kirby</name>
+    <email>matthew.kirby@driftlayer.org</email>
+  </author>
+  <rights>CC BY 4.0</rights>
+  <entry>
+    <title>A liability rule aimed at the wrong control: what the law offers when a delegate exceeds its instruction</title>
+    <id>https://driftlayer.org/papers/liability-rule/</id>
+    <link href="https://driftlayer.org/papers/liability-rule/" rel="alternate" type="text/html"/>
+    <updated>2026-09-24T00:00:00Z</updated>
+    <published>2026-09-24T00:00:00Z</published>
+    <category term="The Drift Layer, paper no. 5 — Version 1"/>
+    <summary type="text">A reading of Part 7 of the Payment Services Regulations 2017 and of the common-law ledger, applied to a payment executed by a software delegate under a standing instruction: which provisions can and cannot reach the case where the close is outside the description the payer gave.</summary>
+  </entry>
+  <entry>
+    <title>The Drift Layer: the clean, fast session that is not proof of authority</title>
+    <id>https://driftlayer.org/papers/the-drift-layer/</id>
+    <link href="https://driftlayer.org/papers/the-drift-layer/" rel="alternate" type="text/html"/>
+    <updated>2026-09-14T00:00:00Z</updated>
+    <published>2026-09-14T00:00:00Z</published>
+    <category term="The Drift Layer, paper no. 4 — Version 1"/>
+    <summary type="text">Merchant-side friction models lean on proxies for a human nervous system: hesitation, mouse movement, repeated clicks, typos, abandonment. What those signals are worth when there is no nervous system behind the session.</summary>
+  </entry>
+  <entry>
+    <title>Response to HM Treasury, Modernising Payment Services Regulation</title>
+    <id>https://driftlayer.org/papers/hmt-payment-services-consultation-response/</id>
+    <link href="https://driftlayer.org/papers/hmt-payment-services-consultation-response/" rel="alternate" type="text/html"/>
+    <updated>2026-09-13T00:00:00Z</updated>
+    <published>2026-09-13T00:00:00Z</published>
+    <category term="Consultation response"/>
+    <summary type="text">Submitted response to the HM Treasury consultation, answering questions 15 to 18 and 42.</summary>
+  </entry>
+  <entry>
+    <title>Four Measures for Mandate Conformance</title>
+    <id>https://driftlayer.org/papers/definitions/</id>
+    <link href="https://driftlayer.org/papers/definitions/" rel="alternate" type="text/html"/>
+    <updated>2026-09-10T00:00:00Z</updated>
+    <published>2026-09-10T00:00:00Z</published>
+    <category term="Definitions — Version 1"/>
+    <summary type="text">Evaluation coverage, mandate conformance, divergence incidence, and unauthorised continuation. Coverage is reported first. The definitions are free and citable, and stay that way.</summary>
+  </entry>
+  <entry>
+    <title>Response to the Bank of England, RPIB consultation on the design of future retail payments infrastructure</title>
+    <id>https://driftlayer.org/papers/rpib-consultation-response/</id>
+    <link href="https://driftlayer.org/papers/rpib-consultation-response/" rel="alternate" type="text/html"/>
+    <updated>2026-09-09T00:00:00Z</updated>
+    <published>2026-09-09T00:00:00Z</published>
+    <category term="Consultation response"/>
+    <summary type="text">Submitted response to the Bank of England consultation on the design of future retail payments infrastructure.</summary>
+  </entry>
+</feed>
