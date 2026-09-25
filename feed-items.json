@@ -2,15 +2,16 @@
   {
     "path": "papers/liability-rule/",
     "title": "A liability rule aimed at the wrong control: what the law offers when a delegate exceeds its instruction",
-    "date": "2026-09-24",
-    "kind": "The Drift Layer, paper no. 5 — Version 1",
-    "summary": "A reading of Part 7 of the Payment Services Regulations 2017 and of the common-law ledger, applied to a payment executed by a software delegate under a standing instruction: which provisions can and cannot reach the case where the close is outside the description the payer gave."
+    "date": "2026-09-25",
+    "kind": "The Drift Layer, paper no. 5 \u2014 Version 1",
+    "summary": "A reading of Part 7 of the Payment Services Regulations 2017 and of the common-law ledger, applied to a payment executed by a software delegate under a standing instruction: which provisions can and cannot reach the case where the close is outside the description the payer gave.",
+    "version_date": "2026-09-24"
   },
   {
     "path": "papers/the-drift-layer/",
     "title": "The Drift Layer: the clean, fast session that is not proof of authority",
     "date": "2026-09-14",
-    "kind": "The Drift Layer, paper no. 4 — Version 1",
+    "kind": "The Drift Layer, paper no. 4 \u2014 Version 1",
     "summary": "Merchant-side friction models lean on proxies for a human nervous system: hesitation, mouse movement, repeated clicks, typos, abandonment. What those signals are worth when there is no nervous system behind the session."
   },
   {
@@ -24,7 +25,7 @@
     "path": "papers/definitions/",
     "title": "Four Measures for Mandate Conformance",
     "date": "2026-09-10",
-    "kind": "Definitions — Version 1",
+    "kind": "Definitions \u2014 Version 1",
     "summary": "Evaluation coverage, mandate conformance, divergence incidence, and unauthorised continuation. Coverage is reported first. The definitions are free and citable, and stay that way."
   },
   {

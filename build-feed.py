@@ -4,7 +4,13 @@
 Adding a paper is one object at the top of feed-items.json, then rerun this.
 No dependencies outside the standard library.
 
-Times: the papers carry dates, not timestamps, so every entry is emitted at
+Dates: an entry's date is when the item became AVAILABLE. Atom <published>
+    and <updated> are availability, not the version date, which is what the
+    ratified date rule assigns to citation_publication_date and DC.date. Where a
+    paper's version date differs from its availability date, put it in
+    "version_date" and it rides on the category label.
+
+    Times: the papers carry dates, not timestamps, so every entry is emitted at
 T00:00:00Z. That is date granularity made explicit, not a measured time.
 """
 import json, pathlib, sys
@@ -44,7 +50,7 @@ for it in items:
             f'    <link href="{url}" rel="alternate" type="text/html"/>',
             f'    <updated>{ts(it["date"])}</updated>',
             f'    <published>{ts(it["date"])}</published>',
-            f'    <category term={quoteattr(it["kind"])}/>',
+            f'    <category term={quoteattr(it["kind"] + (", " + it["version_date"] if it.get("version_date") else ""))}/>',
             f'    <summary type="text">{escape(it["summary"])}</summary>',
             '  </entry>']
 
