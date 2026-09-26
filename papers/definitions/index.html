@@ -155,31 +155,31 @@
     <tr><th>First published</th><td>In <a href="/papers/rpib-consultation-response/">the RPIB consultation response</a>, 9 September 2026</td></tr>
   </table>
 
-  <h3>Abstract</h3>
+  <h3 id="abstract">Abstract</h3>
   <p>Four measures would make it answerable how often transactions executed by software stay inside the authority a person gave it. The response in which they were first published records that no public transaction-level conformance measure with a defined cross-rail denominator was found. They are set out here in the wording in which they were first published, in the author's response to the Bank of England's RPIB consultation of 9 September 2026, together with the ways each of them can be made to lie.</p>
 
-  <h3>Provenance</h3>
+  <h3 id="provenance">Provenance</h3>
   <p>These definitions were first published on 9 September 2026 in
   <a href="/papers/rpib-consultation-response/">the author's response to the RPIB consultation</a>,
   section Q17a. The wording below is that wording. Where any earlier working draft differs, the
   published text governs.</p>
 
-  <h3>The four measures</h3>
+  <h3 id="four-measures">The four measures</h3>
 
-  <h4>1 · Evaluation coverage</h4>
+  <h4 id="evaluation-coverage">1 · Evaluation coverage</h4>
   <div class="cite">Evaluation coverage: what share of agent-initiated transactions carry sufficient
   authority and evaluation evidence for conformance to be determinable at all.</div>
   <p>The evidence in question is a signed mandate, a canonical commitment over the transaction, the
   evaluation criteria as pinned when the mandate was signed, and evidence of how the transaction was
   initiated. Anything missing one of these is neither a pass nor a failure — it is unevaluable.</p>
 
-  <h4>2 · Mandate conformance</h4>
+  <h4 id="mandate-conformance">2 · Mandate conformance</h4>
   <div class="cite">Mandate conformance: among evaluable transactions, the share executing without an
   unapproved divergence from the governing authority.</div>
   <p>The denominator is evaluable, mandate-bound transactions — not all agent traffic. A rate computed
   over everything an agent did is a statement about instrumentation, not about conformance.</p>
 
-  <h4>3 · Divergence incidence</h4>
+  <h4 id="divergence-incidence">3 · Divergence incidence</h4>
   <div class="cite">Divergence incidence: how often execution encounters a material authority mismatch,
   and of what type — amount, payee, item or service meaning, quantity, cumulative budget, or
   freshness.</div>
@@ -190,7 +190,7 @@
   reporting; counts reported against their base carry more information and disclose the volume, which a
   reader needs in order to read the rate at all.</p>
 
-  <h4>4 · Unauthorised continuation</h4>
+  <h4 id="unauthorised-continuation">4 · Unauthorised continuation</h4>
   <div class="cite">Unauthorised continuation: the share of transaction value moving after an authority
   evaluation has failed, without a fresh user authorisation resolving the failure.</div>
   <p>This is one line inside a richer measure, the divergence resolution split: of those divergences,
@@ -201,18 +201,18 @@
   <p>Unauthorised continuation is the line in that split that matters: money moved after an evaluation
   failed, with no fresh human signature.</p>
 
-  <h3>Coverage is printed first</h3>
+  <h3 id="coverage-first">Coverage is printed first</h3>
   <div class="cite">Coverage must be reported first. Otherwise a high conformance rate can be
   manufactured by excluding transactions for which no evidence exists.</div>
   <p>A conformance rate published without its coverage figure beside it describes only the subset that
   happened to be observable.</p>
 
-  <h3>The word to use</h3>
+  <h3 id="the-word-to-use">The word to use</h3>
   <p><strong>Mandate</strong> conformance, never <em>authorisation conformance</em>. In payments,
   authorisation means issuer approval, so an authorisation conformance rate reads to that audience as a
   decline rate. The measure here is about the mandate, and the word has to say so.</p>
 
-  <h3>How these can be made to lie</h3>
+  <h3 id="how-these-lie">How these can be made to lie</h3>
   <p>None of these is unjukeable, and it is worth saying so plainly. A mandate written loosely enough
   passes everything. A transaction that was never evaluated looks clean and is a coverage miss, not a
   conformance hit. Changing the evaluation criteria between mandates silently changes what conformance
@@ -220,13 +220,13 @@
   A metric published with its own failure modes attached is a measurement vocabulary; one published
   without them is marketing.</p>
 
-  <h3>Implementing them</h3>
+  <h3 id="implementing">Implementing them</h3>
   <p>These definitions are free to implement and require no permission and no relationship with the
   author. The artefacts they are computed over — mandate, canonical commitment, divergence record,
   supersession record — have an open reference implementation at
   <a href="https://mandatepatch.org">mandatepatch.org</a>. Neither is a condition of the other.</p>
 
-  <h3>Cite as</h3>
+  <h3 id="cite-as">Cite as</h3>
   <div class="cite">Kirby, M. T. (2026) <em>Four Measures for Mandate Conformance</em>. Version 1, 10 September 2026. https://driftlayer.org/papers/definitions/</div>
   <pre>@misc{kirby2026measures,
   author = {Kirby, Matthew T.},
@@ -237,11 +237,11 @@
   note = {Version 1}
 }</pre>
 
-  <h3>Versions</h3>
+  <h3 id="versions">Versions</h3>
   <p><strong>Version 1</strong> — 10 September 2026. First publication.</p>
   <p class="note">Versions are never overwritten. See <a href="/errata/">versions and errata</a>.</p>
 
-  <h3>Disclosure</h3>
+  <h3 id="disclosure">Disclosure</h3>
   <p>A US provisional patent application (No.&nbsp;64/141,321) was filed on 26 August 2026 and precedes both the disclosure and the repository. The specification is published as <em>Mandate Lifecycle Extensions for Agentic Payment Credentials</em>, Technical Disclosure Commons, Defensive Publications Series no.&nbsp;11517 (August 2026), under CC BY 4.0. A reference implementation of the artefact layer is published at <a href="https://github.com/MandatePatch/mandatepatch">github.com/MandatePatch/mandatepatch</a> under Apache-2.0. The mechanisms described are one implementation of a more general requirement. Each licence governs what it names and nothing else.</p>
 
 
