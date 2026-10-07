@@ -35,11 +35,18 @@ Site text © 2026 Matthew T. Kirby; publications carry their own licence, stated
 
 ## Dates
 
-Published 10 September 2026. The publication date appears in four places and they must agree:
+Each publication carries its own date. The date on a landing page and the date on that
+publication's entry in `papers/index.html` must agree. Dates below are taken from the
+served pages, opened 7 October 2026, not invented.
 
-- `papers/rpib-consultation-response/index.html` — the "Published here" date and the version-1 line
-- `papers/definitions/index.html` — the Date row, the citation block, and the version-1 line
-- `papers/index.html` — the date on the definitions entry
+- `papers/rpib-consultation-response/index.html` — Date row: 9 September 2026 (submitted),
+  published here 10 September 2026. Version 1 line: 10 September 2026.
+- `papers/definitions/index.html` — Date row 10 September 2026. Version 1 line: 10 September 2026.
+- `papers/hmt-payment-services-consultation-response/index.html` — Date row: 13 September 2026
+  (submitted), published here 13 September 2026. Version 1 line: 13 September 2026.
+- `papers/the-drift-layer/index.html` — Date row 14 September 2026.
+- `papers/liability-rule/index.html` — Date row: Version 1, 24 September 2026, published
+  25 September 2026.
 
 The RPIB paper also carries two dates that are not the publication date and must not be changed with it:
 9 September 2026, when the response was submitted, and 11 September 2026, when the consultation closes.
