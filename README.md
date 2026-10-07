@@ -21,8 +21,8 @@ Site text © 2026 Matthew T. Kirby; publications carry their own licence, stated
   landing page. See `errata/index.html`.
 - The SHA-256 printed on a landing page must match the file it names. Check before merging any change to
   a PDF.
-- `papers/the-drift-layer/` is a placeholder: `noindex`, and not linked from the archive index. The entry
-  for it in `papers/index.html` is commented out and is uncommented at publication.
+- `papers/the-drift-layer/` is published. The archive index links it, `sitemap.xml` lists it,
+  and the page does not carry `noindex`.
 
 ## Deploying
 
