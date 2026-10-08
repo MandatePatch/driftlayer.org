@@ -73,6 +73,32 @@
   footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
     color:var(--mute); font-size:.9rem; }
   footer a { color:var(--mute); border-bottom-color:var(--rule); }
+
+  details.versions { margin: -.35rem 0 1.2rem; }
+  details.versions summary { cursor: pointer; color: var(--mute); font-size: .95rem; }
+  details.versions summary:hover { color: var(--fg); }
+  details.versions:not([open]) + .versions-body { display: none; }
+  details.versions[open] + .versions-body { display: block; margin: .55rem 0 1.2rem; }
+  details.versions[open] { margin-bottom: 0; }
+  @media print {
+    :root {
+      color-scheme: light;
+      --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+      --rule:#e2e4ee; --panel:#f7f7fb;
+    }
+    html, body { background:#fff; color:#0d1943; }
+    details.versions { display: block; margin: 0 0 .2rem; }
+    details.versions summary { list-style: none; }
+    details.versions summary::-webkit-details-marker { display: none; }
+    details.versions + .versions-body { display: block !important; margin: .35rem 0 1.2rem; }
+    h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid;
+                     break-inside: avoid; page-break-inside: avoid; }
+    .cite, pre, .meta-table tr { break-inside: avoid; page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+    .keep { break-inside: avoid; page-break-inside: avoid; }
+    h3 { margin-top: 2.2rem; }
+    h4 { margin-top: 1.7rem; }
+  }
 </style>
 <link rel="alternate" type="application/atom+xml" title="The Drift Layer" href="https://driftlayer.org/feed.xml">
 </head>

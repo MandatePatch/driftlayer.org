@@ -73,6 +73,32 @@
   footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
     color:var(--mute); font-size:.9rem; }
   footer a { color:var(--mute); border-bottom-color:var(--rule); }
+
+  details.versions { margin: -.35rem 0 1.2rem; }
+  details.versions summary { cursor: pointer; color: var(--mute); font-size: .95rem; }
+  details.versions summary:hover { color: var(--fg); }
+  details.versions:not([open]) + .versions-body { display: none; }
+  details.versions[open] + .versions-body { display: block; margin: .55rem 0 1.2rem; }
+  details.versions[open] { margin-bottom: 0; }
+  @media print {
+    :root {
+      color-scheme: light;
+      --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+      --rule:#e2e4ee; --panel:#f7f7fb;
+    }
+    html, body { background:#fff; color:#0d1943; }
+    details.versions { display: block; margin: 0 0 .2rem; }
+    details.versions summary { list-style: none; }
+    details.versions summary::-webkit-details-marker { display: none; }
+    details.versions + .versions-body { display: block !important; margin: .35rem 0 1.2rem; }
+    h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid;
+                     break-inside: avoid; page-break-inside: avoid; }
+    .cite, pre, .meta-table tr { break-inside: avoid; page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+    .keep { break-inside: avoid; page-break-inside: avoid; }
+    h3 { margin-top: 2.2rem; }
+    h4 { margin-top: 1.7rem; }
+  }
 </style>
 <link rel="alternate" type="application/atom+xml" title="The Drift Layer" href="https://driftlayer.org/feed.xml">
 </head>
@@ -103,11 +129,11 @@
   <h3>Abstract</h3>
   <p>A response to the Bank of England's Retail Payments Infrastructure Board consultation on the Design of the Future Retail Payments Infrastructure, addressing Questions 17, 17a and 18 on agentic payments and advanced delegation, with a short observation on Question 11 and a note on the Equality Act 2010. It argues that the published agent-payment protocols already recognise the moment at which execution and authority come apart, but share no transaction-scoped artefact recording what a human approved when brought back into the loop; that the payment rails cannot reconstruct the authority decision, because authority is evaluated on one plane while money moves on another; and that the core infrastructure requirement is narrower than any protocol choice — the messaging architecture should be able to carry stable, transaction-bound references to authority evidence, so that an executed agentic payment can later be joined to the authority and the evaluation that permitted it. Four measures are proposed for making mandate conformance answerable.</p>
 
-  <h3>The file</h3>
+  <h3 id="the-files">The files</h3>
   <table class="meta-table">
-    <tr><th>PDF</th><td><a href="/papers/rpib-consultation-response/rpib-consultation-response-v1.pdf">rpib-consultation-response-v1.pdf</a></td></tr>
-    <tr><th>Size</th><td>121,493 bytes · 8 pages · A4</td></tr>
-    <tr><th>SHA-256</th><td><code>96bb5224b2c419e4dc64885256a4ab97ffad255cd8d81117ec5c184e919a316c</code></td></tr>
+    <tr><th>Version 1</th><td><a href="/papers/rpib-consultation-response/rpib-consultation-response-v1.pdf">rpib-consultation-response-v1.pdf</a><br>
+      121,493 bytes · 8 pages · A4<br>
+      SHA-256 <code>96bb5224b2c419e4dc64885256a4ab97ffad255cd8d81117ec5c184e919a316c</code></td></tr>
   </table>
   <p class="note">The file published here is byte-identical to the one sent to the Bank on
   9 September 2026. The submission as filed gives the author's address as

@@ -73,6 +73,32 @@
   footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
     color:var(--mute); font-size:.9rem; }
   footer a { color:var(--mute); border-bottom-color:var(--rule); }
+
+  details.versions { margin: -.35rem 0 1.2rem; }
+  details.versions summary { cursor: pointer; color: var(--mute); font-size: .95rem; }
+  details.versions summary:hover { color: var(--fg); }
+  details.versions:not([open]) + .versions-body { display: none; }
+  details.versions[open] + .versions-body { display: block; margin: .55rem 0 1.2rem; }
+  details.versions[open] { margin-bottom: 0; }
+  @media print {
+    :root {
+      color-scheme: light;
+      --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+      --rule:#e2e4ee; --panel:#f7f7fb;
+    }
+    html, body { background:#fff; color:#0d1943; }
+    details.versions { display: block; margin: 0 0 .2rem; }
+    details.versions summary { list-style: none; }
+    details.versions summary::-webkit-details-marker { display: none; }
+    details.versions + .versions-body { display: block !important; margin: .35rem 0 1.2rem; }
+    h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid;
+                     break-inside: avoid; page-break-inside: avoid; }
+    .cite, pre, .meta-table tr { break-inside: avoid; page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+    .keep { break-inside: avoid; page-break-inside: avoid; }
+    h3 { margin-top: 2.2rem; }
+    h4 { margin-top: 1.7rem; }
+  }
 </style>
 <link rel="alternate" type="application/atom+xml" title="The Drift Layer" href="https://driftlayer.org/feed.xml">
 </head>
@@ -103,11 +129,11 @@
   <h3>Abstract</h3>
   <p>A response to HM Treasury's consultation <em>Modernising Payment Services Regulation</em> (July 2026), addressing Questions 15, 16, 17, 18 and 42, with reference to paragraph 4.12 and Question 21. It agrees with the consultation's statement that the Payment Services Regulations 2017 were designed before agentic AI, and locates the difficulty precisely: the framework assumes that the act of consenting and the act of paying are close together in time, and that what the payer consented to can be reconstructed from the transaction itself — and agentic payments break both assumptions. The consequence is that a transaction can now satisfy every machine-enforced condition of a delegated authority while still raising a genuine question whether the payer consented to the transaction ultimately executed. The regulations already contain the legal test for that question — regulation 67 on consent, regulation 75 on the burden of proof, regulation 76 on the refund obligation keyed to it — but the payment record may not contain the evidence needed to answer it. The recommendation is not that the Government mandate a mechanism. It is that regulation should require the question to be answerable, and countable: that the evidence be produced at the time authority is given, retained through the period in which a dispute may arise, and measured against definitions that are published, free and citable by anyone.</p>
 
-  <h3>The file</h3>
+  <h3 id="the-files">The files</h3>
   <table class="meta-table">
-    <tr><th>PDF</th><td><a href="/papers/hmt-payment-services-consultation-response/hmt-payment-services-consultation-response-v1.pdf">hmt-payment-services-consultation-response-v1.pdf</a></td></tr>
-    <tr><th>Size</th><td>97,702 bytes · 9 pages · A4</td></tr>
-    <tr><th>SHA-256</th><td><code>d67252e569a8114960f380abd2d0639c1279249e0be48ee1af0c97bfd679fcf9</code></td></tr>
+    <tr><th>Version 1</th><td><a href="/papers/hmt-payment-services-consultation-response/hmt-payment-services-consultation-response-v1.pdf">hmt-payment-services-consultation-response-v1.pdf</a><br>
+      97,702 bytes · 9 pages · A4<br>
+      SHA-256 <code>d67252e569a8114960f380abd2d0639c1279249e0be48ee1af0c97bfd679fcf9</code></td></tr>
   </table>
   <p class="note">The file published here is byte-identical to the one sent to HM Treasury on
   13 September 2026.</p>

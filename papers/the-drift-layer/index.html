@@ -75,6 +75,32 @@
   footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
     color:var(--mute); font-size:.9rem; }
   footer a { color:var(--mute); border-bottom-color:var(--rule); }
+
+  details.versions { margin: -.35rem 0 1.2rem; }
+  details.versions summary { cursor: pointer; color: var(--mute); font-size: .95rem; }
+  details.versions summary:hover { color: var(--fg); }
+  details.versions:not([open]) + .versions-body { display: none; }
+  details.versions[open] + .versions-body { display: block; margin: .55rem 0 1.2rem; }
+  details.versions[open] { margin-bottom: 0; }
+  @media print {
+    :root {
+      color-scheme: light;
+      --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+      --rule:#e2e4ee; --panel:#f7f7fb;
+    }
+    html, body { background:#fff; color:#0d1943; }
+    details.versions { display: block; margin: 0 0 .2rem; }
+    details.versions summary { list-style: none; }
+    details.versions summary::-webkit-details-marker { display: none; }
+    details.versions + .versions-body { display: block !important; margin: .35rem 0 1.2rem; }
+    h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid;
+                     break-inside: avoid; page-break-inside: avoid; }
+    .cite, pre, .meta-table tr { break-inside: avoid; page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+    .keep { break-inside: avoid; page-break-inside: avoid; }
+    h3 { margin-top: 2.2rem; }
+    h4 { margin-top: 1.7rem; }
+  }
 </style>
 <link rel="canonical" href="https://driftlayer.org/papers/the-drift-layer/">
 <link rel="alternate" type="application/atom+xml" title="The Drift Layer" href="https://driftlayer.org/feed.xml">
@@ -129,11 +155,11 @@
   <h3>Related</h3>
   <p><a href="/papers/rpib-consultation-response/">Response to the RPIB consultation on the Design of the Future Retail Payments Infrastructure</a>, 9 September 2026. <a href="/papers/hmt-payment-services-consultation-response/">Response to the HM Treasury consultation on Modernising Payment Services Regulation</a>, 13 September 2026. <a href="/papers/definitions/">Four Measures for Mandate Conformance</a>, 10 September 2026.</p>
 
-  <h3>The file</h3>
+  <h3 id="the-files">The files</h3>
   <table class="meta-table">
-    <tr><th>PDF</th><td><a href="/papers/the-drift-layer/the-drift-layer-v1.pdf">the-drift-layer-v1.pdf</a></td></tr>
-    <tr><th>Size</th><td>187,496 bytes · 14 pages · A4</td></tr>
-    <tr><th>SHA-256</th><td><code>bcea844617011ffbbbd9d373f7d6f978b0374d265780b420c22ea68a697b1170</code></td></tr>
+    <tr><th>Version 1</th><td><a href="/papers/the-drift-layer/the-drift-layer-v1.pdf">the-drift-layer-v1.pdf</a><br>
+      187,496 bytes · 14 pages · A4<br>
+      SHA-256 <code>bcea844617011ffbbbd9d373f7d6f978b0374d265780b420c22ea68a697b1170</code></td></tr>
   </table>
   <p class="note">Version 1 — 14 September 2026. This file is the fixed, citable copy. It is not overwritten when a later version is published.</p>
 
