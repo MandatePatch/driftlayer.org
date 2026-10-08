@@ -73,6 +73,13 @@
   footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
     color:var(--mute); font-size:.9rem; }
   footer a { color:var(--mute); border-bottom-color:var(--rule); }
+  details.versions { margin: -.35rem 0 1.2rem; }
+  details.versions summary { cursor: pointer; color: var(--mute); font-size: .95rem; }
+  details.versions summary:hover { color: var(--fg); }
+  details.versions .meta-table { margin: .55rem 0 0; }
+  @media print {
+    details.versions, details.versions > * { display: block !important; }
+  }
 
   @media print {
     h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid;
@@ -177,10 +184,15 @@
     <tr><th>Version 2</th><td><a href="/papers/definitions/definitions-v2.pdf">definitions-v2.pdf</a><br>
       136,362 bytes · 23 pages · A4<br>
       SHA-256 <code>6c5b60e027691a22fd298989da4295e218f700f729e3d8a8d4cefa0d271aff43</code></td></tr>
-    <tr><th>Version 1</th><td><a href="/papers/definitions/definitions-v1.pdf">definitions-v1.pdf</a> — superseded, retained<br>
-      58,642 bytes · 2 pages · A4<br>
-      SHA-256 <code>7fbe2eb644e0d1c017900e8c3666630bcfd5069dc7c3ace86c02d4a109c9fa48</code></td></tr>
   </table>
+  <details class="versions">
+    <summary>Previous versions (1) — version 1, 10 September 2026, superseded 8 October 2026</summary>
+    <table class="meta-table">
+      <tr><th>Version 1</th><td><a href="/papers/definitions/definitions-v1.pdf">definitions-v1.pdf</a> — superseded, retained<br>
+        58,642 bytes · 2 pages · A4<br>
+        SHA-256 <code>7fbe2eb644e0d1c017900e8c3666630bcfd5069dc7c3ace86c02d4a109c9fa48</code></td></tr>
+    </table>
+  </details>
 
   <h3 id="abstract">Abstract</h3>
   <p>Four measures would make it answerable how often transactions executed by software stay
