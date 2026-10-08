@@ -76,8 +76,9 @@
   details.versions { margin: -.35rem 0 1.2rem; }
   details.versions summary { cursor: pointer; color: var(--mute); font-size: .95rem; }
   details.versions summary:hover { color: var(--fg); }
-  details.versions .meta-table { margin: .55rem 0 0; }
-  .versions-print { display: none; }
+  details.versions:not([open]) + .versions-body { display: none; }
+  details.versions[open] + .versions-body { display: block; margin: .55rem 0 1.2rem; }
+  details.versions[open] { margin-bottom: 0; }
   @media print {
     :root {
       color-scheme: light;
@@ -85,9 +86,10 @@
       --rule:#e2e4ee; --panel:#f7f7fb;
     }
     html, body { background:#fff; color:#0d1943; }
-    details.versions { display: none !important; }
-    .versions-print { display: block; margin: 0 0 1.2rem; }
-    .versions-print .label { color: var(--mute); font-size: .95rem; margin: 0 0 .2rem; }
+    details.versions { display: block; margin: 0 0 .2rem; }
+    details.versions summary { list-style: none; }
+    details.versions summary::-webkit-details-marker { display: none; }
+    details.versions + .versions-body { display: block !important; margin: .35rem 0 1.2rem; }
     h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid;
                      break-inside: avoid; page-break-inside: avoid; }
     .cite, pre, .meta-table tr { break-inside: avoid; page-break-inside: avoid; }
@@ -174,20 +176,12 @@
   </table>
   <details class="versions">
     <summary>Previous versions (1) — version 1, 10 September 2026, superseded 8 October 2026</summary>
-    <table class="meta-table">
-      <tr><th>Version 1</th><td><a href="/papers/definitions/definitions-v1.pdf">definitions-v1.pdf</a> — superseded, retained<br>
-        58,642 bytes · 2 pages · A4<br>
-        SHA-256 <code>7fbe2eb644e0d1c017900e8c3666630bcfd5069dc7c3ace86c02d4a109c9fa48</code></td></tr>
-    </table>
   </details>
-  <div class="versions-print">
-    <p class="label">Previous versions (1) — version 1, 10 September 2026, superseded 8 October 2026</p>
-    <table class="meta-table">
-      <tr><th>Version 1</th><td><a href="/papers/definitions/definitions-v1.pdf">definitions-v1.pdf</a> — superseded, retained<br>
-        58,642 bytes · 2 pages · A4<br>
-        SHA-256 <code>7fbe2eb644e0d1c017900e8c3666630bcfd5069dc7c3ace86c02d4a109c9fa48</code></td></tr>
-    </table>
-  </div>
+  <table class="meta-table versions-body">
+    <tr><th>Version 1</th><td><a href="/papers/definitions/definitions-v1.pdf">definitions-v1.pdf</a> — superseded, retained<br>
+      58,642 bytes · 2 pages · A4<br>
+      SHA-256 <code>7fbe2eb644e0d1c017900e8c3666630bcfd5069dc7c3ace86c02d4a109c9fa48</code></td></tr>
+  </table>
 
   <h3 id="abstract">Abstract</h3>
   <p>Four measures would make it answerable how often transactions executed by software stay
