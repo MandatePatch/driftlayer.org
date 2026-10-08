@@ -4,13 +4,17 @@
 Adding a paper is one object at the top of feed-items.json, then rerun this.
 No dependencies outside the standard library.
 
-Dates: an entry's date is when this edition became available. Atom <updated>
-    is that date. Atom <published> is the same, unless the item has first_date,
-    in which case <published> is first_date and a revision moves <updated> only.
-    first_date is the day the item was first available; a Version 2 edit must not
-    overwrite it. The version date, which the ratified date rule assigns to
-    citation_publication_date and DC.date, is separate: where it differs from
-    availability, put it in "version_date" and it rides on the category label.
+Dates: the feed has two dates for availability and one label for the version,
+    and nothing else. A submission date, a version date and a re-issue date all
+    go on the label; only "first available here" and "last changed here" go in
+    the Atom fields.
+
+    date is when this edition became available here, and is emitted as <updated>.
+    <published> is the same, unless the item has first_date, in which case
+    <published> is first_date and a revision moves <updated> only. first_date is
+    the day the item was first available here; a Version 2 edit must not
+    overwrite it. version_date is the label: the submission, the version, or the
+    re-issue. It rides on the category term and is not an Atom date.
 
     Times: the papers carry dates, not timestamps, so every entry is emitted at
 T00:00:00Z. That is date granularity made explicit, not a measured time.
