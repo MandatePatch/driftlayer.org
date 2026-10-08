@@ -4,11 +4,13 @@
 Adding a paper is one object at the top of feed-items.json, then rerun this.
 No dependencies outside the standard library.
 
-Dates: an entry's date is when the item became AVAILABLE. Atom <published>
-    and <updated> are availability, not the version date, which is what the
-    ratified date rule assigns to citation_publication_date and DC.date. Where a
-    paper's version date differs from its availability date, put it in
-    "version_date" and it rides on the category label.
+Dates: an entry's date is when this edition became available. Atom <updated>
+    is that date. Atom <published> is the same, unless the item has first_date,
+    in which case <published> is first_date and a revision moves <updated> only.
+    first_date is the day the item was first available; a Version 2 edit must not
+    overwrite it. The version date, which the ratified date rule assigns to
+    citation_publication_date and DC.date, is separate: where it differs from
+    availability, put it in "version_date" and it rides on the category label.
 
     Times: the papers carry dates, not timestamps, so every entry is emitted at
 T00:00:00Z. That is date granularity made explicit, not a measured time.
@@ -49,7 +51,7 @@ for it in items:
             f'    <id>{url}</id>',
             f'    <link href="{url}" rel="alternate" type="text/html"/>',
             f'    <updated>{ts(it["date"])}</updated>',
-            f'    <published>{ts(it["date"])}</published>',
+            f'    <published>{ts(it.get("first_date") or it["date"])}</published>',
             f'    <category term={quoteattr(it["kind"] + (", " + it["version_date"] if it.get("version_date") else ""))}/>',
             f'    <summary type="text">{escape(it["summary"])}</summary>',
             '  </entry>']
