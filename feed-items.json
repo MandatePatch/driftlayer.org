@@ -39,8 +39,10 @@
   {
     "path": "papers/rpib-consultation-response/",
     "title": "Response to the Bank of England, RPIB consultation on the design of future retail payments infrastructure",
-    "date": "2026-09-09",
+    "date": "2026-09-10",
     "kind": "Consultation response",
-    "summary": "Submitted response to the Bank of England consultation on the design of future retail payments infrastructure."
+    "summary": "Submitted response to the Bank of England consultation on the design of future retail payments infrastructure.",
+    "first_date": "2026-09-10",
+    "version_date": "2026-09-09"
   }
 ]
