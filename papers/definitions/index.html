@@ -73,43 +73,60 @@
   footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
     color:var(--mute); font-size:.9rem; }
   footer a { color:var(--mute); border-bottom-color:var(--rule); }
+
+  @media print {
+    h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid;
+                     break-inside: avoid; page-break-inside: avoid; }
+    .cite, pre, .meta-table tr { break-inside: avoid; page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+    h3 { margin-top: 2.2rem; }
+    h4 { margin-top: 1.7rem; }
+  }
+
+  @media print {
+    h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid;
+                     break-inside: avoid; page-break-inside: avoid; }
+    .cite, pre, .meta-table tr { break-inside: avoid; page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+    .keep { break-inside: avoid; page-break-inside: avoid; }
+    h3 { margin-top: 2.2rem; }
+    h4 { margin-top: 1.7rem; }
+  }
+
+  @media print {
+    h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid;
+                     break-inside: avoid; page-break-inside: avoid; }
+    .cite, pre, .meta-table tr { break-inside: avoid; page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+    .keep { break-inside: avoid; page-break-inside: avoid; }
+    h3 { margin-top: 2.2rem; }
+    h4 { margin-top: 1.7rem; }
+  }
 </style>
-<!-- Head block for papers/definitions/index.html
-     Built 25 September 2026 from the page's OWN source (all four measure texts are the page's exact wording; the only change is a sentence-initial capital), retrieved at
-     raw.githubusercontent.com/MandatePatch/driftlayer.org/main/papers/definitions/index.html
-     (12,378 bytes). Title, date and description are the page's, not a
-     template's. The page currently carries ZERO citation_*, dc.* or dcterms.*
-     tags - only Open Graph - so this is the whole scholarly block, not an
-     addition to one.
-
-     NOTE this page has no PDF. There is no citation_pdf_url, and Scholar will
-     index the HTML directly. Its three hard requirements - title, full name of
-     the first author, year - are all present below. -->
-
 <link rel="canonical" href="https://driftlayer.org/papers/definitions/">
 <link rel="alternate" type="application/atom+xml" title="The Drift Layer" href="https://driftlayer.org/feed.xml">
-
 <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
 <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
 
 <!-- version date: what a citation to this page carries -->
 <meta name="citation_title" content="Four Measures for Mandate Conformance">
 <meta name="citation_author" content="Kirby, Matthew T.">
-<meta name="citation_publication_date" content="2026/09/10">
+<meta name="citation_publication_date" content="2026/10/08">
 <meta name="DC.title" content="Four Measures for Mandate Conformance">
 <meta name="DC.creator" content="Kirby, Matthew T.">
-<meta name="DC.date" content="2026-09-10">
+<meta name="DC.date" content="2026-10-08">
 <meta name="DC.rights" content="CC BY 4.0">
 <meta name="DC.identifier" content="https://driftlayer.org/papers/definitions/">
+<meta name="DCTERMS.hasVersion" content="https://driftlayer.org/papers/definitions/definitions-v2.pdf">
+<meta name="DCTERMS.replaces" content="https://driftlayer.org/papers/definitions/definitions-v1.pdf">
 
-<!-- push date: when it became publicly available.
-     The papers index dates this page 10 September 2026 and it has been live
-     since about then, so version and push coincide here. If a different live
-     date is ever established, ONLY these two and the JSON-LD move. -->
-<meta name="citation_online_date" content="2026/09/10">
-<meta name="DCTERMS.available" content="2026-09-10">
+<!-- push date: when Version 2 became publicly available. Version 1 became
+     available 2026-09-10 and is retained at its own file. -->
+<meta name="citation_online_date" content="2026/10/08">
+<meta name="DCTERMS.available" content="2026-10-08">
 
 <meta name="citation_abstract_html_url" content="https://driftlayer.org/papers/definitions/">
+<meta name="citation_pdf_url" content="https://driftlayer.org/papers/definitions/definitions-v2.pdf">
 <meta name="citation_language" content="en">
 <meta name="citation_publisher" content="The Drift Layer">
 
@@ -118,16 +135,16 @@
 "name":"Four Measures for Mandate Conformance",
 "description":"Evaluation coverage, mandate conformance, divergence incidence and unauthorised continuation - the measurement vocabulary for mandate conformance. Coverage is reported first.",
 "author":{"@type":"Person","name":"Matthew T. Kirby","email":"matthew.kirby@driftlayer.org"},
-"datePublished":"2026-09-10","version":"1",
+"datePublished":"2026-10-08","version":"2",
 "license":"https://creativecommons.org/licenses/by/4.0/",
 "url":"https://driftlayer.org/papers/definitions/",
 "isPartOf":{"@type":"Periodical","name":"The Drift Layer"},
 "inLanguage":"en",
 "hasDefinedTerm":[
- {"@type":"DefinedTerm","name":"Evaluation coverage","description":"What share of agent-initiated transactions carry sufficient authority and evaluation evidence for conformance to be determinable at all"},
- {"@type":"DefinedTerm","name":"Mandate conformance","description":"Among evaluable transactions, the share executing without an unapproved divergence from the governing authority"},
- {"@type":"DefinedTerm","name":"Divergence incidence","description":"How often execution encounters a material authority mismatch, and of what type — amount, payee, item or service meaning, quantity, cumulative budget, or freshness"},
- {"@type":"DefinedTerm","name":"Unauthorised continuation","description":"The share of transaction value moving after an authority evaluation has failed, without a fresh user authorisation resolving the failure"}
+ {"@type":"DefinedTerm","name":"Evaluation coverage","description":"How many agent-initiated transactions carry sufficient authority and evaluation evidence for conformance to be determinable at all. Reported as a count against all agent-initiated transactions, with the share beside it"},
+ {"@type":"DefinedTerm","name":"Mandate conformance","description":"Among evaluable transactions that executed, the share executing under an authorising artefact bound to the transaction before it executed"},
+ {"@type":"DefinedTerm","name":"Divergence incidence","description":"How often an evaluable transaction encounters a material authority mismatch, and of what type - amount, payee, item or service meaning, quantity, cumulative budget, or freshness"},
+ {"@type":"DefinedTerm","name":"Unauthorised continuation","description":"Transaction value moving after an authority evaluation has failed, with no authorising artefact bound to the transaction before it executed"}
 ]}
 </script>
 </head>
@@ -149,105 +166,748 @@
 
   <table class="meta-table">
     <tr><th>Author</th><td>Matthew T. Kirby, Independent Researcher, River Falls, Wisconsin, USA — <a href="mailto:matthew.kirby@driftlayer.org">matthew.kirby@driftlayer.org</a></td></tr>
-    <tr><th>Date</th><td>10 September 2026</td></tr>
-    <tr><th>Version</th><td>1</td></tr>
+    <tr><th>Date</th><td>8 October 2026</td></tr>
+    <tr><th>Version</th><td>2</td></tr>
     <tr><th>Licence</th><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td></tr>
     <tr><th>First published</th><td>In <a href="/papers/rpib-consultation-response/">the RPIB consultation response</a>, 9 September 2026</td></tr>
   </table>
 
-  <h3>The file</h3>
+  <h3 id="the-files">The files</h3>
   <table class="meta-table">
-    <tr><th>PDF</th><td><a href="/papers/definitions/definitions-v1.pdf">definitions-v1.pdf</a></td></tr>
-    <tr><th>Size</th><td>58,642 bytes · 2 pages · A4</td></tr>
-    <tr><th>SHA-256</th><td><code>7fbe2eb644e0d1c017900e8c3666630bcfd5069dc7c3ace86c02d4a109c9fa48</code></td></tr>
+    <tr><th>Version 2</th><td><a href="/papers/definitions/definitions-v2.pdf">definitions-v2.pdf</a><br>
+      136,362 bytes · 23 pages · A4<br>
+      SHA-256 <code>6c5b60e027691a22fd298989da4295e218f700f729e3d8a8d4cefa0d271aff43</code></td></tr>
+    <tr><th>Version 1</th><td><a href="/papers/definitions/definitions-v1.pdf">definitions-v1.pdf</a> — superseded, retained<br>
+      58,642 bytes · 2 pages · A4<br>
+      SHA-256 <code>7fbe2eb644e0d1c017900e8c3666630bcfd5069dc7c3ace86c02d4a109c9fa48</code></td></tr>
   </table>
 
   <h3 id="abstract">Abstract</h3>
-  <p>Four measures would make it answerable how often transactions executed by software stay inside the authority a person gave it. The response in which they were first published records that no public transaction-level conformance measure with a defined cross-rail denominator was found. They are set out here in the wording in which they were first published, in the author's response to the Bank of England's RPIB consultation of 9 September 2026, together with the ways each of them can be made to lie.</p>
+  <p>Four measures would make it answerable how often transactions executed by software stay
+  inside the authority a person gave it. The response in which they were first published records that no
+  public transaction-level conformance measure with a defined cross-rail denominator was found. This is the
+  second edition: it corrects defects found by computing the measures from the Version&nbsp;1 wording alone,
+  and sets out beside each measure the ways it can be made to lie. Version&nbsp;1 is retained at its own file
+  and remains citable.</p>
 
   <h3 id="provenance">Provenance</h3>
   <p>These definitions were first published on 9 September 2026 in
   <a href="/papers/rpib-consultation-response/">the author's response to the RPIB consultation</a>,
-  section Q17a. The wording below is that wording. Where any earlier working draft differs, the
-  published text governs.</p>
+  section Q17a, and published at this address as Version&nbsp;1 on 10 September 2026. This page carries
+  Version&nbsp;2. Version&nbsp;1 is not withdrawn: a figure computed against that edition remains checkable
+  against it.</p>
 
-  <h3 id="four-measures">The four measures</h3>
+<h3 id="terms">Terms</h3>
+<p>These four words carry weight in every measure below, and Version 1 used three of
+them in more than one sense.</p>
+<p><strong>Attempt</strong> — one presentation of a transaction to the authority gate, with its own
+evaluation.</p>
+<p><strong>Transaction</strong> — an attempt and its retries, taken together under the collapse key
+the evaluator declares. The collapse key defines the unit for all four measures,
+every base included.</p>
+<p><strong>Intended payment</strong> — what the agent was trying to pay, independent of how many
+attempts it took. An evaluator may collapse on the <strong>attempt group</strong> — the attempts a
+system records as retries of one another — or on the <strong>mandate and the intended
+payment</strong>. The second key needs a <strong>mandate identity</strong>, not merely evidence that a
+mandate exists: a record that shows a signed mandate was present cannot say whether two
+transactions were authorised by the same one. An evaluator whose record carries no
+mandate identity has one key available, and says so rather than substituting a proxy
+for the other. The two keys do not always agree, and the figures move with the choice,
+which is why the choice is declared rather than assumed. <em>Transaction</em> is what either
+key produces and is therefore not the name of one of them.</p>
+<p><strong>Execution</strong> — value moving. A transaction executed if any of its attempts
+executed. Where more than one attempt executed, each execution is a transaction of
+its own: two movements of money do not collapse into one.</p>
+<p><strong>The collapsed transaction takes the value and the ending of the attempt that
+executed</strong> — with one exception, the seventh ending of the resolution split, where that
+attempt executed cleanly and recorded no ending at all. Where no attempt executed it
+takes the value and the ending of the final attempt — both, not the ending alone, or retries at differing values leave the value
+unassigned.</p>
+<p><strong>Final means last by the attempt sequence the record assigns, where that sequence
+orders the attempts.</strong> Where it does not — <strong>absent, or tied</strong> — final is last by
+initiation time. A tie is named because it is the case a reader skips: the record did
+assign a sequence, so a rule written only for an absent one does not open, and the
+sequence does not order, so the first rule does not close. On a record whose groups are
+built by a key the sequence was not assigned against, ties are the normal case rather
+than the exception. The order of recording is not
+used: it is a property of the store rather than of the events, and two stores can
+disagree about it for the same transaction. <strong>Where neither orders the attempts, the
+record cannot say which was final</strong> — which the first measure's fourth element handles,
+because it is a question about initiation evidence and every ground for unevaluability
+lives there.</p>
+<p><strong>The attempt whose value and ending the transaction takes is its representative</strong>, and
+the five evidence elements of the first measure are read off that attempt. A group in
+which one well-recorded retry sits beside an executing attempt with no evidence is a
+group whose executed value cannot be evaluated, and reading the elements off <em>any</em>
+attempt would report it as covered. The cost is stated rather than corrected: evidence
+present elsewhere in the group is not credited, and an operator whose records are
+complete on every attempt but the one that executed reports a coverage miss.</p>
+<p><strong>Where a component produced more than one execution, each execution carries every
+class any attempt in that component encountered.</strong> The non-executed attempts are not
+divided between the executions, because nothing in the record says which retry belonged
+to which movement of money. So a class raised once on a declined attempt is counted
+against each execution that followed in that component. That is what a per-transaction
+measure means where the component is more than one transaction, and it is a known
+overcount: one raised divergence, two transactions carrying it. An evaluator reporting a
+dataset with multi-execution components says how many there were, so a reader can see
+how much of the incidence count rests on this rule.</p>
+<p><strong>It carries every divergence class any of its attempts encountered.</strong> Value and
+ending come from one attempt; the classes come from all of them. An evaluator that
+reads the classes off the executing attempt alone loses every divergence that was
+raised and then answered by retrying inside the mandate — which the third measure
+says in terms it counts. A transaction whose attempts encountered different classes is
+a transaction carrying more than one class, and is reported as one transaction against
+each.</p>
 
-  <h4 id="evaluation-coverage">1 · Evaluation coverage</h4>
-  <div class="cite">Evaluation coverage: what share of agent-initiated transactions carry sufficient
-  authority and evaluation evidence for conformance to be determinable at all.</div>
-  <p>The evidence in question is a signed mandate, a canonical commitment over the transaction, the
-  evaluation criteria as pinned when the mandate was signed, and evidence of how the transaction was
-  initiated. Anything missing one of these is neither a pass nor a failure — it is unevaluable.</p>
+<h3 id="four-measures">The four measures</h3>
+<h4 id="evaluation-coverage">1 · Evaluation coverage</h4>
+<div class="cite"><strong>Evaluation coverage:</strong> how many agent-initiated transactions carry sufficient
+authority and evaluation evidence for conformance to be determinable at all.
+Reported as a count against all agent-initiated transactions, with the share beside
+it.</div>
+<p>The evidence is five things: a signed mandate, and any amendment to it, each
+carrying the consumption record or time that orders it against execution; a
+canonical commitment over the transaction; the evaluation criteria as pinned when
+the mandate was signed, including the identifier of any model used to evaluate
+them; evidence of how the transaction was initiated, carrying the time it was
+initiated — <strong>and, where the record assigns no attempt sequence, or assigns one that
+does not order the attempts, initiation times that order them against one another</strong>, since without them the
+transaction has no final attempt and so no value or ending; and the time at which the
+transaction was evaluated. Anything missing one
+of these is neither a pass nor a failure — it is unevaluable. <strong>The five are read off
+the transaction's representative attempt</strong>, which the Terms name.</p>
+<p><strong>The ordering requirement binds on amendments that exist, and asks only whether the
+order can be read.</strong> Where a divergence was resolved by an amendment or a superseding
+mandate, that artefact carries either the gate's record of having consumed it or a
+binding time that can be compared against the execution time.</p>
+<p><strong>A consumed artefact establishes the order by what it is, not by a comparison.</strong> The
+gate consumed it in the course of admitting the transaction, so it existed and was
+bound before the transaction executed; there is no pair of times to compare and none is
+needed. <em>Before means before</em> governs the comparison where a comparison is what the
+record offers. Where the record offers a consumption record instead, the order is
+evidenced by the consumption and the rule is satisfied without one. An evaluator holding
+a consumption record and no binding time has an orderable artefact, and an evaluator
+holding neither has the present-and-unorderable case below. <strong>Which way the comparison falls is the second
+measure's question, not this one's.</strong> An amendment bound after the money moved is
+perfectly legible and perfectly non-conforming; reading it as unevaluable here would
+move a non-conforming transaction out of the population and raise conformance for it,
+which is the Version 1 error named below.</p>
+<p><strong>Two rules move a transaction out of the conformance population, and their effects
+look alike.</strong> The one just stated forbids it; the reporting rules permit it for an
+amendment the record shows was made before a reading and bound after it. The
+distinction is <strong>what the record can say, and when</strong>. The first case is a record that
+can never order the artefact; the second is a record that cannot order it <em>yet</em>, and
+says so — it carries a recording time, separate from the binding time, placing the
+amendment before the reading while the binding falls after. <strong>The second case is
+available only where that separate time exists.</strong> A record that keeps one time per
+amendment has only the first case, and an evaluator that reads a late binding as
+unorderable without a recording time to support it has performed the Version 1 error
+under a different name.</p>
+<p><strong>Say plainly what the permitted case costs, because it is the same arithmetic.</strong> It
+raises conformance at that reading by removing a transaction the next reading calls
+non-conforming. That is tolerable only because the removal is temporary and is
+evidenced: the record itself states that the amendment existed and that its order was
+not yet readable, and the following reading puts the transaction back. <strong>An evaluator
+reporting a reading in which this rule fired reports how many transactions it removed
+and what conformance would have been without it.</strong> A removal that is not reported is
+not distinguishable from the manoeuvre.</p>
+<p>Where a transaction carried no divergence, there is no amendment to order and the
+requirement is satisfied. Where a divergence carried no artefact at all, there is
+still nothing to order, and that transaction is <strong>non-conforming</strong> under the second
+measure rather than unevaluable here. <strong>A record that has an amendment and no time
+that can be ordered against execution, on a transaction that executed, is the one case
+this element fails on</strong> — the
+artefact is <strong>present and unorderable</strong>, and the measure declines to speak rather than
+guessing which side of the execution it fell. <strong>This is a property of the record as it
+stands at the reading, not of the record.</strong> A transaction can be present-and-unorderable
+at one date and orderable at a later one — the binding time arrives, and the reading
+that then has it can compare. What is fixed is the rule; what it returns moves with what
+the record holds, like every other figure here.</p>
+<p><strong>A consumption record is not a stamp, and an as-of reading cannot remove it.</strong> Every
+other element of the ordering evidence carries a time, so a reading computed from the
+record as it stood can censor it; a flag that says the gate consumed an artefact says
+nothing about when. An evaluator reading an earlier date therefore treats a consumption
+record as present at that date, which it may not have been. <strong>The reading cannot do
+better and the limit belongs with the others</strong>: a record that evidences order without
+evidencing time cannot be read as of a date on that element. Where it matters, the
+consumption record carries a time and the problem does not arise.</p>
+<p>It is not the same as an amendment that <strong>had not yet been made</strong> at the date being
+read, which the reporting rules cover, and the two must not be run together: one is a
+record that cannot say, the other is a record that had nothing to say yet.</p>
+<p><strong>Where no attempt executed, the artefact's presence alone satisfies this.</strong> There
+is nothing to order it against and no money for it to have preceded, so a mandate
+amended and then declined, or amended and still open, is evaluable on the
+amendment's presence. <strong>This is why the failure ground above is qualified to
+transactions that executed</strong>: without that qualification the two sentences both reach a
+non-executed transaction carrying an amendment and no orderable time, and say opposite
+things about it. The qualification is the same one the second measure's no-artefact rule
+carries, and for the same reason.</p>
+<p><strong>A mandate may be of scope one.</strong> A single approved transaction is a mandate of
+scope one, and an operator who approves each transaction individually is evaluable
+on the same terms as one who signs a standing authority. What these measures need is
+signed authority, a commitment, pinned criteria, initiation evidence and times, in
+whatever form the operator's system records them — not a particular artefact. An
+operator reports little coverage when its system records none of those, which is a
+statement about that system and not about the shape of its authority.</p>
+<p>A different evaluation model is a different evaluation, not an audit of the first.
+That is why the model identifier is part of the pinned criteria rather than a
+footnote to them.</p>
+<p><strong>This bears on what the evidence must record, not on the collapse key.</strong> Two attempts
+evaluated under different models are still retries of one intended payment and collapse
+into one transaction; the rule does not make them two. What it does is stop the second
+evaluation being read as a check on the first — the pinned criteria differ, so the two
+attempts were not evaluated against the same thing, and the transaction's representative
+carries the identifier of the model that evaluated <em>it</em>. <strong>An evaluator whose dataset
+contains transactions whose attempts ran under more than one model says how many</strong>, since
+a reader comparing two figures needs to know whether a change of model is inside the
+population.</p>
+<p><strong>The base is a count, not a value, and not executions only.</strong> Coverage describes
+whether the record can be read. A gate that blocks transactions it cannot evaluate
+produces unevaluable transactions that never execute; on a base of executed
+transactions those vanish and coverage rises, so that base reports the gate's policy
+rather than the readability of the record. A value-weighted base answers a different
+question again, and weights a measure that is about whether rows can be evaluated at
+all. Either may be published as a second figure with its base named. Neither is the
+measure, and the measure is the one printed first.</p>
+<p><strong>An unevaluable transaction stays in the denominator.</strong> It is not a failure and it
+is not an omission: it is the measure reporting what it cannot see. Removing it
+raises coverage without changing anything an operator did, and the entry on that
+manoeuvre is in the limits section below.</p>
+<p><strong>Coverage moves with transaction granularity.</strong> An operator who splits one
+transaction into two reports the same evidence over more rows. This is true of every
+count-denominated measure here and is not true of transaction value. It is stated
+rather than corrected, because the alternative — defining coverage by value — trades
+a known distortion for a worse one.</p>
+<p><strong>What a low coverage figure does not mean.</strong> An operator whose system records none
+of the five kinds of evidence — an unsigned standing instruction, a policy engine
+whose decisions leave no portable artefact — will report little coverage or none.
+That number says what evidence exists to evaluate. It does not say the operator's
+controls are weak, and it is not a finding against them. Where coverage is absent the
+measure is declining to speak, and a reader should not hear a verdict in the silence
+— in either direction.</p>
+<h4 id="mandate-conformance">2 · Mandate conformance</h4>
+<div class="cite"><strong>Mandate conformance:</strong> among evaluable transactions that executed, the share
+that either carried no divergence from the governing authority <strong>on the attempt that
+executed</strong>, or carried, for every divergence <strong>that attempt encountered</strong>, an
+authorising artefact bound to the transaction before it executed.</div>
+<p>Three things are pinned here, and each was underdetermined in Version 1.</p>
+<p><strong>The population</strong> is evaluable transactions <strong>that executed</strong> — not all agent
+traffic, and not all evaluable transactions. Non-executed transactions leave the
+population: no value moved, so there is nothing to have conformed.</p>
+<p><strong>A transaction that never diverged conforms</strong>, and the definition says so in its own
+sentence rather than leaving it to vacuous truth. Version 1 stated conformance wholly
+in terms of how divergences were handled, which a transaction with no divergences
+satisfies only because the condition has nothing to range over — a reader is entitled
+not to have to notice that, and an implementer reading it as <em>evaluate the divergent
+ones</em> gets a different measure.</p>
+<p><strong>The numerator turns on the order of two events, not on how a divergence was
+eventually labelled.</strong> A record that says a divergence ended in amendment does not say
+whether the amendment preceded execution or followed it, and a measure whose numerator
+rests on an unrecorded ordering is not a measure. So a conforming transaction is one
+whose divergences each carry an artefact binding the authorisation to that transaction
+before it executed.</p>
+<p><strong>Before means before.</strong> <em>No later than</em> is not <em>before</em>: equal times leave the order
+unestablished and the transaction fails the numerator, having been admitted by
+coverage. This is the one direction test in the document and it lives here.</p>
+<p><strong>Where the times are equal, the transaction is an unratified continuation.</strong> It is
+non-conforming, by the rule just stated; and the fourth measure's sub-count turns on
+<em>afterwards</em>, which an authorisation bound at the moment of execution is not. So it sits
+on the continuation line and not in the ratified sub-count. The category is stated
+because two independent readers of the previous edition placed it in the sub-count, and
+the text gave them nothing to read it off.</p>
+<p><strong>Conformance reads the divergences the executing attempt carried.</strong> A divergence
+raised on an attempt that did not execute — declined at the gate, and then retried
+within the mandate — is counted once per class by divergence incidence and does not
+fail this numerator: no unauthorised value moved on it, because no value moved on it
+at all.</p>
+<p><strong>The reverse case is already closed by the irreducibility rule</strong>: a decline recorded
+after an execution cannot undo the execution. The two rules run in opposite directions
+and meet in the middle — a divergence before a clean execution does not fail the
+numerator, and a decline after an execution does not rescue it.</p>
+<p><strong>The ending is the transaction's, not the attempt's.</strong> The resolution split records one
+ending per transaction — the executed attempt's, as the Terms say. A split taken per
+attempt instead would record the ending of the <em>attempt</em> on which the divergence was
+raised — a decline, or an open divergence, depending on what that attempt recorded; the
+transaction's ending is the clean execution's, and the split names that ending —
+<em>answered within the mandate</em> — as its own line. The two are
+different figures, and a split taken per attempt reports the first under the second's
+name.</p>
+<p><strong>The seventh ending is the one case where the transaction's ending is not a word the
+executing attempt recorded.</strong> That attempt executed cleanly and recorded no divergence,
+so it recorded no ending; the ending belongs to the transaction, which diverged, and is
+determined by its shape rather than read off a cell. <strong>This makes the ending computable
+only after the collapse key has been applied</strong>, because whether the transaction diverged
+at all is a question about the union of its attempts. An evaluator that assigns endings
+attempt by attempt and then groups cannot produce this line, and will report the
+transactions it belongs to as carrying no ending — which is the gap this revision
+closes, arriving in the implementation instead of the text.</p>
+<p><strong>The split's total and the divergence count are not the same number, and an earlier
+edition of this text said they were.</strong> One transaction encountering two classes is one
+ending and two class incidences. <strong>The two totals coincide only where no transaction
+carries more than one class</strong>, which is a property of a dataset and not of these
+definitions.</p>
+<p><strong>This revision removed the second reason they differ, and the condition is narrower for
+it.</strong> The previous edition gave two: a transaction carrying two classes, and a
+transaction whose divergence was answered by retrying inside the mandate, which was
+counted by incidence and had no line in a six-ending split. The seventh ending gives that
+transaction a line, so the split now covers every divergence the third measure counts and
+only multiple classes break the equality. <strong>A multi-execution component does not add a
+second route, although it looks as though it should</strong>: the sibling's class attaches to
+every execution, and every execution is a transaction with an ending of its own, so the
+component contributes one ending and one incidence per execution. It breaks the equality
+only when that attachment leaves an execution carrying more than one class, which is the
+condition already stated. An evaluator reporting both reports them as
+what they are: endings per transaction, and class incidences per transaction per class.</p>
+<p><strong>A superseding mandate is such an artefact.</strong> Supersession is an amendment of
+whole-mandate scope and takes the same ordering evidence. Scoring a re-signed
+mandate below an amended one, for the same divergence resolved the same way, would
+write a preference for one mechanism into a measure that claims to measure and not
+judge. What that costs is in the limits section: these measures cannot tell a narrow
+delta from a broad re-authorisation, and the second is worse for the principal.</p>
+<p><strong>A divergence with no artefact at all, on a transaction that executed, is
+non-conforming</strong>, not unevaluable. It stays in the population, fails the numerator, and
+is counted by the fourth measure. <strong>The qualification is load-bearing</strong>: this measure's
+population is evaluable transactions that executed, and a divergence with no artefact on
+an attempt that never executed has no numerator to fail. Those transactions are counted
+by divergence incidence and carry an ending in the split; they are not non-conforming,
+because nothing moved for an artefact to have failed to authorise. A definition that moved it to coverage would report perfect
+conformance on a dataset in which value moved without authorisation.</p>
+<p><strong>This measure adds no ground of its own for calling a transaction unevaluable.</strong>
+Every ground is in the first measure, including the ordering one; this measure reads
+what coverage admitted. That is what lets the three parts below sum to the <strong>evaluable</strong>
+count
+coverage reports, and it keeps the word meaning one thing.</p>
+<p><strong>The parts that sum.</strong> Evaluable transactions divide exactly three ways: those that
+executed, those that did not execute and diverged, and those that did not execute and
+did not diverge. Divergence incidence is not one of the three and must not be added
+to them — it counts divergences, including divergences in transactions that executed,
+so adding it to the executed count double-counts every one of those.</p>
+<p>A rate computed over everything an agent did is a statement about instrumentation,
+not about conformance.</p>
+<h4 id="divergence-incidence">3 · Divergence incidence</h4>
+<div class="cite"><strong>Divergence incidence:</strong> how often an evaluable transaction encounters a material
+authority mismatch, and of what type — amount, payee, item or service meaning,
+quantity, cumulative budget, or freshness. Reported as counts over evaluable
+transactions.</div>
+<p>The definition and the base name the same population. Version 1's wording said
+<em>how often execution encounters</em>, which selects the executed transactions and
+contradicts the base rule two sentences later; the two readings differ by every
+divergence that never executed.</p>
+<p>Those six classes are a design taxonomy for a scoreboard, not a census of error codes
+already shipped one-to-one in ACP, UCP, AP2 or Open Banking v4.0.1. Live codes name a
+mismatch or a failed control; they do not yet publish this split.</p>
+<p>Transactions <strong>declined at the gate</strong> stay in this base although they leave the
+conformance population. A divergence that the gate declined is a divergence that
+happened, so it belongs in the measure that counts divergences and not in the one that
+asks what executed conformed.</p>
+<p><strong>A record that leaves both the divergence class and the evaluation outcome empty has
+not said there was no divergence.</strong> It has said nothing, and the two readings — <em>no
+mismatch was found</em> and <em>no evaluation was recorded</em> — put the transaction in different
+places: the first in this measure's base as a non-divergent transaction, the second
+outside the evaluable population altogether. <strong>An evaluator states which reading it
+applied</strong>, because on a record where that pair is common the choice moves coverage and
+incidence at once, and a reader cannot recover it from the figures.</p>
+<p><strong>A decline is not by itself a divergence.</strong> A transaction can fail to execute for
+reasons that have nothing to do with authority — an issuer decline, a network failure,
+an abandoned basket — and those are not divergences and do not enter this measure. What
+counts here is the divergence, not the non-execution.</p>
+<p><strong>An attempt and its retries are one transaction, in every measure.</strong> Collapsing only
+the divergence count would leave each retry adding one to the base and nothing to the
+numerator, so incidence would fall for free — the retry inflation running backwards.
+An evaluator states the key it collapses on and applies it to every figure it
+publishes.</p>
+<p><strong>Execution is irreducible under collapse.</strong> Without this, an evaluator chooses, and
+the choice that pays is to record a declined attempt after an execution that carried
+no fresh authorisation — which would take a continuation out of the conformance
+population and out of the fourth measure at once, although the money moved. <strong>Money
+that moved cannot be collapsed away by what happens after it</strong>, which is what the
+fourth measure already says in its own terms.</p>
+<p>No scaling denominator is prescribed. A rate per thousand borrows its unit from card
+fraud reporting; counts reported against their base carry more information and
+disclose the volume, which a reader needs in order to read the rate at all.</p>
+<h4 id="unauthorised-continuation">4 · Unauthorised continuation</h4>
+<div class="cite"><strong>Unauthorised continuation:</strong> transaction value moving after an authority
+evaluation has failed, without a fresh authorisation bound to that transaction
+<strong>before it executed</strong>. The test is the order of those two events, not the word the
+record later used for the divergence: <strong>a continuation afterwards ratified remains a
+continuation.</strong> Reported as two shares, each with its base named — a <strong>population
+rate</strong> over evaluable transaction value that executed, and a <strong>share within the
+divergence resolution split</strong> over that split's total value — with the count and
+value of the ratified continuations beside them.</div>
+<p>The two answer different questions and neither substitutes for the other. They use
+different bases and are not comparable; both are reported, each naming its own.</p>
+<p><strong>The in-split base is the split's own total, which is the value of every divergent
+evaluable transaction.</strong> The split carries value for declined, expired, open and
+answered-within-the-mandate endings as well as executed ones, so a share <em>within</em> the
+split has the split's whole value as its denominator — and because the seven endings
+partition the population, that total is stated once and not assembled.</p>
+<p><strong>Two other readings are available from the previous edition's wording and are not this
+measure.</strong> A denominator restricted to the transactions carrying one of the six endings
+the previous edition listed drops the answered-within-the-mandate value and raises the
+share. A denominator of every transaction carrying an ending, evaluable or not, admits
+value the population excludes and lowers it. Both are computable, both were reached by
+independent readers of the previous edition, and neither is this figure. <strong>A share over
+executed divergent value is a fourth quantity</strong>, which may be reported as a further line
+with its base named and must not be published under this one's name.</p>
+<p><strong>That base carries nominal value, and the share is not comparable across operators
+because of it.</strong> Value on a transaction that never executed is a figure the record
+states and nothing tests: no money moved. Raising it lowers this share without
+changing conduct, conformance, coverage, incidence, the population rate or the
+continuation value itself. The share is reported because the split is where the
+endings live, and it is read against the split it came from — not against another
+operator's.</p>
+<p><strong>What this edition rules out, said plainly so an implementer can check.</strong> A reading
+that takes the ending from the record's own word — counting a retrospectively amended
+execution on the <em>amended</em> line — produces a smaller continuation figure from the same
+events. It is excluded, because the word is what the measure is testing and not what
+decides it. A figure below this one, computed from the same events, is either that
+column reading, <strong>a different reading of <em>before</em></strong>, or a different base — a different collapse
+key, a different as-of date, or a split whose nominal value has grown. <strong>The evaluator
+says which.</strong> The second route is the one this list previously omitted: reading the
+ordering comparison as <em>no later than</em> rather than <em>before</em> moves every
+authorisation bound at the moment of execution out of the numerator and produces a
+lower figure from the same events, the same base, the same key, the same date and the
+same nominal value. The second measure names that reading and forbids it three pages
+above; a completeness list that leaves it out invites exactly the substitution it was
+written to expose.</p>
+<p><strong>Of the continuations, how many were afterwards ratified, with value.</strong> A
+continuation that is later authorised is two facts — value moved without
+authorisation, and authority was signed afterwards — and both are reported rather
+than collapsed into either one. The sub-count is not a discount: the transaction stays
+in the continuation line and in the numerator. It is there because an operator that
+goes back for a signature has done something a reader should be able to see, and
+because hiding it inside the amended line is the manoeuvre this measure exists to
+catch.</p>
+<p>This measure is one line inside a richer measure, the <strong>divergence resolution
+split</strong>, taken over <strong>divergences on evaluable transactions</strong> — the same population
+divergence incidence counts, named here rather than carried across from there: of
+those divergences, how each ended — resolved by a signed amendment, resolved by
+superseding the mandate, <strong>answered within the mandate</strong>, declined, expired unresolved,
+still open, or continued without a fresh authorisation — each carrying transaction
+value.</p>
+<p><strong>The seventh ending is new in this edition, and it closes a gap the previous one
+left.</strong> <em>Answered within the mandate</em> is the ending of a transaction whose divergence was
+raised on an attempt that did not execute and was then resolved by retrying inside the
+authority already signed — nothing was amended, nothing was declined, and the money
+moved on a clean execution. The previous edition said in terms that such a transaction's
+ending is the clean execution's, listed six endings, and left that ending off the list.
+The split therefore could not cover the population it was defined over: a divergence
+counted by incidence sat on no line, and its value sat in no column.</p>
+<p><strong>The ending of a non-executed transaction is the word its final attempt recorded</strong>, and
+that word is one of the seven: a divergence that was declined is declined, one amended
+without execution is amended, and one still unresolved is open or expired on the rule
+below. The split does not ask whether value moved; it asks how the divergence ended, and
+a transaction can end in an amendment without ever executing. Stated because the
+partition is asserted and the assignment it rests on was not.</p>
+<p><strong>With the seventh line the split is a partition.</strong> Every divergence on an evaluable
+transaction carries exactly one of the seven, the counts sum to the divergence count
+over transactions, and the values sum to the divergent evaluable population's value.
+That is what makes the phrase in the next paragraph have one reading.</p>
+<p><strong>Expired is reportable only where a time-out is published.</strong> No profile currently
+defines one for an unresolved divergence. An evaluator that moves a divergence from
+<em>open</em> to <em>expired</em> has applied a time-out of its own, which is the same invention as
+folding an open case into a decline. So a reported <em>expired</em> names the governing
+profile's time-out; where no profile publishes one, the divergence stays open.</p>
+<p><strong>What a published profile time-out is, so that an evaluator can tell whether it has
+one.</strong> It names the profile it belongs to, the version of that profile, where the
+profile was published, and the date the time-out took effect. <strong>A bare duration carried
+in a dataset is not one.</strong> A number with no profile behind it cannot be checked by a
+reader, cannot be shown to have been in force when the divergence was raised, and cannot
+be distinguished from the evaluator's own choice. <strong>What follows for an evaluator
+holding only such a number is below, and this edition does not settle it.</strong></p>
+<p><strong>This rule runs in both directions and only one of them is an invention.</strong> Moving a
+divergence from <em>open</em> to <em>expired</em> without a published time-out invents one. Moving one
+the record labelled <em>expired</em> to <em>open</em>, where no profile publishes a time-out, applies
+the rule as written and is required. An evaluator doing the second is correcting a label
+the record was not entitled to; an evaluator doing the first is writing a judgement into
+a measure. <strong>This rule moves value between two non-executed endings and therefore
+changes the split alone</strong>: conformance, coverage and incidence do not move with it, and
+an evaluator applying it should say so rather than leave a reader to wonder what else
+shifted.</p>
+<p><strong>What this edition does NOT settle.</strong> Whether a duration a dataset carries without a
+profile behind it may stand in for a published time-out <strong>is an open question and this
+edition does not answer it.</strong> The definition above says what a published profile
+time-out is; it does not rule on what an evaluator holding only a number should
+conclude, because that is a judgement about what evidence a conformance figure may rest
+on and not a drafting choice. <strong>So an evaluator holding only a number reports both
+readings and names the one it used</strong>: the split with the number applied, and the split
+with every divergence the record called <em>expired</em> reported open. Both are computable
+from the same record, they differ only on two lines, and a reader given one and not the
+other cannot tell which was chosen.</p>
+<p>That is the same treatment this document gives any question it has not closed. <strong>It is
+recorded as open rather than left to be inferred from a figure</strong>, and an evaluator that
+publishes one reading without the other has answered it silently. <strong>The two readings
+differ on the expired and open lines and nowhere else</strong>, so the other five lines of the
+split and all four measures are the same under both.</p>
+<p><strong>Open divergences are reported with their age at the as-of date</strong>, measured from the
+evaluation that raised the divergence — the time the fifth evidence element records, for
+the attempt the divergence was raised on. <strong>Where the transaction's divergence was
+raised on more than one attempt the origin is the earliest of those evaluations</strong>.</p>
+<p><strong>This is one of two figures read across a transaction's attempts rather than off its
+representative</strong> — the other is the set of divergence classes, which the Terms take from
+all of them — and the exception is stated because the first measure's evidence rule is the
+opposite. The reason is that age measures how long a thing has been unresolved, and the
+representative of a non-executed transaction is its <strong>final</strong> attempt — the latest
+evaluation, which would report the shortest age for the longest-standing divergence. An
+evaluator reading the
+representative's evaluation time reads the final attempt's on a transaction that never
+executed, which is the latest and not the earliest. Initiation is not the origin: a divergence does not exist until
+an evaluation finds it, and dating age from initiation would age a divergence over a
+period in which there was nothing to resolve. The latest failed retry is not the origin
+either: it would reset the clock every time an agent tried again, so an unresolved
+divergence could be kept young by retrying.</p>
+<p>That measures the thing a time-out would judge without inventing one, and when a profile
+does publish a time-out, <em>expired</em> becomes a threshold on a distribution already being
+reported.</p>
+<p>The open bucket is not bookkeeping fussiness: it is where a divergence waits when
+nothing has decided it, and collapsing it invents a result.</p>
 
-  <h4 id="mandate-conformance">2 · Mandate conformance</h4>
-  <div class="cite">Mandate conformance: among evaluable transactions, the share executing without an
-  unapproved divergence from the governing authority.</div>
-  <p>The denominator is evaluable, mandate-bound transactions — not all agent traffic. A rate computed
-  over everything an agent did is a statement about instrumentation, not about conformance.</p>
-
-  <h4 id="divergence-incidence">3 · Divergence incidence</h4>
-  <div class="cite">Divergence incidence: how often execution encounters a material authority mismatch,
-  and of what type — amount, payee, item or service meaning, quantity, cumulative budget, or
-  freshness.</div>
-  <p>Those six classes are a design taxonomy for a scoreboard, not a census of error codes already
-  shipped one-to-one in ACP, UCP, AP2 or Open Banking v4.0.1. Live codes name a mismatch or a failed
-  control; they do not yet publish this split.</p>
-  <p>No scaling denominator is prescribed here. A rate per thousand borrows its unit from card fraud
-  reporting; counts reported against their base carry more information and disclose the volume, which a
-  reader needs in order to read the rate at all.</p>
-
-  <h4 id="unauthorised-continuation">4 · Unauthorised continuation</h4>
-  <div class="cite">Unauthorised continuation: the share of transaction value moving after an authority
-  evaluation has failed, without a fresh user authorisation resolving the failure.</div>
-  <p>This is one line inside a richer measure, the divergence resolution split: of those divergences,
-  how each ended — resolved by a signed user amendment, resolved by superseding the mandate, declined,
-  expired unresolved, or still open — each carrying transaction value. The open bucket is not
-  bookkeeping fussiness: no published profile defines a time-out for an unresolved divergence, so
-  folding open cases into declines invents a result.</p>
-  <p>Unauthorised continuation is the line in that split that matters: money moved after an evaluation
-  failed, with no fresh human signature.</p>
-
-  <h3 id="coverage-first">Coverage is printed first</h3>
-  <div class="cite">Coverage must be reported first. Otherwise a high conformance rate can be
-  manufactured by excluding transactions for which no evidence exists.</div>
-  <p>A conformance rate published without its coverage figure beside it describes only the subset that
-  happened to be observable.</p>
-
-  <h3 id="the-word-to-use">The word to use</h3>
-  <p><strong>Mandate</strong> conformance, never <em>authorisation conformance</em>. In payments,
-  authorisation means issuer approval, so an authorisation conformance rate reads to that audience as a
-  decline rate. The measure here is about the mandate, and the word has to say so.</p>
-
-  <h3 id="how-these-lie">How these can be made to lie</h3>
-  <p>None of these is unjukeable, and it is worth saying so plainly. A mandate written loosely enough
-  passes everything. A transaction that was never evaluated looks clean and is a coverage miss, not a
-  conformance hit. Changing the evaluation criteria between mandates silently changes what conformance
-  means. Chargeback files are a biased sample of pain and must never be published as a conformance rate.
-  A metric published with its own failure modes attached is a measurement vocabulary; one published
-  without them is marketing.</p>
+<h3 id="reporting-rules">Reporting rules</h3>
+<p id="coverage-first"><strong>Coverage is printed first.</strong> Otherwise a high conformance rate can be manufactured
+by excluding transactions for which no evidence exists. A conformance rate published
+without its coverage figure beside it describes only the subset that happened to be
+observable.</p>
+<p><strong>Conformance is printed with divergence incidence beside it.</strong> Conformance alone
+does not show how often the agent was stopped. A gate that flags liberally reports
+high conformance and high incidence together; only the pair is legible.</p>
+<p><strong>Every reported figure names the date it was computed, and is computed from the
+record as it stood on that date.</strong> A figure that selects the transactions existing at a
+date and then scores them with everything the record later acquired is not a reading of
+that date.</p>
+<p><strong>What a later stamp carries with it.</strong> A stamp dated after a reading is not yet
+evidence at that reading, and <strong>whatever only that stamp evidenced is not yet in the
+record</strong>. So an execution time after the reading means the transaction had not
+executed; an evaluation time after it means no evaluation had happened, and therefore
+no outcome, no class and no ending; and an amendment whose only evidence is its binding
+time, dated after the reading, <strong>had not yet been made</strong> — the divergence stands
+unauthorised at that reading and the later binding makes it a ratified continuation at
+the next one.</p>
+<p><strong>This is about what the record held, not about what exists.</strong> An amendment the record
+shows was made before the reading and bound after it is a different case: present, and
+not yet orderable. Where a record can show that — it needs a recording time separate
+from the binding time, which not every record keeps — the transaction is unevaluable at
+that reading rather than non-conforming, because the artefact exists and its order does
+not.</p>
+<p><strong>A transaction exists at a reading from its initiation.</strong> That is the event element
+four already names, which is why element four carries a time. Dating existence from the
+evaluation time instead would remove from coverage's denominator exactly the
+transactions whose missing evaluation the measure exists to report; the entry on that
+is in the limits section.</p>
+<p><strong>A transaction whose initiation time is missing exists from the earliest record of
+it</strong>, and is unevaluable. Both halves are needed: without the first, the transactions
+that cannot be dated are the ones a reading may quietly drop, which is the same removal
+by another door; without the second, a missing element reads as a pass.</p>
+<p><strong>This covers a transaction with no initiation time at all, which is a different case
+from one initiated after the reading.</strong> A reading that drops the transactions whose
+initiation time falls after it, and keeps the ones that have no initiation time, has
+applied half the rule: the earliest record of such a transaction can itself fall after
+the reading, and keeping it puts in the denominator a transaction that did not yet
+exist. The fallback is stated as its own sentence because it is the clause a reader applying
+the first half will skip.</p>
+<p>Two things move between readings, and the rule exists for both: a divergence open at
+one reading can be resolved by the next, and a transaction initiated before a reading
+can be evaluated after it — entering coverage's denominator at the first and its
+numerator at the second. Time alone reclassifies nothing; events between readings do.</p>
+<h3 id="the-word-to-use">The word to use</h3>
+<p>Mandate conformance, never <em>authorisation conformance</em>. In payments, authorisation
+means issuer approval, so an authorisation conformance rate reads to that audience as
+a decline rate. The measure here is about the mandate, and the word has to say so.</p>
+<h3 id="how-these-lie">How these can be made to lie</h3>
+<p>None of these is unjukeable, and it is worth saying so plainly.</p>
+<p>A mandate written loosely enough passes everything. A transaction that was never
+evaluated looks clean and is a coverage miss, not a conformance hit. Changing the
+evaluation criteria between mandates silently changes what conformance means.
+Chargeback files are a biased sample of pain and must never be published as a
+conformance rate.</p>
+<p><strong>Declining more raises conformance.</strong> With non-executed transactions outside the
+conformance population, an operator who converts an executed non-conformance into a
+decline removes a transaction from the base while the numerator is unchanged. The
+rate rises whenever the conforming count is above zero. This is why divergence
+incidence is printed beside conformance and keeps declines in its base: the behaviour
+stays visible in the measure that counts them.</p>
+<p><strong>Splitting transactions conflates counts with count-denominated shares.</strong> When one
+transaction becomes two, the counts all grow; what happens to a <em>rate</em> depends on
+whether its numerator grows with its denominator. <strong>Which way any given rate moves
+depends on which transactions were split</strong>, and two earlier editions of this text got
+that wrong in opposite directions — first claiming splitting raises the count
+measures, then claiming that splitting conforming transactions lowers divergence
+incidence. Splitting an <em>authorised divergent</em> transaction raises incidence, because a
+transaction can be both divergent and conforming; conforming is not the same as
+non-divergent, and a sentence that treats them as the same is describing a dataset
+rather than a rule.</p>
+<p>What survives as a reading instruction, and nothing more: <strong>a sharp movement in the
+three count measures with none in the two value shares is what a change of granularity
+looks like.</strong></p>
+<p><strong>Dropping the unevaluable transactions raises coverage.</strong> The numerator is unchanged
+and the denominator shrinks by exactly the rows the measure exists to report, so
+coverage rises toward the limit of reporting only what was already observable. An
+unevaluable transaction is not a failure and its removal is not a tidy-up.</p>
+<p><strong>Dating existence from the evaluation time does the same thing, deniably.</strong> It is
+the same removal reached through the as-of rule, where it reads as a convention
+choice rather than an omission — which is why the reporting rules name initiation as
+the dating event and leave no convention to choose.</p>
+<p><strong>Adding an unorderable artefact removes a transaction as surely as removing a legible
+one.</strong> Record an amendment against a non-conforming execution and give it no ordering
+evidence at all — no consumption record, no binding time — and the first measure's
+failure ground calls the transaction unevaluable. It leaves the conformance population
+without anything being blanked, and the ending the record previously carried is
+replaced by one that reads as resolution. This is a different route from the suppression
+entry below: that one takes evidence away, this one puts an artefact in, and an operator
+doing it has added a record rather than destroyed one.</p>
+<p><strong>The tell is the same pair, and it moves further here.</strong> Conformance rises and coverage
+falls together, which the entries below already say to read as one line. An operator
+whose non-conforming executions all acquire amendments with no orderable time reports
+better conformance on a smaller evaluable population, and the second number is the one
+that says what happened. <strong>No wording closes this</strong>: the failure ground has to exist,
+because a record that cannot order an artefact genuinely cannot say which side of the
+execution it fell, and a measure that guessed instead would be the Version 1 error. It is
+named here so that a reader meeting the pair knows there are two ways to produce it.</p>
+<p><strong>Suppressing the evidence on a transaction runs the other way, and pays.</strong> Blank the
+authority evidence on transactions that would otherwise be non-conforming and they
+leave the evaluable population: conformance rises, unauthorised continuation falls,
+and coverage drops by the share suppressed — a drop this document has just said is not
+a finding against the operator. The coverage note is right and stays; the manoeuvre lives in
+the architecture of a coverage-gated quartet and no wording closes it. What follows
+is the honest partial answer.</p>
+<p><strong>— a candidate, not yet stress-tested.</strong> <em>Publishing the conformance population as a
+share of all transactions beside the conformance figure makes the manoeuvre visible:
+suppression raises conformance while its population falls, and the two numbers sit on
+one line. It does not close the attack and it carries no verdict: an honest tightening
+of the evidence requirement moves the same pair the same way, or the opposite way,
+depending on which transactions happen to lack the evidence. </em><em>The pair is a prompt to
+look, not a finding</em><em>, and anything stronger would claim to know good better than the
+operator.</em></p>
+<p><strong>— a second candidate.</strong> <em>A conformance figure carries no confidence interval.
+Sampling error at a few hundred transactions is the narrowest of the uncertainties on
+it, well below the span opened by an unresolved coding question or by the share of the
+population that is unevaluable. An interval printed alone understates what the reader
+does not know, and is precision about the label rather than about conduct.</em></p>
+<p><strong>Relabelling resolves nothing and scores everything.</strong> A continuation recorded as an
+amendment, with no artefact bound before execution, is the one manoeuvre these
+measures cannot see at all from the ending alone — which is why the numerator turns on
+ordering evidence and not on the label.</p>
+<p><strong>Widening the mandate scores as conforming.</strong> An operator that answers every
+divergence by issuing a broader mandate, rather than signing a delta for the
+transaction in front of it, conforms on identical terms — and the broader mandate
+raises the ceiling for everything after it, which is worse for the principal.</p>
+<p><strong>Nothing here catches it, and an earlier edition of this text claimed the resolution
+split did.</strong> It does not. <em>Amended</em> and <em>superseded</em> record a mechanism, and a
+mechanism is not a scope: an amendment can widen authority and a replacement mandate
+can preserve or narrow it. Watching the split move from one line to the other watches a
+word change. <strong>Measuring the manoeuvre needs the authority's scope before and after,
+which no artefact in these measures carries</strong>, and until one does this is a limit and
+not a detection.</p>
+<p><strong>A near-perfect conformance rate can mean the agent is stopped constantly.</strong> Read
+divergence incidence as the stop figure it is: on a gate that suspends on divergence,
+it is the share of evaluable transactions <strong>the gate stopped</strong>. Conformance near 100%
+at a high incidence is an operator whose gate halts almost everything, which is a real
+cost and does not appear in the conformance rate.</p>
+<p><strong>The as-of rule asks for the record as it stood, and most records cannot answer.</strong> A
+reading computed from a record that carries event times — when a transaction was
+initiated, evaluated, bound, executed — reconstructs that date by censoring later
+events. That is the best such a record can do, and it is not the same thing. It assumes
+every event entered the record when it happened: that nothing arrived late, that nothing
+was corrected, that no backfill filled a gap after the fact. <strong>A record that does not log
+its own arrivals cannot distinguish a transaction that was absent at a reading from one
+that was present and recorded afterwards</strong>, and no wording in this document closes that.</p>
+<p>This edition narrows it in one place rather than claiming to close it. The
+present-and-unorderable case needs a recording time separate from the binding time, and
+where a record keeps one, that one case is answered from the record's own account of when
+it learned something. <strong>Every other element is reconstructed, and an as-of figure
+computed from event times alone carries this limit whether or not it is stated.</strong> It is
+stated here so that a reader comparing two readings of the same dataset knows what the
+difference between them does and does not evidence.</p>
+<p><strong>Execution identity is missing, and this may not be closable by wording.</strong> These
+measures count executions, and value moving is what the fourth measure is about. But a
+record that carries no identifier for the movement itself cannot distinguish <strong>two
+movements of money from one movement recorded twice</strong>. The irreducibility rule says money
+that moved cannot be collapsed away; it does not say how many times money moved. A
+duplicate row inflates the executed population, the conformance base and, if it carried a
+divergence, the continuation value — and a genuine second execution does the same thing,
+correctly. <strong>Defining a word does not separate them</strong>: the distinction is in the record or
+it is nowhere. An evaluator whose record carries a movement identifier should say so; one
+whose record does not should say that too, and a reader should treat the executed
+population as an upper bound.</p>
+<p><strong>What these measures cannot see.</strong> They record what was signed, not what was shown. A
+divergence detected and never put in front of the principal, and one put in front of
+the principal and overridden, leave the same trace: no fresh authorisation. There is a
+third case the earlier wording also had no word for — detected, executed, and shown
+afterwards — which is what a continuation surfaced late looks like, and what a
+retrospectively signed amendment looks like. Neither is a defect and neither is
+visible here. Measuring any of the three requires an artefact attesting presentation to
+the principal, which no profile currently defines. Until one exists these measures do
+not report it, and a reader should not infer it.</p>
+<p>A metric published with its own failure modes attached is a measurement vocabulary;
+one published without them is marketing.</p>
 
   <h3 id="implementing">Implementing them</h3>
-  <p>These definitions are free to implement and require no permission and no relationship with the
-  author. The artefacts they are computed over — mandate, canonical commitment, divergence record,
-  supersession record — have an open reference implementation at
-  <a href="https://mandatepatch.org">mandatepatch.org</a>. Neither is a condition of the other.</p>
+  <p>These definitions are free to implement and require no permission and no relationship with
+  the author.</p>
+  <p>The artefacts they are computed over — mandate, mandate patch, canonical commitment, divergence
+  record, supersession record — have an open reference implementation at
+  <a href="https://mandatepatch.org">mandatepatch.org</a>. It does not carry everything these
+  measures ask for. There is no field recording how a transaction was initiated or when, which is
+  the fourth evidence element and what the first measure counts over; and there is no identifier for
+  the movement of money itself, which the limits name as possibly not closable by wording.</p>
+  <p>Neither the definitions nor the implementation is a condition of the other.</p>
 
+  <div class="keep">
   <h3 id="cite-as">Cite as</h3>
-  <div class="cite">Kirby, M. T. (2026) <em>Four Measures for Mandate Conformance</em>. Version 1, 10 September 2026. https://driftlayer.org/papers/definitions/</div>
+  <div class="cite">Kirby, M. T. (2026) <em>Four Measures for Mandate Conformance</em>. Version 2,
+  8 October 2026. https://driftlayer.org/papers/definitions/</div>
   <pre>@misc{kirby2026measures,
   author = {Kirby, Matthew T.},
   title = {Four Measures for Mandate Conformance},
   year = {2026},
-  month = sep,
+  month = oct,
   howpublished = {\url{https://driftlayer.org/papers/definitions/}},
-  note = {Version 1}
+  note = {Version 2}
 }</pre>
+  </div>
 
   <h3 id="versions">Versions</h3>
-  <p>7 October 2026 — A revised edition of these definitions is in preparation. Four rounds of independent review, including two in which out-of-family implementations computed the measures from this wording alone, found defects in the Version 1 text: evaluation coverage describes its denominator twice; mandate conformance admits more than one arithmetic for its population and rests its test on how a divergence was labelled rather than on the order of events; divergence incidence is defined over one population and reported over another; unauthorised continuation names no base. Version 1 is not withdrawn and this text is unchanged. A figure computed against this edition remains checkable against it. The revised edition will be published alongside, at its own filename, with its own hash.</p>
-  <p><strong>Version 1</strong> — 10 September 2026. First publication. File: <a href="/papers/definitions/definitions-v1.pdf">definitions-v1.pdf</a> · SHA-256 <code>7fbe2eb644e0d1c017900e8c3666630bcfd5069dc7c3ace86c02d4a109c9fa48</code></p>
-  <p class="note">Versions are never overwritten. See <a href="/errata/">versions and errata</a>.</p>
+  <p><strong>Version 2</strong> — 8 October 2026. Corrects defects in the Version 1 wording found by
+computing the measures from that wording alone, in four rounds: two against Version 1,
+and two in which the measures were computed from a draft of this edition by
+implementations written independently of each other and of the author's own,
+before it was published. The fourth round returned a
+specification that computed two materially different sets of figures from one dataset,
+and this edition is the repair.</p>
+<p>Mandate conformance admitted four arithmetics for its population, rested its
+numerator on an unrecorded ordering, and left a transaction with no divergence
+conforming only by vacuous truth. Unauthorised continuation named no base, and the
+base it now names is the split's own total. Divergence incidence defined itself over
+one population and reported itself over another. Evaluation coverage described its
+denominator twice. The resolution split omitted the ending the fourth measure is
+defined as.</p>
+<p><strong>States what decides the state of an authorisation</strong>: its ordering evidence, and not
+the word the record later used. One principle settles three questions the previous
+draft answered differently in different places — whether an amendment with no
+orderable time is absent or merely unorderable, whether an execution authorised
+afterwards is an amendment or a continuation, and what a stamp dated after a reading
+carries with it.</p>
+<p>Adds a Terms section, because <em>transaction</em> was doing four jobs. Restores the
+evaluation time and the model identifier to the evidence set, adds to the first
+element the evidence that orders an authorisation against execution, and adds to the
+fourth the time a transaction was initiated — the event a figure's as-of date is
+measured from. Rules that a superseding mandate is an authorising artefact. States
+that <strong>a mandate may be of scope one</strong>. Adds the deduplication rule with its
+tie-break and the irreducibility of execution; the time-out condition on <em>expired</em>;
+the as-of rule, with the requirement that a reading be computed from the record as it
+stood; and five further failure modes, two of which carry candidate remedies marked
+as untested.</p>
+<p>7 October 2026 — a revised edition was announced here as in preparation. It is published above as Version 2, 8 October 2026. This line is retained because the announcement was served.</p>
+
+<p><strong>Version 1</strong> — 10 September 2026. First publication. <strong>Superseded by Version 2</strong>, and
+retained: see versions and errata. File <code>definitions-v1.pdf</code>, SHA-256
+<code>7fbe2eb644e0d1c017900e8c3666630bcfd5069dc7c3ace86c02d4a109c9fa48</code>. That file was
+generated on 7 October 2026 from the Version 1 text as published on 10 September 2026,
+so the creation date embedded in it is the file's and not the edition's. Wording hash
+<code>46797af339bd</code>, computed over the page body with the <code>&lt;head&gt;</code> block and all <code>id</code>
+attributes removed.</p>
+<p><em>Version 1 is not withdrawn. A transaction evaluated against an edition must remain
+checkable against that edition.</em></p>
+<p class="note">Versions are never overwritten. See <a href="/errata/">versions and errata</a>.</p>
 
   <h3 id="disclosure">Disclosure</h3>
   <p>A US provisional patent application (No.&nbsp;64/141,321) was filed on 26 August 2026 and precedes both the disclosure and the repository. The specification is published as <em>Mandate Lifecycle Extensions for Agentic Payment Credentials</em>, Technical Disclosure Commons, Defensive Publications Series no.&nbsp;11517 (August 2026), under CC BY 4.0. A reference implementation of the artefact layer is published at <a href="https://github.com/MandatePatch/mandatepatch">github.com/MandatePatch/mandatepatch</a> under Apache-2.0. The mechanisms described are one implementation of a more general requirement. Each licence governs what it names and nothing else.</p>

@@ -5,12 +5,21 @@
   <id>https://driftlayer.org/</id>
   <link href="https://driftlayer.org/" rel="alternate" type="text/html"/>
   <link href="https://driftlayer.org/feed.xml" rel="self" type="application/atom+xml"/>
-  <updated>2026-09-25T00:00:00Z</updated>
+  <updated>2026-10-08T00:00:00Z</updated>
   <author>
     <name>Matthew T. Kirby</name>
     <email>matthew.kirby@driftlayer.org</email>
   </author>
   <rights>CC BY 4.0</rights>
+  <entry>
+    <title>Four Measures for Mandate Conformance</title>
+    <id>https://driftlayer.org/papers/definitions/</id>
+    <link href="https://driftlayer.org/papers/definitions/" rel="alternate" type="text/html"/>
+    <updated>2026-10-08T00:00:00Z</updated>
+    <published>2026-10-08T00:00:00Z</published>
+    <category term="Definitions — Version 2"/>
+    <summary type="text">Evaluation coverage, mandate conformance, divergence incidence, and unauthorised continuation. Coverage is reported first. Version 2 corrects defects found by computing the measures from the Version 1 wording alone; Version 1 is retained and citable. The definitions are free and citable, and stay that way.</summary>
+  </entry>
   <entry>
     <title>A liability rule aimed at the wrong control: what the law offers when a delegate exceeds its instruction</title>
     <id>https://driftlayer.org/papers/liability-rule/</id>
@@ -37,15 +46,6 @@
     <published>2026-09-13T00:00:00Z</published>
     <category term="Consultation response"/>
     <summary type="text">Submitted response to the HM Treasury consultation, answering questions 15 to 18 and 42.</summary>
-  </entry>
-  <entry>
-    <title>Four Measures for Mandate Conformance</title>
-    <id>https://driftlayer.org/papers/definitions/</id>
-    <link href="https://driftlayer.org/papers/definitions/" rel="alternate" type="text/html"/>
-    <updated>2026-09-10T00:00:00Z</updated>
-    <published>2026-09-10T00:00:00Z</published>
-    <category term="Definitions — Version 1"/>
-    <summary type="text">Evaluation coverage, mandate conformance, divergence incidence, and unauthorised continuation. Coverage is reported first. The definitions are free and citable, and stay that way.</summary>
   </entry>
   <entry>
     <title>Response to the Bank of England, RPIB consultation on the design of future retail payments infrastructure</title>
