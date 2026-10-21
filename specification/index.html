@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mandate Lifecycle Extensions for Agentic Payment Credentials — errata — The Drift Layer</title>
+<meta name="description" content="The specification, Technical Disclosure Commons no. 11517, frozen as published, with its errata recorded here as dated entries.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Drift Layer">
+<meta property="og:title" content="Mandate Lifecycle Extensions for Agentic Payment Credentials — errata">
+<meta property="og:description" content="The specification, Technical Disclosure Commons no. 11517, frozen as published, with its errata recorded here as dated entries.">
+<meta property="og:url" content="https://driftlayer.org/specification/">
+<meta property="og:image" content="https://driftlayer.org/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Drift Layer">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+    --rule:#e2e4ee; --panel:#f7f7fb; --max:44rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#070b1c; --fg:#e7e9f2; --mute:#9aa0be; --accent:#9a76ef; --accent-deep:#6d4dd6;
+      --rule:#1c2340; --panel:#10152c;
+    }
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--bg); color:var(--fg);
+    font:17px/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width:var(--max); margin:0 auto; padding:4rem 1.25rem 5rem; }
+  .masthead { display:inline-block; margin:0 0 2.4rem; border:0; color:inherit; }
+  .masthead svg { display:block; width:100%; height:auto; margin:0 0 .6rem; }
+  .masthead h1, .masthead .wordmark { font-size:1.45rem; letter-spacing:.185em;
+    text-transform:uppercase; font-weight:500; margin:0 -.185em 0 0; white-space:nowrap; }
+  h1.page-title { font-size:1.35rem; line-height:1.35; font-weight:600; margin:0 0 1.4rem;
+    letter-spacing:0; text-transform:none; }
+  h2 { font-size:1.05rem; letter-spacing:.08em; text-transform:uppercase; color:var(--mute);
+    margin:2.6rem 0 .8rem; font-weight:600; }
+  h3 { font-size:1rem; margin:1.9rem 0 .35rem; font-weight:600; }
+  h4 { font-size:.95rem; margin:1.6rem 0 .3rem; font-weight:600; color:var(--accent); }
+  .list p { margin:0 0 .55rem; }
+  p { margin:0 0 1rem; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-deep); }
+  a:hover { border-bottom-color:var(--accent); }
+  code { font:0.92em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); padding:.1em .35em; border-radius:3px; overflow-wrap:anywhere; }
+  pre { font:0.84em/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); border-left:3px solid var(--rule); padding:.8rem 1rem;
+    white-space:pre-wrap; overflow-wrap:anywhere; margin:1rem 0; }
+  .cite { border-left:3px solid var(--accent-deep); padding:.6rem 1rem; background:var(--panel);
+    margin:1rem 0; font-size:.95rem; }
+  .meta { color:var(--mute); font-size:.9rem; margin:0 0 .25rem; }
+  .meta-table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
+  .meta-table th { text-align:left; font-weight:600; color:var(--mute); padding:.35rem 1rem .35rem 0;
+    vertical-align:top; white-space:nowrap; }
+  .meta-table td { padding:.35rem 0; vertical-align:top; overflow-wrap:anywhere; }
+  .entry { border-top:1px solid var(--rule); padding:1.2rem 0; }
+  .entry p:last-child { margin-bottom:0; }
+  .entry .title { font-size:1.05rem; margin:0 0 .35rem; }
+  .back { margin:0 0 1.6rem; font-size:.9rem; }
+  .note { color:var(--mute); font-size:.9rem; }
+  @media (max-width:30rem) {
+    main { padding:2.5rem 1.1rem 3.5rem; }
+    .meta-table th, .meta-table td { display:block; padding:0; }
+    .meta-table th { white-space:normal; padding-top:.7rem; }
+    .meta-table td { padding-bottom:.2rem; }
+    .masthead h1, .masthead .wordmark { font-size:1.15rem; letter-spacing:.15em; }
+  }
+  footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
+    color:var(--mute); font-size:.9rem; }
+  footer a { color:var(--mute); border-bottom-color:var(--rule); }
+  details.versions { margin: -.35rem 0 1.2rem; }
+  details.versions summary { cursor: pointer; color: var(--mute); font-size: .95rem; }
+  details.versions summary:hover { color: var(--fg); }
+  details.versions:not([open]) + .versions-body { display: none; }
+  details.versions[open] + .versions-body { display: block; margin: .55rem 0 1.2rem; }
+  details.versions[open] { margin-bottom: 0; }
+  @media print {
+    :root {
+      color-scheme: light;
+      --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+      --rule:#e2e4ee; --panel:#f7f7fb;
+    }
+    html, body { background:#fff; color:#0d1943; }
+    details.versions { display: block; margin: 0 0 .2rem; }
+    details.versions summary { list-style: none; }
+    details.versions summary::-webkit-details-marker { display: none; }
+    details.versions + .versions-body { display: block !important; margin: .35rem 0 1.2rem; }
+    h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid;
+                     break-inside: avoid; page-break-inside: avoid; }
+    .cite, pre, .meta-table tr { break-inside: avoid; page-break-inside: avoid; }
+    p { orphans: 3; widows: 3; }
+    .keep { break-inside: avoid; page-break-inside: avoid; }
+    h3 { margin-top: 2.2rem; }
+    h4 { margin-top: 1.7rem; }
+  }
+</style>
+<link rel="canonical" href="https://driftlayer.org/specification/">
+<link rel="alternate" type="application/atom+xml" title="The Drift Layer" href="https://driftlayer.org/feed.xml">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+<meta name="DC.title" content="Mandate Lifecycle Extensions for Agentic Payment Credentials — errata">
+<meta name="DC.creator" content="Kirby, Matthew T.">
+<meta name="DC.date" content="2026-10-21">
+<meta name="DC.identifier" content="https://driftlayer.org/specification/">
+<meta name="DCTERMS.isVersionOf" content="https://www.tdcommons.org/dpubs_series/11517">
+<meta name="DCTERMS.available" content="2026-10-21">
+</head>
+<body>
+<main>
+  <a class="masthead" href="/">
+    <svg viewBox="0 0 100 10.6" role="img" aria-label="The Drift Layer">
+      <rect x="0" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="33.853" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="67.707" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="0" y="6.9" width="100" height="3.7" fill="var(--fg)"/>
+    </svg>
+    <p class="wordmark">The Drift Layer</p>
+  </a>
+
+  <p class="back"><a href="/">← The Drift Layer</a></p>
+
+  <h1 class="page-title">Mandate Lifecycle Extensions for Agentic Payment Credentials</h1>
+  <p class="meta">The specification. Frozen as published; corrections are recorded here, dated, and never applied to the published text.</p>
+
+  <table class="meta-table">
+    <tr><th>Author</th><td>Matthew T. Kirby, Independent Researcher, River Falls, Wisconsin, USA — <a href="mailto:matthew.kirby@driftlayer.org">matthew.kirby@driftlayer.org</a></td></tr>
+    <tr><th>Published</th><td>Technical Disclosure Commons, Defensive Publications Series no.&nbsp;11517, posted 27 August 2026 — <a href="https://www.tdcommons.org/dpubs_series/11517">tdcommons.org/dpubs_series/11517</a></td></tr>
+    <tr><th>Version</th><td>v2.2, the filing version. Frozen: cited, never revised.</td></tr>
+    <tr><th>Licence</th><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> (no patent rights)</td></tr>
+    <tr><th>Priority</th><td>US provisional patent application No.&nbsp;64/141,321, filed 26 August 2026, precedes the disclosure.</td></tr>
+    <tr><th>This page</th><td>Published 21 October 2026. Errata are added as dated entries and are never edited; see <a href="/errata/">versions and errata</a>.</td></tr>
+  </table>
+
+  <h3 id="the-files">The files</h3>
+  <p>The files are served by Technical Disclosure Commons, not by this site. The hashes below are of the bytes that record served on 21 October 2026; if a hash ever differs from what the record serves, that is a fault to report, not an edit.</p>
+  <table class="meta-table">
+    <tr><th>Disclosure</th><td>The published PDF, as served from the record above<br>
+      195,133 bytes · 18 pages<br>
+      SHA-256 <code>121b27e4a64e17338db4840ac39833f5b6b705583101e5c9f03efc3d69515404</code></td></tr>
+    <tr><th>Artifact archive</th><td><code>circuit-reference-v2.2-TDCOMMONS.tar.gz</code>, the additional file on the same record<br>
+      1,446,512 bytes<br>
+      SHA-256 <code>cd5eb4af32724d99783d4c97948cd7c69834d33cd752ec3bf2bd4861b2eb0081</code></td></tr>
+  </table>
+
+  <h3 id="what-this-page-is">What this page is</h3>
+  <p>The specification is published once and cited as published. It is not revised: a reader who cited it can always fetch what they cited, and the priority it establishes attaches to that text. Corrections therefore live here, not in the document. Each entry below states the published text, the correction, the reason, and — where a correction has been carried into the reference implementation — the commit or release that carries it. Entries marked <em>open</em> state a defect whose resolution has not yet been chosen; they are listed so that a reader finds them here first.</p>
+  <p>The reference implementation at <a href="https://github.com/MandatePatch/mandatepatch">github.com/MandatePatch/mandatepatch</a> tracks these entries and is versioned separately; where it is ahead of the published text, the entry says so.</p>
+
+  <h3 id="errata">Errata</h3>
+  <p class="note">Five entries as of 21 October 2026: three corrections, two open items. This is the author's current register of defects found in the published text, by the author and by the review desks that work on it. The list grows; nothing in it is edited.</p>
+
+  <div class="entry keep">
+    <p class="title"><strong>E-1 · §7 — the nullifier domain separator.</strong> Correction, with a residual stated. Published here 21 October 2026; carried in the reference implementation since 12 September 2026.</p>
+    <p><em>Published text (§7):</em> “Nullifier derivation is domain-separated over issuer, mandate family, version, patch sequence, checkout, rail, and purpose, and verifiers resolve Merkle roots, epoch heads, and configuration from the authoritative context rather than accepting them as prover-supplied inputs.”</p>
+    <p><em>Correction:</em> the nullifier is domain-separated over issuer, mandate family, version, patch sequence, checkout, and purpose. <code>rail</code> is removed from the nullifier domain.</p>
+    <p><em>Reason:</em> the consume authority of §5.3 keys exactly-once consumption on the nullifier. A rail-scoped derivation yields distinct nullifiers for the same patch presented on different rails, so one human-signed patch could be consumed once per rail, defeating the cross-rail guarantee §5.3 exists to give. <code>rail</code> remains, correctly, in the §6.2 response-transcript domain separator, where it prevents cross-rail transplantation of signed step-up responses. The reference circuit's domain-input nullifier derivation takes the domain vector as inputs; instantiations use the rail-independent vocabulary above.</p>
+    <p><em>What remains open:</em> removing <code>rail</code> from the nullifier closes the double derivation; it does not bind the patch to a rail at signing. The MandatePatch structure of §4.2 carries no rail member, so the rail is bound only through the §6.2 transcript separator, whose inputs the artefact itself does not carry, and §5.3 assigns the consume authority the nullifier check without saying that it checks the §6.2 separation. That residual is stated here because §8 of the specification promises that nothing is claimed fixed that is only mitigated.</p>
+    <p><em>Implemented:</em> <code>schemas/supersession-record.schema.json</code>, description of <code>voided_patch_nullifiers</code>, merged in pull request #3 at commit <code>6297a8a</code>, 12 September 2026.</p>
+  </div>
+
+  <div class="entry keep">
+    <p class="title"><strong>E-2 · §4.3 — a per-attempt distinguisher in the canonical commitment.</strong> Correction. Published here 21 October 2026; carried in the reference implementation since release v0.1.2, 28 August 2026.</p>
+    <p><em>Published text (§4.3):</em> “… seller identity, line items with SKU and variant identifiers, quantities, unit and total amounts, currency, tax, shipping, fulfillment source, recurrence terms, and post-authorization substitution policy.”</p>
+    <p><em>Correction:</em> the field list ends “… recurrence terms, post-authorization substitution policy, and a per-attempt distinguisher — a value unique to each checkout attempt (for example a 128-bit random nonce).” In §6.2, the per-checkout distinguisher displayed in the challenge is the same value committed in §4.3.</p>
+    <p><em>Reason:</em> without it, two byte-identical carts produce identical commitments, defeating duplicate detection and leaving §6.1's voiding of superseded authorisations unenforceable against re-presentation of a stale attempt.</p>
+    <p><em>Implemented:</em> <code>schemas/canonical-commitment.schema.json</code>, <code>attempt_nonce</code> required, pattern <code>^[A-Za-z0-9_-]{22,}$</code>; profile v1 uses 16 random bytes, base64url without padding. The vector <code>commitment-attempt-nonce-distinguishes</code> is byte-identical to <code>commitment-canonical-order</code> in every other field, so a matching digest between the two means the erratum has been reverted. The parity digest moved from <code>563962e9…</code> to <code>b9b75ff3…</code> with this change; the CHANGELOG records the supersession.</p>
+  </div>
+
+  <div class="entry keep">
+    <p class="title"><strong>E-3 · §3.1 and §4.3 — what the semantic score is computed over, and what the challenge may display.</strong> Correction, on one sentence that two defects share. Published here 21 October 2026. Nothing to implement: the reference implementation does not implement a scorer.</p>
+    <p><em>The defect:</em> §3.1 requires the evaluator to compute E₁ “over the canonical authorization transaction commitment defined in Section 4.3 — the same serialization whose hash binds the checkout,” and §4.3 says that serialization is “the sole input to Section 3 scoring.” “Over” admits two readings — over the serialized byte string, or over the fields of the commitment object — and two conforming implementations could score the same cart differently. E-2 makes the difference load-bearing: with a random value inside the commitment, the string reading scores two attempts at an identical cart differently. The same §4.3 sentence also calls the serialization “the sole permissible display source for Section 6 challenges,” which is contradicted by §6.1 and §6.2: the challenge is required to display the divergence record, the proposed MandatePatch tuple set, the mandate's own signed instruction text and the patch sequence number, none of which is in §4.3's schema.</p>
+    <p><em>Published text (§4.3, closing sentence):</em> “This same serialization is the sole input to Section 3 scoring and the sole permissible display source for Section 6 challenges.”</p>
+    <p><em>Correction, §3.1, fifth residual, added after “never over agent-relayed prose”:</em> “E₁ is computed over the commitment's semantic fields as a structured object — seller identity, line items with their SKU and variant identifiers, quantities, unit and total amounts, currency, tax, shipping, fulfillment source, recurrence terms, and post-authorization substitution policy — not over the serialized byte string. Fields that exist to identify, order or distinguish the attempt rather than to describe the purchase — the binding-profile identifier, the checkout identifier, the time the commitment was fixed, and the per-attempt distinguisher of Section 4.3 — enter the commitment's hash and are excluded from the scoring input, so that two attempts at an identical cart yield identical scores under a pinned stack. Excluding the time the commitment was fixed from the semantic distance does not remove time from the gate: freshness is a predicate, not a dimension of the distance, and is evaluated where the predicates are — in the Section 4.2 de novo evaluation, which reads the commitment's own fields, and in the Section 5.2 epoch-freshness check at the consume authority and in the proof relation — not by the Section 3 scorer.”</p>
+    <p><em>Correction, §4.3, closing sentence replaced:</em> “This same commitment is the sole source of the Section 3 scoring input, under the field projection Section 3.1 defines, and the sole permissible source for the transaction terms displayed in Section 6 challenges; the further objects Section 6 requires displayed — the divergence record, the proposed MandatePatch tuple set, the mandate's own signed instruction text, and the patch sequence number — are permitted non-transaction adjuncts.”</p>
+    <p><em>Reading of §6.2 under this entry:</em> §6.2's closing clause, “the displayed object and the signed object derive from one canonical commitment,” governs the signed transaction terms; the adjuncts are displayed beside them and are not signed as terms.</p>
+  </div>
+
+  <div class="entry keep">
+    <p class="title"><strong>E-4 · §5.1 and §5.2 — the Δ tolerance and the voiding of unconsumed patches.</strong> Open. Recorded here 21 October 2026; a resolution will be published as a further entry.</p>
+    <p><em>Published text (§5.2):</em> “for amendments, activity within Δ against the prior version is tolerated by design.”</p>
+    <p><em>Published text (§5.1, fourth residual):</em> “supersession voids unconsumed patches against superseded versions, with the deployment required to disclose its nullifier-to-epoch update ordering and the resulting atomicity window, if any.”</p>
+    <p><em>The conflict:</em> for an unconsumed patch against a version superseded less than Δ ago, the first sentence tolerates it and the second voids it. Two conforming implementations will disagree about whether a human's signed authorisation is spendable. The resolution is a design decision and is not proposed here.</p>
+  </div>
+
+  <div class="entry keep">
+    <p class="title"><strong>E-5 · §4.4 — the pending lock and settlement-time budget accounting.</strong> Open. Recorded here 21 October 2026; one of two candidate resolutions will be adopted in a further entry.</p>
+    <p><em>Published text (§4.4):</em> the base mandate is locked against new authorisation requests “while any patch is pending — the pending state beginning at challenge issuance and ending at patch consumption, challenge expiry, or decline”; and “cumulative budgets count settled patch-derived spend.”</p>
+    <p><em>The conflict:</em> the lock lifts at consumption and the cumulative budget learns at settlement. Sibling transactions authorised in the interval between them evaluate against an under-counted budget, which is the bypass §4.4 names. Two candidate resolutions, either a prose change: count authorised-but-unsettled spend against the cumulative budget, or hold the lock until settlement.</p>
+  </div>
+
+  <h3 id="reporting">Reporting an error</h3>
+  <p>To <a href="mailto:matthew.kirby@driftlayer.org">matthew.kirby@driftlayer.org</a>. A report that names the section and the passage is the one that gets an entry fastest. The site's rules for versions and errata are <a href="/errata/">stated in full</a>.</p>
+
+  <h3 id="cite-as">Cite as</h3>
+  <div class="cite">Kirby, M. T. (2026) <em>Mandate Lifecycle Extensions for Agentic Payment Credentials</em>. Technical Disclosure Commons, Defensive Publications Series no.&nbsp;11517, 27 August 2026. https://www.tdcommons.org/dpubs_series/11517 — with errata at https://driftlayer.org/specification/</div>
+  <pre>@misc{kirby2026mandate,
+  author = {Kirby, Matthew T.},
+  title = {Mandate Lifecycle Extensions for Agentic Payment Credentials},
+  year = {2026},
+  month = aug,
+  howpublished = {Technical Disclosure Commons, Defensive Publications Series no. 11517, \url{https://www.tdcommons.org/dpubs_series/11517}},
+  note = {Errata at \url{https://driftlayer.org/specification/}}
+}</pre>
+
+  <h3 id="disclosure">Disclosure</h3>
+  <p>A US provisional patent application (No.&nbsp;64/141,321) was filed on 26 August 2026 and precedes both the disclosure and the repository. The specification is published as <em>Mandate Lifecycle Extensions for Agentic Payment Credentials</em>, Technical Disclosure Commons, Defensive Publications Series no.&nbsp;11517 (August 2026), under CC BY 4.0. A reference implementation of the artefact layer is published at <a href="https://github.com/MandatePatch/mandatepatch">github.com/MandatePatch/mandatepatch</a> under Apache-2.0. The mechanisms described are one implementation of a more general requirement. Each licence governs what it names and nothing else.</p>
+
+  <footer>© 2026 Matthew T. Kirby. Site text is the author's; each publication carries its own licence, stated on its page. <a href="/errata/">Versions and errata</a>.</footer>
+</main>
+</body>
+</html>
