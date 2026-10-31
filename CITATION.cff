@@ -25,6 +25,18 @@ keywords:
 
 references:
   - type: report
+    title: The Link Between Consent and the Change
+    authors:
+      - family-names: Kirby
+        given-names: Matthew T.
+    collection-title: The Drift Layer
+    number: "7"
+    year: 2026
+    month: 10
+    date-published: 2026-10-31
+    url: https://driftlayer.org/papers/consent-and-change/
+    license: CC-BY-4.0
+  - type: report
     title: >-
       The Drift Layer: the clean, fast session that is not proof of authority
     authors:

@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="950" viewBox="0 0 1240 950" font-family="Helvetica, Arial, sans-serif" fill="#0d1943">
+  <rect width="1240" height="950" fill="#ffffff"/>
+
+  <!-- title -->
+  <text x="60" y="52" font-size="26" font-weight="700">The life of a payment mandate</text>
+  <text x="60" y="78" font-size="14" fill="#5a6183">What happens when execution leaves the description the person gave — and what each answer leaves in the record</text>
+
+  <!-- ===== top row: grant → execution → evaluation ===== -->
+  <g font-size="13">
+    <rect x="60" y="110" width="300" height="96" rx="4" fill="#f7f7fb" stroke="#2a187e" stroke-width="1.5"/>
+    <text x="76" y="134" font-size="12" font-weight="700" fill="#3b129d" letter-spacing="1">1 · THE GRANT</text>
+    <text x="76" y="156">A signed authority: a cap, a merchant,</text>
+    <text x="76" y="174">a description of what is to be bought.</text>
+    <text x="76" y="194" fill="#5a6183">Consent to a series (PSRs reg. 67(1)(b)).</text>
+
+    <rect x="440" y="110" width="300" height="96" rx="4" fill="#f7f7fb" stroke="#2a187e" stroke-width="1.5"/>
+    <text x="456" y="134" font-size="12" font-weight="700" fill="#3b129d" letter-spacing="1">2 · EXECUTION</text>
+    <text x="456" y="156">Software acts under the grant,</text>
+    <text x="456" y="174">the person absent.</text>
+    <text x="456" y="194" fill="#5a6183">Same credential and merchant, inside the cap.</text>
+
+    <rect x="820" y="110" width="360" height="96" rx="4" fill="#f7f7fb" stroke="#2a187e" stroke-width="1.5"/>
+    <text x="836" y="134" font-size="12" font-weight="700" fill="#3b129d" letter-spacing="1">3 · EVALUATION AT AUTHORISATION</text>
+    <text x="836" y="156">Will the close fit the description?</text>
+    <text x="836" y="174">Amount · payee · item or service meaning ·</text>
+    <text x="836" y="192">quantity · cumulative budget · freshness.</text>
+  </g>
+  <!-- arrows top row -->
+  <g stroke="#0d1943" stroke-width="1.5" fill="none">
+    <path d="M360 158 H432"/><path d="M426 152 L434 158 L426 164"/>
+    <path d="M740 158 H812"/><path d="M806 152 L814 158 L806 164"/>
+  </g>
+
+  <!-- ===== fork ===== -->
+  <g stroke="#0d1943" stroke-width="1.5" fill="none">
+    <path d="M1000 206 V240"/>
+    <path d="M1000 240 H180"/>
+    <path d="M180 240 V262"/><path d="M174 256 L180 264 L186 256"/>
+    <path d="M1000 240 V262"/><path d="M994 256 L1000 264 L1006 256"/>
+  </g>
+  <text x="194" y="236" font-size="12" fill="#5a6183">fits</text>
+  <text x="1012" y="236" font-size="12" fill="#5a6183">diverges · gated</text>
+
+  <!-- fits box -->
+  <rect x="60" y="266" width="240" height="96" rx="4" fill="#ffffff" stroke="#e2e4ee" stroke-width="1.5"/>
+  <text x="76" y="290" font-size="12" font-weight="700" fill="#5a6183" letter-spacing="1">FITS · EXECUTES</text>
+  <text x="76" y="312" font-size="13">Value moves. Record: grant,</text>
+  <text x="76" y="330" font-size="13">close, and the join between them.</text>
+
+  <!-- twin: diverges but never gated -->
+  <path d="M460 240 V262" stroke="#5a6183" stroke-width="1.5" stroke-dasharray="4 3" fill="none"/><path d="M454 256 L460 264 L466 256" stroke="#5a6183" stroke-width="1.5" fill="none"/>
+  <text x="474" y="236" font-size="12" fill="#5a6183">diverges · not gated</text>
+  <rect x="340" y="266" width="240" height="96" rx="4" fill="#ffffff" stroke="#5a6183" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="356" y="290" font-size="12" font-weight="700" fill="#5a6183" letter-spacing="1">DIVERGES · EXECUTES</text>
+  <text x="356" y="305" font-size="11.5">Detected or not, nothing holds it. The</text>
+  <text x="356" y="318" font-size="11.5">record shows a clean close, identical</text>
+  <text x="356" y="331" font-size="11.5">to the case at left: nothing in it</text>
+  <text x="356" y="344" font-size="11.5">separates a conforming execution</text>
+  <text x="356" y="357" font-size="11.5">from an unauthorised continuation.</text>
+
+  <!-- diverges: the question -->
+  <rect x="620" y="266" width="560" height="96" rx="4" fill="#ffffff" stroke="#3b129d" stroke-width="1.5"/>
+  <text x="636" y="290" font-size="12" font-weight="700" fill="#3b129d" letter-spacing="1">THE CLOSE IS OUTSIDE THE DESCRIPTION</text>
+  <text x="636" y="312" font-size="13">The person wants to approve only this deviation</text>
+  <text x="636" y="330" font-size="13">and continue. Four answers exist. A–C are the ones found</text>
+  <text x="636" y="348" font-size="13" fill="#5a6183">in the sources cited below; none of those sources offers D.</text>
+
+  <!-- four columns: 4 × 265, gap 20 -->
+  <g stroke="#0d1943" stroke-width="1.5" fill="none">
+    <path d="M900 362 V372"/>
+    <path d="M192 372 H1047"/>
+    <path d="M192 372 V392"/><path d="M186 386 L192 394 L198 386"/>
+    <path d="M477 372 V392"/><path d="M471 386 L477 394 L483 386"/>
+    <path d="M762 372 V392"/><path d="M756 386 L762 394 L768 386"/>
+    <path d="M1047 372 V392"/><path d="M1041 386 L1047 394 L1053 386"/>
+  </g>
+
+  <g font-size="12.5">
+    <!-- col A: refuse -->
+    <rect x="60" y="396" width="265" height="212" rx="4" fill="#ffffff" stroke="#e2e4ee" stroke-width="1.5"/>
+    <text x="76" y="420" font-size="12" font-weight="700" fill="#5a6183" letter-spacing="1">A · REFUSE (OR HOLD)</text>
+    <text x="76" y="444">The transaction does not proceed</text>
+    <text x="76" y="461">under the existing authorisation.</text>
+    <text x="76" y="486" fill="#5a6183">Lee, Zurich slide 5: ACCEPT · HOLD ·</text>
+    <text x="76" y="502" fill="#5a6183">REFUSE, with HOLD "a first-class</text>
+    <text x="76" y="518" fill="#5a6183">'not yet'" — "neither yes nor never".</text>
+    <text x="76" y="542" fill="#5a6183">The slides do not say what ends a</text>
+    <text x="76" y="558" fill="#5a6183">hold, or what the record keeps of it.</text>
+    <text x="76" y="582" fill="#5a6183">Nothing continues; the approval the</text>
+    <text x="76" y="598" fill="#5a6183">person would give has nowhere to go.</text>
+
+    <!-- col B: afresh, new grant -->
+    <rect x="345" y="396" width="265" height="212" rx="4" fill="#ffffff" stroke="#e2e4ee" stroke-width="1.5"/>
+    <text x="361" y="420" font-size="12" font-weight="700" fill="#5a6183" letter-spacing="1">B · AFRESH: A NEW GRANT</text>
+    <text x="361" y="444">The grant is revoked and a new</text>
+    <text x="361" y="461">grant is created.</text>
+    <text x="361" y="486" fill="#5a6183">NatWest, VRP support page: to change</text>
+    <text x="361" y="502" fill="#5a6183">a variable recurring payment, "revoke</text>
+    <text x="361" y="518" fill="#5a6183">and set-up a new one".</text>
+    <text x="361" y="542" fill="#5a6183">The base grant is destroyed; what it</text>
+    <text x="361" y="558" fill="#5a6183">said, and why it changed, survive only</text>
+    <text x="361" y="574" fill="#5a6183">if someone chose to keep them.</text>
+
+    <!-- col C: afresh, this one -->
+    <rect x="630" y="396" width="265" height="212" rx="4" fill="#ffffff" stroke="#e2e4ee" stroke-width="1.5"/>
+    <text x="646" y="420" font-size="12" font-weight="700" fill="#5a6183" letter-spacing="1">C · AFRESH: FOR THIS ONE</text>
+    <text x="646" y="444">A fresh authorisation covering</text>
+    <text x="646" y="461">that transaction; a new chain.</text>
+    <text x="646" y="486" fill="#5a6183">A4P, Zurich slide 6 (P1): "Each user</text>
+    <text x="646" y="502" fill="#5a6183">confirmation is bound to a specific</text>
+    <text x="646" y="518" fill="#5a6183">transaction" — confirm, biometric</text>
+    <text x="646" y="534" fill="#5a6183">approval: a fresh authorisation each time.</text>
+    <text x="646" y="558" fill="#5a6183">AP2 / VI (FIDO PTWG slides): expiry</text>
+    <text x="646" y="574" fill="#5a6183">and revocation; a "lifecycle" is named,</text>
+    <text x="646" y="590" fill="#5a6183">not specified.</text>
+
+    <!-- col D: signed deviation -->
+    <rect x="915" y="396" width="265" height="212" rx="4" fill="#f7f7fb" stroke="#3b129d" stroke-width="2"/>
+    <text x="931" y="420" font-size="12" font-weight="700" fill="#3b129d" letter-spacing="1">D · A SIGNED DEVIATION</text>
+    <text x="931" y="444">A signed, transaction-scoped delta:</text>
+    <text x="931" y="461">consumed once, non-propagating,</text>
+    <text x="931" y="478">the base grant left intact,</text>
+    <text x="931" y="495">lineage back to it.</text>
+    <text x="931" y="520" fill="#5a6183">TDCommons no. 11517 (CC BY 4.0);</text>
+    <text x="931" y="536" fill="#5a6183">reference artefact layer, Apache-2.0.</text>
+    <text x="931" y="560" fill="#5a6183">The suspended evaluation resumes</text>
+    <text x="931" y="576" fill="#5a6183">against the held state, not a fresh</text>
+    <text x="931" y="592" fill="#5a6183">one; the base grant is unchanged.</text>
+  </g>
+
+  <!-- ===== the record ===== -->
+  <text x="60" y="648" font-size="12" font-weight="700" fill="#3b129d" letter-spacing="1">4 · WHAT THE RECORD CARRIES AFTERWARDS</text>
+  <text x="60" y="668" font-size="12.5" fill="#5a6183">The record a dispute needs is the grant, the close, and the join between them (paper 5, https://driftlayer.org/papers/liability-rule/).</text>
+  <text x="60" y="684" font-size="12.5" fill="#5a6183">Nothing examined obliges anyone to keep it.</text>
+
+  <g font-size="12.5">
+    <rect x="60" y="696" width="265" height="120" rx="4" fill="#ffffff" stroke="#e2e4ee"/>
+    <text x="76" y="720" font-weight="700">Grant only.</text>
+    <text x="76" y="740">No close, so nothing to join.</text>
+    <text x="76" y="760" fill="#5a6183">The deviation the person would</text>
+    <text x="76" y="776" fill="#5a6183">have approved is never recorded.</text>
+
+    <rect x="345" y="696" width="265" height="120" rx="4" fill="#ffffff" stroke="#e2e4ee"/>
+    <text x="361" y="720" font-weight="700">New grant; close under it.</text>
+    <text x="361" y="740">The old grant is gone. Why the</text>
+    <text x="361" y="760">description changed, and from what,</text>
+    <text x="361" y="780">is not in any artefact.</text>
+
+    <rect x="630" y="696" width="265" height="120" rx="4" fill="#ffffff" stroke="#e2e4ee"/>
+    <text x="646" y="720" font-weight="700">A second chain.</text>
+    <text x="646" y="740">Two authorities for one purchase;</text>
+    <text x="646" y="760">the relation between them is</text>
+    <text x="646" y="780">reconstructed by inference, if at all.</text>
+
+    <rect x="915" y="696" width="265" height="120" rx="4" fill="#f7f7fb" stroke="#3b129d" stroke-width="1.5"/>
+    <text x="931" y="720" font-weight="700">Grant + delta + close + join.</text>
+    <text x="931" y="740">Which authority governed this close</text>
+    <text x="931" y="760">is directly readable: the base, the</text>
+    <text x="931" y="780">one-time exception, and what it</text>
+    <text x="931" y="800">permitted.</text>
+  </g>
+
+  <!-- ===== provenance ===== -->
+  <line x1="60" y1="836" x2="1180" y2="836" stroke="#e2e4ee"/>
+  <g font-size="10.5" fill="#5a6183">
+    <text x="60" y="856">Version 1, 31 October 2026; SHA-256 in the paper's reference 36. Sources, all public: Lee, "The Last Reversible Moment", slides pp. 3, 5; Jia, "TASP / A4P", slide 6; FIDO PTWG slides pp. 4–5, 12 —</text>
+    <text x="60" y="872">all W3C/GS1 workshop, Zurich, 8–9 Sept 2026, w3.org/2026/09/ecommerce-agents/slides/, read 13 Oct 2026 (Jia re-opened 16 Oct, SHA-256 7c0c6013…). NatWest VRP support page, read 13 Sept 2026 (paper 5, note vrp).</text>
+    <text x="60" y="888">Paper 5 = The liability rule, Version 1, 24 Sept 2026, https://driftlayer.org/papers/liability-rule/. PSRs 2017 reg. 67(1)(b), legislation.gov.uk, opened 16 Oct 2026.</text>
+    <text x="60" y="904">TDCommons Defensive Publications Series no. 11517 (CC BY 4.0); MandatePatch reference artefact layer (Apache-2.0).</text>
+    <text x="60" y="920">No private correspondence is quoted. Characterisations of other parties' designs are limited to what the cited pages show.</text>
+    <text x="60" y="936">Figure © 2026 Matthew T. Kirby, CC BY 4.0. The Drift Layer.</text>
+  </g>
+</svg>

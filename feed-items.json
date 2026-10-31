@@ -1,5 +1,12 @@
 [
   {
+    "path": "papers/consent-and-change/",
+    "title": "The Link Between Consent and the Change",
+    "date": "2026-10-31",
+    "kind": "The Drift Layer, paper no. 7 — Version 1",
+    "summary": "What the field does when an agent's purchase departs from what was agreed, and the one artefact no examined system produces."
+  },
+  {
     "path": "papers/instrument/",
     "title": "An obligation in one place, a definition in another",
     "date": "2026-10-08",
