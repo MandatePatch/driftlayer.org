@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://driftlayer.org/</loc></url>
-  <url><loc>https://driftlayer.org/papers/</loc></url>
-  <url><loc>https://driftlayer.org/papers/consent-and-change/</loc></url>
-  <url><loc>https://driftlayer.org/papers/instrument/</loc></url>
-  <url><loc>https://driftlayer.org/papers/the-drift-layer/</loc></url>
-  <url><loc>https://driftlayer.org/papers/liability-rule/</loc></url>
-  <url><loc>https://driftlayer.org/papers/definitions/</loc></url>
-  <url><loc>https://driftlayer.org/papers/hmt-payment-services-consultation-response/</loc></url>
-  <url><loc>https://driftlayer.org/papers/rpib-consultation-response/</loc></url>
-  <url><loc>https://driftlayer.org/errata/</loc></url>
-  <url><loc>https://driftlayer.org/specification/</loc></url>
+  <url><loc>https://driftlayer.org/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://driftlayer.org/papers/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://driftlayer.org/papers/consent-and-change/</loc><lastmod>2026-10-31</lastmod></url>
+  <url><loc>https://driftlayer.org/papers/instrument/</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://driftlayer.org/papers/the-drift-layer/</loc><lastmod>2026-09-14</lastmod></url>
+  <url><loc>https://driftlayer.org/papers/liability-rule/</loc><lastmod>2026-09-25</lastmod></url>
+  <url><loc>https://driftlayer.org/papers/definitions/</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://driftlayer.org/papers/hmt-payment-services-consultation-response/</loc><lastmod>2026-09-13</lastmod></url>
+  <url><loc>https://driftlayer.org/papers/rpib-consultation-response/</loc><lastmod>2026-09-10</lastmod></url>
+  <url><loc>https://driftlayer.org/errata/</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://driftlayer.org/specification/</loc><lastmod>2026-10-21</lastmod></url>
 </urlset>
