@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Completion Fencing and Verifiable Evidence Emission for Externally Managed Single-Use Capabilities — errata — The Drift Layer</title>
+<meta name="description" content="The specification, Technical Disclosure Commons no. 12938, frozen as published, with its errata recorded here as dated entries.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Drift Layer">
+<meta property="og:title" content="Completion Fencing and Verifiable Evidence Emission for Externally Managed Single-Use Capabilities — errata">
+<meta property="og:description" content="The specification, Technical Disclosure Commons no. 12938, frozen as published, with its errata recorded here as dated entries.">
+<meta property="og:url" content="https://driftlayer.org/specification/corridor/">
+<meta property="og:image" content="https://driftlayer.org/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Drift Layer">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg:#ffffff; --fg:#0d1943; --mute:#5a6183; --accent:#3b129d; --accent-deep:#2a187e;
+    --rule:#e2e4ee; --panel:#f7f7fb; --max:44rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#070b1c; --fg:#e7e9f2; --mute:#9aa0be; --accent:#9a76ef; --accent-deep:#6d4dd6;
+      --rule:#1c2340; --panel:#10152c;
+    }
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; background:var(--bg); color:var(--fg);
+    font:17px/1.6 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width:var(--max); margin:0 auto; padding:4rem 1.25rem 5rem; }
+  .masthead { display:inline-block; margin:0 0 2.4rem; border:0; color:inherit; }
+  .masthead svg { display:block; width:100%; height:auto; margin:0 0 .6rem; }
+  .masthead h1, .masthead .wordmark { font-size:1.45rem; letter-spacing:.185em;
+    text-transform:uppercase; font-weight:500; margin:0 -.185em 0 0; white-space:nowrap; }
+  h1.page-title { font-size:1.35rem; line-height:1.35; font-weight:600; margin:0 0 1.4rem;
+    letter-spacing:0; text-transform:none; }
+  h2 { font-size:1.05rem; letter-spacing:.08em; text-transform:uppercase; color:var(--mute);
+    margin:2.6rem 0 .8rem; font-weight:600; }
+  h3 { font-size:1rem; margin:1.9rem 0 .35rem; font-weight:600; }
+  h4 { font-size:.95rem; margin:1.6rem 0 .3rem; font-weight:600; color:var(--accent); }
+  p { margin:0 0 1rem; }
+  a { color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-deep); }
+  a:hover { border-bottom-color:var(--accent); }
+  code { font:0.92em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); padding:.1em .35em; border-radius:3px; overflow-wrap:anywhere; }
+  pre { font:0.84em/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background:var(--panel); border-left:3px solid var(--rule); padding:.8rem 1rem;
+    white-space:pre-wrap; overflow-wrap:anywhere; margin:1rem 0; }
+  .cite { border-left:3px solid var(--accent-deep); padding:.6rem 1rem; background:var(--panel);
+    margin:1rem 0; font-size:.95rem; }
+  .meta { color:var(--mute); font-size:.9rem; margin:0 0 .25rem; }
+  .meta-table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
+  .meta-table th { text-align:left; font-weight:600; color:var(--mute); padding:.35rem 1rem .35rem 0;
+    vertical-align:top; white-space:nowrap; }
+  .meta-table td { padding:.35rem 0; vertical-align:top; overflow-wrap:anywhere; }
+  .note { color:var(--mute); font-size:.9rem; }
+  @media (max-width:30rem) {
+    main { padding:2.5rem 1.1rem 3.5rem; }
+    .meta-table th, .meta-table td { display:block; padding:0; }
+    .meta-table th { white-space:normal; padding-top:.7rem; }
+    .meta-table td { padding-bottom:.2rem; }
+    .masthead h1, .masthead .wordmark { font-size:1.15rem; letter-spacing:.15em; }
+  }
+  footer { margin-top:3.5rem; padding-top:1.2rem; border-top:1px solid var(--rule);
+    color:var(--mute); font-size:.9rem; }
+  footer a { color:var(--mute); border-bottom-color:var(--rule); }
+</style>
+</head>
+<body>
+<main>
+  <a class="masthead" href="/">
+    <svg viewBox="0 0 100 10.6" role="img" aria-label="The Drift Layer">
+      <rect x="0" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="33.853" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="67.707" y="0" width="32.293" height="3.7" fill="var(--accent)"/>
+      <rect x="0" y="6.9" width="100" height="3.7" fill="var(--fg)"/>
+    </svg>
+    <p class="wordmark">The Drift Layer</p>
+  </a>
+
+  <p class="back"><a href="/">← Home</a></p>
+
+  <h1 class="page-title">Completion Fencing and Verifiable Evidence Emission for Externally Managed Single-Use Capabilities</h1>
+  <p class="note">The specification. Frozen as published; corrections are recorded here, dated, and never applied to the published text.</p>
+
+  <p class="note">Sibling: <a href="/specification/">Mandate Lifecycle Extensions for Agentic Payment Credentials</a>, Technical Disclosure Commons, Defensive Publications Series no. 11517.</p>
+
+  <table class="meta-table">
+    <tr><th>Author</th><td>Matthew T. Kirby, Independent Researcher, River Falls, Wisconsin, USA — <a href="mailto:matthew.kirby@driftlayer.org">matthew.kirby@driftlayer.org</a></td></tr>
+    <tr><th>Published</th><td>Technical Disclosure Commons, Defensive Publications Series no. 12938, posted 10 November 2026 — <a href="https://www.tdcommons.org/dpubs_series/12938">tdcommons.org/dpubs_series/12938</a></td></tr>
+    <tr><th>Version</th><td>The filing version. Frozen: cited, never revised.</td></tr>
+    <tr><th>Licence</th><td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> (no patent rights)</td></tr>
+    <tr><th>Priority</th><td>US provisional patent application No. 64/194,700, filed 9 November 2026, precedes the disclosure.</td></tr>
+    <tr><th>This page</th><td>Published 13 November 2026. Errata are added as dated entries and are never edited; see <a href="/errata/">versions and errata</a>.</td></tr>
+  </table>
+
+  <h3 id="the-files">The files</h3>
+  <p>The files are served by Technical Disclosure Commons, not by this site. The hashes below are of the bytes that record served on 13 November 2026; if a hash ever differs from what the record serves, that is a fault to report, not an edit.</p>
+  <table class="meta-table">
+    <tr><th>Disclosure</th><td>The published PDF, as served from the record above<br>
+      1,975,804 bytes · 40 pages as served, of which the first is the publisher's cover sheet · 39 pages of disclosure<br>
+      SHA-256 <code>db268f1ea3861e56288dfe21992c48058b6e835b04b557b788f0e5b0466b61ce</code></td></tr>
+  </table>
+
+  <h3>What this page is</h3>
+  <p>The specification is published once and cited as published. It is not revised: a reader who cited it can always fetch what they cited, and the priority it establishes attaches to that text. Corrections therefore live here, not in the document. Each entry below states the published text, the correction, the reason, and — where a correction has been carried into a reference implementation — the commit or release that carries it. Entries marked <em>open</em> state a defect whose resolution has not yet been chosen; they are listed so that a reader finds them here first.</p>
+
+  <h3>Errata</h3>
+  <p>No entries as of 13 November 2026. This is the author's register of defects found in the published text, by the author and by the review desks that work on it. The list grows; nothing in it is edited.</p>
+
+  <h3>Reporting an error</h3>
+  <p>To <a href="mailto:matthew.kirby@driftlayer.org">matthew.kirby@driftlayer.org</a>. A report that names the section and the passage is the one that gets an entry fastest. The site's rules for versions and errata are <a href="/errata/">stated in full</a>.</p>
+
+  <h3 id="cite-as">Cite as</h3>
+  <div class="cite">Kirby, M. T. (2026) <em>Completion Fencing and Verifiable Evidence Emission for Externally Managed Single-Use Capabilities</em>. Technical Disclosure Commons, Defensive Publications Series no. 12938, 10 November 2026. https://www.tdcommons.org/dpubs_series/12938 — with errata at https://driftlayer.org/specification/corridor/</div>
+  <pre>@misc{kirby2026corridor,
+  author = {Kirby, Matthew T.},
+  title = {Completion Fencing and Verifiable Evidence Emission for Externally Managed Single-Use Capabilities},
+  year = {2026},
+  month = nov,
+  howpublished = {Technical Disclosure Commons, Defensive Publications Series no. 12938, \url{https://www.tdcommons.org/dpubs_series/12938}},
+  note = {Errata at \url{https://driftlayer.org/specification/corridor/}}
+}</pre>
+
+  <h3 id="disclosure">Disclosure</h3>
+  <p>A US provisional patent application (No. 64/194,700) was filed on 9 November 2026 and precedes the disclosure. The specification is published as <em>Completion Fencing and Verifiable Evidence Emission for Externally Managed Single-Use Capabilities</em>, Technical Disclosure Commons, Defensive Publications Series no. 12938 (10 November 2026), under CC BY 4.0. The mechanisms described are one implementation of a more general requirement. Each licence governs what it names and nothing else.</p>
+
+  <footer>© 2026 Matthew T. Kirby. Site text is the author's; each publication carries its own licence, stated on its page. <a href="/errata/">Versions and errata</a>.</footer>
+</main>
+</body>
+</html>
